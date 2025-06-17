@@ -15,18 +15,18 @@
 PKG := github.com/oracle/oci-cloud-controller-manager
 
 ifeq "$(CI_IMAGE_REGISTRY)" ""
-    CI_IMAGE_REGISTRY   ?= iad.ocir.io/oracle
+    CI_IMAGE_REGISTRY   ?= sjc.ocir.io/oracle
 else
     CI_IMAGE_REGISTRY   ?= ${CI_IMAGE_REGISTRY}
 endif
 
 ifeq "$(OSS_REGISTRY)" ""
-    OSS_REGISTRY   ?= iad.ocir.io/oracle
+    OSS_REGISTRY   ?= sjc.ocir.io/oracle
 else
     OSS_REGISTRY   ?= ${OSS_REGISTRY}
 endif
 IMAGE ?= $(OSS_REGISTRY)/cloud-provider-oci
-COMPONENT ?= oci-cloud-controller-manager oci-volume-provisioner oci-flexvolume-driver oci-csi-controller-driver oci-csi-node-driver
+COMPONENT ?= oci-cloud-tagging-driver
 
 ALL_ARCH = amd64 arm64
 
@@ -148,8 +148,8 @@ BUILD_ARGS = --build-arg CI_IMAGE_REGISTRY="$(CI_IMAGE_REGISTRY)" --build-arg CO
 image:
 	docker  build $(BUILD_ARGS) \
 		-t $(IMAGE)-amd64:$(VERSION) .
-	docker  build $(BUILD_ARGS) \
-		-t $(IMAGE)-arm64:$(VERSION) -f Dockerfile_arm_all .
+	#docker  build $(BUILD_ARGS) \
+#		-t $(IMAGE)-arm64:$(VERSION) -f Dockerfile_arm_all .
 
 .PHONY: push
 push: image

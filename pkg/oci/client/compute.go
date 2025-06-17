@@ -26,7 +26,6 @@ import (
 type ComputeInterface interface {
 	// GetInstance gets information about the specified instance.
 	GetInstance(ctx context.Context, id string) (*core.Instance, error)
-	ListInstancesByCompartmentAndAD(ctx context.Context, compartmentId, availabilityDomain string) (response []core.Instance, err error)
 
 	// GetInstanceByNodeName gets the OCI instance corresponding to the given
 	// Kubernetes node name.
@@ -34,7 +33,7 @@ type ComputeInterface interface {
 
 	GetPrimaryVNICForInstance(ctx context.Context, compartmentID, instanceID string) (*core.Vnic, error)
 
-	GetSecondaryVNICsForInstance(ctx context.Context, compartmentID, instanceID string) ([]*core.Vnic, error)
+	UpdateInstance(ctx context.Context, request core.UpdateInstanceRequest) (*core.Instance, error)
 
 	VolumeAttachmentInterface
 }
@@ -54,36 +53,6 @@ func (c *client) GetInstance(ctx context.Context, id string) (*core.Instance, er
 	}
 
 	return &resp.Instance, nil
-}
-
-func (c *client) ListInstancesByCompartmentAndAD(ctx context.Context, compartmentID, availabilityDomain string) ([]core.Instance, error) {
-	var (
-		page      *string
-		instances []core.Instance
-	)
-	for {
-		if !c.rateLimiter.Reader.TryAccept() {
-			return nil, RateLimitError(false, "ListInstances")
-		}
-		resp, err := c.compute.ListInstances(ctx, core.ListInstancesRequest{
-			AvailabilityDomain: &availabilityDomain,
-			CompartmentId:      &compartmentID,
-			Page:               page,
-			RequestMetadata:    c.requestMetadata,
-		})
-		incRequestCounter(err, listVerb, instanceResource)
-
-		if err != nil {
-			return nil, errors.WithStack(err)
-		}
-
-		instances = append(instances, resp.Items...)
-		if page = resp.OpcNextPage; resp.OpcNextPage == nil {
-			break
-		}
-	}
-
-	return instances, nil
 }
 
 func (c *client) getInstanceByDisplayName(ctx context.Context, compartmentID, displayName string) (*core.Instance, error) {
@@ -184,52 +153,6 @@ func (c *client) GetPrimaryVNICForInstance(ctx context.Context, compartmentID, i
 	return nil, errors.WithStack(errNotFound)
 }
 
-func (c *client) GetSecondaryVNICsForInstance(ctx context.Context, compartmentID, instanceID string) ([]*core.Vnic, error) {
-	logger := c.logger.With("instanceID", instanceID, "compartmentID", compartmentID)
-	secondaryVnics := []*core.Vnic{}
-	var page *string
-	for {
-		resp, err := c.listVNICAttachments(ctx, core.ListVnicAttachmentsRequest{
-			InstanceId:      &instanceID,
-			CompartmentId:   &compartmentID,
-			Page:            page,
-			RequestMetadata: c.requestMetadata,
-		})
-
-		if err != nil {
-			return nil, err
-		}
-
-		for _, attachment := range resp.Items {
-			if attachment.LifecycleState != core.VnicAttachmentLifecycleStateAttached {
-				logger.With("vnicAttachmentID", *attachment.Id).Info("VNIC attachment is not in attached state")
-				continue
-			}
-
-			if attachment.VnicId == nil {
-				// Should never happen but lets be extra cautious as field is non-mandatory in OCI API.
-				logger.With("vnicAttachmentID", *attachment.Id).Error("VNIC attachment is attached but has no VNIC ID")
-				continue
-			}
-
-			// TODO(apryde): Cache map[instanceID]SecondaryVNICID.
-			vnic, err := c.GetVNIC(ctx, *attachment.VnicId)
-			if err != nil {
-				return nil, err
-			}
-			if !*vnic.IsPrimary {
-				secondaryVnics = append(secondaryVnics, vnic)
-			}
-		}
-
-		if page = resp.OpcNextPage; resp.OpcNextPage == nil {
-			break
-		}
-	}
-
-	return secondaryVnics, nil
-}
-
 func (c *client) GetInstanceByNodeName(ctx context.Context, compartmentID, vcnID, nodeName string) (*core.Instance, error) {
 	// First try lookup by display name.
 	instance, err := c.getInstanceByDisplayName(ctx, compartmentID, nodeName)
@@ -280,7 +203,6 @@ func (c *client) GetInstanceByNodeName(ctx context.Context, compartmentID, vcnID
 
 			if (vnic.PublicIp != nil && *vnic.PublicIp == nodeName) ||
 				(vnic.PrivateIp != nil && *vnic.PrivateIp == nodeName) ||
-				(len(vnic.Ipv6Addresses) > 0 && vnic.Ipv6Addresses[0] == strings.ReplaceAll(nodeName, "-", ":")) ||
 				(vnic.HostnameLabel != nil && (*vnic.HostnameLabel != "" && strings.HasPrefix(nodeName, *vnic.HostnameLabel))) {
 				instance, err := c.GetInstance(ctx, *attachment.InstanceId)
 				if err != nil {
@@ -334,4 +256,15 @@ func getNonTerminalInstances(instances []core.Instance) []core.Instance {
 		}
 	}
 	return result
+}
+
+func (c *client) UpdateInstance(ctx context.Context, request core.UpdateInstanceRequest) (*core.Instance, error) {
+	c.logger.Info("UpdateInstance API call with ", "request", request)
+
+	resp, err := c.compute.UpdateInstance(ctx,
+		request)
+	if err != nil {
+		return nil, errors.WithStack(err)
+	}
+	return &resp.Instance, nil
 }

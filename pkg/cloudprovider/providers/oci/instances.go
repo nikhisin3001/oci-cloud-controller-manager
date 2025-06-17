@@ -17,6 +17,8 @@ package oci
 import (
 	"context"
 	"fmt"
+	"github.com/oracle/oci-cloud-controller-manager/pkg/tags"
+	"k8s.io/client-go/kubernetes"
 	"net"
 	"strings"
 
@@ -130,6 +132,11 @@ func (cp *CloudProvider) extractNodeAddresses(ctx context.Context, instanceID st
 	OpenShiftTagNamesapce := cp.getOpenShiftTagNamespaceByInstance(ctx, instanceID)
 
 	if OpenShiftTagNamesapce != "" {
+
+		// If the cluster is OpenShift, then start the Tagging Controller
+
+		cp.startTaggingController(ctx)
+
 		secondaryVnics, err := cp.client.Compute().GetSecondaryVNICsForInstance(ctx, compartmentID, instanceID)
 		if err != nil {
 			return nil, err
@@ -459,4 +466,23 @@ func (cp *CloudProvider) checkOpenShiftISCSIBootVolumeTagByVnic(ctx context.Cont
 		}
 	}
 	return false
+}
+
+func (cp *CloudProvider) startTaggingController(ctx context.Context) {
+
+	cp.logger.Info("Starting Tagging Controller")
+
+	go func() {
+		clientset, ok := cp.kubeclient.(*kubernetes.Clientset)
+		if !ok {
+			cp.logger.Error("Failed to assert kubeclient to *kubernetes.Clientset")
+			return
+		}
+
+		err := tags.New_Run(ctx, clientset, cp.logger)
+		if err != nil {
+			cp.logger.Error("[FATAL] Tagging Controller execution failed: %v", err)
+		}
+	}()
+
 }
