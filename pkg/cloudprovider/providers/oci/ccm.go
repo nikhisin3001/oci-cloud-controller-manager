@@ -192,6 +192,17 @@ func (cp *CloudProvider) Initialize(clientBuilder cloudprovider.ControllerClient
 
 	go nodeInfoController.Run(wait.NeverStop)
 
+	taggingController := NewTaggingController(
+		factory.Core().V1().Nodes(),
+		cp.kubeclient,
+		cp,
+		cp.logger,
+		cp.instanceCache,
+		cp.client,
+	)
+
+	go taggingController.Run(wait.NeverStop)
+
 	cp.logger.Info("Waiting for node informer cache to sync")
 	if !cache.WaitForCacheSync(wait.NeverStop, nodeInformer.Informer().HasSynced, serviceInformer.Informer().HasSynced) {
 		utilruntime.HandleError(fmt.Errorf("Timed out waiting for informers to sync"))
