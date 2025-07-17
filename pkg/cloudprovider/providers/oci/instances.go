@@ -33,7 +33,7 @@ const (
 	VirtualNodePoolIdAnnotation = "oci.oraclecloud.com/virtual-node-pool-id"
 	IPv4NodeIPFamilyLabel       = "oci.oraclecloud.com/ip-family-ipv4"
 	IPv6NodeIPFamilyLabel       = "oci.oraclecloud.com/ip-family-ipv6"
-	OpenShiftTagNamesapcePrefix = "openshift-"
+	OpenShiftTagNamespacePrefix = "openshift-"
 	OpenShiftBootVolumeType     = "boot-volume-type"
 	OpenShiftBootVolumeISCSI    = "ISCSI"
 )
@@ -127,9 +127,9 @@ func (cp *CloudProvider) extractNodeAddresses(ctx context.Context, instanceID st
 		}
 	}
 
-	OpenShiftTagNamesapce := cp.getOpenShiftTagNamespaceByInstance(ctx, instanceID)
+	OpenShiftTagNamespace := cp.getOpenShiftTagNamespaceByInstance(ctx, instanceID)
 
-	if OpenShiftTagNamesapce != "" {
+	if OpenShiftTagNamespace != "" {
 		secondaryVnics, err := cp.client.Compute().GetSecondaryVNICsForInstance(ctx, compartmentID, instanceID)
 		if err != nil {
 			return nil, err
@@ -139,7 +139,7 @@ func (cp *CloudProvider) extractNodeAddresses(ctx context.Context, instanceID st
 			return addresses, nil
 		}
 		for _, secondaryVnic := range secondaryVnics {
-			if cp.checkOpenShiftISCSIBootVolumeTagByVnic(ctx, secondaryVnic, OpenShiftTagNamesapce) {
+			if cp.checkOpenShiftISCSIBootVolumeTagByVnic(ctx, secondaryVnic, OpenShiftTagNamespace) {
 				if (secondaryVnic.IsPrimary == nil || !*secondaryVnic.IsPrimary) && secondaryVnic.PrivateIp != nil && *secondaryVnic.PrivateIp != "" {
 					ip := net.ParseIP(*secondaryVnic.PrivateIp)
 					if ip == nil {
@@ -440,7 +440,7 @@ func (cp *CloudProvider) getOpenShiftTagNamespaceByInstance(ctx context.Context,
 	}
 
 	for namespace := range instance.DefinedTags {
-		if strings.HasPrefix(namespace, OpenShiftTagNamesapcePrefix) {
+		if strings.HasPrefix(namespace, OpenShiftTagNamespacePrefix) {
 			return namespace
 		}
 	}

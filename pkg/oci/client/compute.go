@@ -36,6 +36,8 @@ type ComputeInterface interface {
 
 	GetSecondaryVNICsForInstance(ctx context.Context, compartmentID, instanceID string) ([]*core.Vnic, error)
 
+	UpdateInstance(ctx context.Context, request core.UpdateInstanceRequest) (*core.Instance, error)
+
 	VolumeAttachmentInterface
 }
 
@@ -334,4 +336,15 @@ func getNonTerminalInstances(instances []core.Instance) []core.Instance {
 		}
 	}
 	return result
+}
+
+func (c *client) UpdateInstance(ctx context.Context, request core.UpdateInstanceRequest) (*core.Instance, error) {
+	c.logger.Info("UpdateInstance API call with ", "request", request)
+
+	resp, err := c.compute.UpdateInstance(ctx,
+		request)
+	if err != nil {
+		return nil, errors.WithStack(err)
+	}
+	return &resp.Instance, nil
 }

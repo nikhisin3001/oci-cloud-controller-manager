@@ -944,6 +944,18 @@ func (c *MockComputeClient) ListVnicAttachments(ctx context.Context, compartment
 	return nil, nil
 }
 
+func (c *MockComputeClient) UpdateInstance(ctx context.Context, request core.UpdateInstanceRequest) (*core.Instance, error) {
+	// Return mock or expected response
+	return &core.Instance{
+		AvailabilityDomain: common.String("NWuj:PHX-AD-1"),
+		Id:                 request.InstanceId,
+		Region:             common.String("PHX"),
+		Shape:              common.String("VM.Standard1.2"),
+		DisplayName:        request.DisplayName,
+		DefinedTags:        request.DefinedTags,
+	}, nil
+}
+
 func (c *MockComputeClient) GetVnicAttachment(ctx context.Context, vnicAttachmentId *string) (response *core.VnicAttachment, err error) {
 	return nil, nil
 }

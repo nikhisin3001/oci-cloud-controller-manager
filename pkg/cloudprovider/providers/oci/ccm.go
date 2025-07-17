@@ -20,6 +20,9 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"k8s.io/apimachinery/pkg/labels"
+	v1 "k8s.io/client-go/informers/core/v1"
+	"strings"
 	"time"
 
 	"github.com/pkg/errors"
@@ -200,6 +203,22 @@ func (cp *CloudProvider) Initialize(clientBuilder cloudprovider.ControllerClient
 
 	cp.ServiceAccountLister = serviceAccountInformer.Lister()
 
+	// If the cluster is type OpenShift then the Tagging Controller
+	// should be enabled.
+	isOpenShiftCluster := cp.checkIfOpenShiftCluster(nodeInformer)
+	if isOpenShiftCluster {
+		cp.logger.Info("Tagging controller enabled")
+		taggingController := NewTaggingController(
+			factory.Core().V1().Nodes(),
+			cp.kubeclient,
+			cp,
+			cp.logger,
+			cp.instanceCache,
+			cp.client,
+		)
+		go taggingController.Run(wait.NeverStop)
+	}
+
 	/* StorageBackfillController not applicable for Open Source CCM
 	enableStorageBackfillController := GetIsFeatureEnabledFromEnv(cp.logger, resourceTrackingFeatureFlagName, false)
 	if enableStorageBackfillController {
@@ -279,4 +298,17 @@ func (cp *CloudProvider) HasClusterID() bool {
 
 func instanceCacheKeyFn(obj interface{}) (string, error) {
 	return *obj.(*core.Instance).Id, nil
+}
+
+func (cp *CloudProvider) checkIfOpenShiftCluster(informer v1.NodeInformer) bool {
+	nodes, _ := informer.Lister().List(labels.Everything())
+	for _, node := range nodes {
+		for key := range node.Labels {
+			if strings.HasPrefix(key, "node.openshift.io/") {
+				cp.logger.Info("Detected OpenShift node label", "label", key)
+				return true
+			}
+		}
+	}
+	return false
 }

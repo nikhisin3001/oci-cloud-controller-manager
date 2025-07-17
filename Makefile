@@ -15,20 +15,20 @@
 PKG := github.com/oracle/oci-cloud-controller-manager
 
 ifeq "$(CI_IMAGE_REGISTRY)" ""
-    CI_IMAGE_REGISTRY   ?= iad.ocir.io/oracle
+    CI_IMAGE_REGISTRY   ?= sjc.ocir.io/axpiwif30tzw
 else
     CI_IMAGE_REGISTRY   ?= ${CI_IMAGE_REGISTRY}
 endif
 
 ifeq "$(OSS_REGISTRY)" ""
-    OSS_REGISTRY   ?= iad.ocir.io/oracle
+    OSS_REGISTRY   ?= sjc.ocir.io/axpiwif30tzw
 else
     OSS_REGISTRY   ?= ${OSS_REGISTRY}
 endif
 IMAGE ?= $(OSS_REGISTRY)/cloud-provider-oci
-COMPONENT ?= oci-cloud-controller-manager oci-volume-provisioner oci-flexvolume-driver oci-csi-controller-driver oci-csi-node-driver
+COMPONENT ?= oci-cloud-controller-manager
 
-ALL_ARCH = amd64 arm64
+ALL_ARCH = amd64
 
 ifeq "$(VERSION)" ""
     BUILD := $(shell git describe --exact-match 2> /dev/null || git describe --match=$(git rev-parse --short=8 HEAD) --always --dirty --abbrev=8)
@@ -146,10 +146,8 @@ run-volume-provisioner-dev:
 .PHONY: image
 BUILD_ARGS = --build-arg CI_IMAGE_REGISTRY="$(CI_IMAGE_REGISTRY)" --build-arg COMPONENT="$(COMPONENT)"
 image:
-	docker  build $(BUILD_ARGS) \
+	docker build $(BUILD_ARGS) \
 		-t $(IMAGE)-amd64:$(VERSION) .
-	docker  build $(BUILD_ARGS) \
-		-t $(IMAGE)-arm64:$(VERSION) -f Dockerfile_arm_all .
 
 .PHONY: push
 push: image
