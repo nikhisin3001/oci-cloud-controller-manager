@@ -1,0 +1,3 @@
+./commons.go
+./mock_kubeclient.go
+./mock_oci_clients.go

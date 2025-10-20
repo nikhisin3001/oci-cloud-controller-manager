@@ -192,4 +192,3 @@ test-local: build \
 .PHONY: run-ccm-e2e-tests-local
 run-ccm-e2e-tests-local:
 	./hack/run_e2e_test.sh
-

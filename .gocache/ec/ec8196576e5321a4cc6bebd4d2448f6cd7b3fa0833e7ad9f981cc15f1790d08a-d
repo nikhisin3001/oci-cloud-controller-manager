@@ -1,0 +1,5 @@
+./cidr.go
+./conditions.go
+./hostname.go
+./ips.go
+./status.go

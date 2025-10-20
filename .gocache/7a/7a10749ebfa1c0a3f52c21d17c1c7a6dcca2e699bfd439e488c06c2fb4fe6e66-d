@@ -1,0 +1,6 @@
+./corrupt_obj_deleter.go
+./decorated_watcher.go
+./doc.go
+./dryrun.go
+./storage_factory.go
+./store.go

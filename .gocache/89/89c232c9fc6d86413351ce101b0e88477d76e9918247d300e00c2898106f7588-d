@@ -1,0 +1,11 @@
+./compact.go
+./corrupt_obj_deleter.go
+./decoder.go
+./errors.go
+./event.go
+./healthcheck.go
+./latency_tracker.go
+./lease_manager.go
+./logger.go
+./store.go
+./watcher.go

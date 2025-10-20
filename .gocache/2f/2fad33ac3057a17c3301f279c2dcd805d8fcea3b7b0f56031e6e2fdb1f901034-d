@@ -1,0 +1,13 @@
+./authz.go
+./cidr.go
+./cost.go
+./format.go
+./ip.go
+./jsonpatch.go
+./libraries.go
+./lists.go
+./quantity.go
+./regex.go
+./semverlib.go
+./test.go
+./urls.go

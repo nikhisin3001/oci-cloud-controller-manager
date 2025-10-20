@@ -1,0 +1,15 @@
+./config.go
+./config_selfclient.go
+./deleted_kinds.go
+./deprecated_insecure_serving.go
+./doc.go
+./genericapiserver.go
+./handler.go
+./healthz.go
+./hooks.go
+./lifecycle_signals.go
+./plugins.go
+./secure_serving.go
+./signal.go
+./signal_posix.go
+./storage_readiness_hook.go

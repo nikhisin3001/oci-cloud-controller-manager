@@ -1,0 +1,5 @@
+./doc.go
+./resource_config.go
+./resource_encoding_config.go
+./storage_codec.go
+./storage_factory.go

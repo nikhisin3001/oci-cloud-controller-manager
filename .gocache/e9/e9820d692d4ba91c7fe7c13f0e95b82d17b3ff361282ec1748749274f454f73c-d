@@ -1,0 +1,11 @@
+./bindings.go
+./comprehensions.go
+./encoders.go
+./formatting.go
+./guards.go
+./lists.go
+./math.go
+./native.go
+./protos.go
+./sets.go
+./strings.go

@@ -1,0 +1,12 @@
+./create.go
+./delete.go
+./doc.go
+./get.go
+./helpers.go
+./namer.go
+./patch.go
+./response.go
+./rest.go
+./trace_util.go
+./update.go
+./watch.go

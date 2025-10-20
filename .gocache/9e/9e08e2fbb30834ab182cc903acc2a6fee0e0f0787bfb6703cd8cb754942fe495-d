@@ -1,0 +1,4 @@
+./flags.go
+./util.go
+./viper.go
+./watch.go

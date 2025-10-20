@@ -1,0 +1,6 @@
+./adaptor.go
+./equality.go
+./maplist.go
+./schemas.go
+./typeprovider.go
+./values.go

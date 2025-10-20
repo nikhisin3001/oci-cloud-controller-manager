@@ -1,0 +1,9 @@
+./doc.go
+./kube_features.go
+./options.go
+./options_slog.go
+./pflags.go
+./registry.go
+./text.go
+./types.go
+./zz_generated.deepcopy.go

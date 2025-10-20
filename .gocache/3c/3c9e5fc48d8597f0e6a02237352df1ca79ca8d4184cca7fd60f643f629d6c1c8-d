@@ -1,0 +1,4 @@
+./doc.go
+./fake_ipaddress.go
+./fake_networking_client.go
+./fake_servicecidr.go

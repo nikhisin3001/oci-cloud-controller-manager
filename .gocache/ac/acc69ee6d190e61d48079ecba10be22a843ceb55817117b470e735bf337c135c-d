@@ -1,0 +1,6 @@
+./deviceclass.go
+./devicetaintrule.go
+./interface.go
+./resourceclaim.go
+./resourceclaimtemplate.go
+./resourceslice.go

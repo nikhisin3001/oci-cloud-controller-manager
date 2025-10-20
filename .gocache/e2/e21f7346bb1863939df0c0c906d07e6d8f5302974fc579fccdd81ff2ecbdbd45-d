@@ -1,0 +1,4 @@
+./interface.go
+./json_patch.go
+./smd.go
+./typeconverter.go

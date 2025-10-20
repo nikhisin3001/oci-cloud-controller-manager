@@ -1,0 +1,6 @@
+./cloudprovider.go
+./kubecloudshared.go
+./nodecontroller.go
+./options.go
+./servicecontroller.go
+./webhook.go

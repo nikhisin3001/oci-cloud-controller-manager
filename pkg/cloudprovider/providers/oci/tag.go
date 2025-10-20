@@ -17,12 +17,12 @@ package oci
 import (
 	"context"
 	"fmt"
+	"strings"
+	"time"
+
 	"github.com/oracle/oci-cloud-controller-manager/pkg/cloudprovider/providers/oci/config"
 	"github.com/oracle/oci-cloud-controller-manager/pkg/util"
 	coreinformers "k8s.io/client-go/informers/core/v1"
-	"log"
-	"strings"
-	"time"
 
 	"k8s.io/apimachinery/pkg/util/wait"
 
@@ -46,6 +46,7 @@ const (
 	openshiftTagNamespace = "openshift-tags"
 	openshiftTagKey       = "openshift-resource"
 	openshiftTagValue     = "openshift-resource-infra"
+	//OpenShiftTagNamespacePrefix = "openshift-"
 )
 
 type TaggingController struct {
@@ -110,7 +111,7 @@ func (tc *TaggingController) Run(stopCh <-chan struct{}) {
 	tc.logger.Info("Starting tagging controller")
 	wait.Until(func() {
 		if err := tc.runWorker(stopCh); err != nil {
-			klog.Errorf("runWorker error: %v", err)
+			tc.logger.Error(err, "runWorker error", "TaggingController")
 		}
 	}, time.Second, stopCh)
 
@@ -118,9 +119,7 @@ func (tc *TaggingController) Run(stopCh <-chan struct{}) {
 
 func (tc *TaggingController) runWorker(stopCh <-chan struct{}) error {
 
-	//ctx := context.Background()
-
-	tc.logger.Info("[INFO]:  Starting unmarshall tags")
+	tc.logger.Info("Starting unmarshall tags")
 
 	nodeLister := tc.nodeInformer.Lister()
 
@@ -130,52 +129,56 @@ func (tc *TaggingController) runWorker(stopCh <-chan struct{}) error {
 	for {
 		select {
 		case <-stopCh:
-			log.Println("[INFO] Controller stopped")
+			tc.logger.Info("Tagging Controller stopped")
 			return nil
 		case <-ticker.C:
 			nodes, err := nodeLister.List(labels.Everything())
 			if err != nil {
-				log.Printf("[ERROR] Failed to list nodes: %v", err)
-				continue
+				tc.logger.Error("Failed to list nodes: %v", err)
+				return err
 			}
-			tc.logger.Info("[INFO]:  list all nodes returned from nodeLister", nodes)
 			for _, node := range nodes {
-				tc.logger.Info("[INFO]:  processing node: ", node)
-				tc.ReconcileNode(context.Background(), node)
+				tc.logger.Info("processing node: ", node)
+				tc.ReconcileNodeTags(context.Background(), node)
 			}
 		}
 	}
 }
 
-// ReconcileNode  retrieves instance details, merges required tags with existing defined tags,
+// ReconcileNodeTags  retrieves instance details, merges required tags with existing defined tags,
 // and calls the UpdateInstance API to apply the changes.
-func (tc *TaggingController) ReconcileNode(ctx context.Context, node *v1.Node) {
+func (tc *TaggingController) ReconcileNodeTags(ctx context.Context, node *v1.Node) {
 
-	tc.logger.Info("[INFO]:  Getting instanceOcid for node: ", node)
+	if node == nil {
+		tc.logger.Error("node is nil")
+		return
+	}
+	tc.logger.Info("Getting instanceOcid for node: ", zap.String("node", node.Name))
 	instanceOCID, err := getInstanceIDFromNode(node, tc.logger)
 	if err != nil {
-		tc.logger.Error("[ERROR] Failed to instanceOCID for node %s: %v", node.Name, err)
+		tc.logger.Error("Failed to get/retrieve instanceOCID for node %s: %v", node.Name, err)
 		return
 	}
 
-	tc.logger.Info("[INFO]: instanceOcid: for node: ", instanceOCID, node.Name)
+	tc.logger.Info("instanceOcid: for node: ", instanceOCID, node.Name)
 	instance, err := tc.ociClient.Compute().GetInstance(ctx, instanceOCID)
 	if err != nil {
-		tc.logger.Errorf("[ERROR] Failed to get instance for node %s: %v", node.Name, err)
+		tc.logger.Errorf("Failed to get instance for node %s: %v", node.Name, err)
 		return
 	}
 
-	tc.logger.Infof("[INFO]: Existing tags on node: %v. Expected tags on node:  ", instance.DefinedTags)
+	tc.logger.Infof("Existing defined tags on node: %v", instance.DefinedTags)
 
 	var t *config.TagConfig
 	if tc.cloud.config.Tags == nil || tc.cloud.config.Tags.Common == nil {
-		tc.logger.Warnf("[WARN] Tag config is nil; using empty TagConfig for node %s", node.Name)
+		tc.logger.Warnf("Tag config is nil; using empty TagConfig for node %s", node.Name)
 		t = &config.TagConfig{
 			FreeformTags: map[string]string{},
 			DefinedTags:  map[string]map[string]interface{}{},
 		}
 	} else {
 		t = tc.cloud.config.Tags.Common
+		tc.logger.Infof("Expected tags on node: %v ", instance.DefinedTags)
 	}
 
 	// If cluster is OpenShift, then make sure the required OpenShift
@@ -192,10 +195,10 @@ func (tc *TaggingController) ReconcileNode(ctx context.Context, node *v1.Node) {
 		},
 	})
 	if err != nil {
-		log.Printf("[ERROR] Failed to update tags for node %s: %v", node.Name, err)
-	} else {
-		log.Printf("[INFO] Successfully updated tags for node %s", node.Name)
+		tc.logger.Error("Failed to update tags for node %s: %v", node.Name, err)
+		return
 	}
+	tc.logger.Info("Successfully updated tags for node %s", node.Name)
 }
 
 // getInstanceIDFromNode - Retrieves  the instanceOcid from the Node
@@ -205,7 +208,7 @@ func getInstanceIDFromNode(node *v1.Node, logger *zap.SugaredLogger) (string, er
 	}
 	logger.Info("Node providerId", node.Name)
 	providerID := node.Spec.ProviderID
-	if providerID == "" {
+	if &providerID == nil || providerID == "" {
 		return "", fmt.Errorf("providerID is empty for node %s", node.Name)
 	}
 	if !strings.HasPrefix(providerID, "oci://") {

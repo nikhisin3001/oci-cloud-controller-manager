@@ -21,7 +21,9 @@ import (
 	"fmt"
 	"io"
 	"k8s.io/apimachinery/pkg/labels"
+	"k8s.io/apimachinery/pkg/selection"
 	v1 "k8s.io/client-go/informers/core/v1"
+	"os"
 	"strings"
 	"time"
 
@@ -205,18 +207,23 @@ func (cp *CloudProvider) Initialize(clientBuilder cloudprovider.ControllerClient
 
 	// If the cluster is type OpenShift then the Tagging Controller
 	// should be enabled.
-	isOpenShiftCluster := cp.checkIfOpenShiftCluster(nodeInformer)
+	isOpenShiftCluster := cp.isOpenShiftCluster(nodeInformer)
 	if isOpenShiftCluster {
-		cp.logger.Info("Tagging controller enabled")
-		taggingController := NewTaggingController(
-			factory.Core().V1().Nodes(),
-			cp.kubeclient,
-			cp,
-			cp.logger,
-			cp.instanceCache,
-			cp.client,
-		)
-		go taggingController.Run(wait.NeverStop)
+		if GetIsFeatureEnabledFromEnv(cp.logger, "DISABLE_INSTANCE_TAGGING_CONTROLLER", false) {
+			cp.logger.Info("Tagging controller disabled via environment variable DISABLE_INSTANCE_TAGGING_CONTROLLER")
+		} else {
+			logger := zap.L()
+			cp.logger.Info("Tagging controller enabled")
+			taggingController := NewTaggingController(
+				factory.Core().V1().Nodes(),
+				cp.kubeclient,
+				cp,
+				logger.With(zap.String("controller", "tagging-controller")).Sugar(),
+				cp.instanceCache,
+				cp.client,
+			)
+			go taggingController.Run(wait.NeverStop)
+		}
 	}
 
 	/* StorageBackfillController not applicable for Open Source CCM
@@ -300,15 +307,29 @@ func instanceCacheKeyFn(obj interface{}) (string, error) {
 	return *obj.(*core.Instance).Id, nil
 }
 
-func (cp *CloudProvider) checkIfOpenShiftCluster(informer v1.NodeInformer) bool {
-	nodes, _ := informer.Lister().List(labels.Everything())
-	for _, node := range nodes {
-		for key := range node.Labels {
-			if strings.HasPrefix(key, "node.openshift.io/") {
-				cp.logger.Info("Detected OpenShift node label", "label", key)
-				return true
-			}
-		}
+func (cp *CloudProvider) isOpenShiftCluster(informer v1.NodeInformer) bool {
+	labelIdentifier := strings.TrimSpace(os.Getenv("OPENSHIFT_NODE_LABEL_ID"))
+	if labelIdentifier == "" {
+		cp.logger.Debug("OpenShift node label identifier not provided")
+		return false
+	}
+
+	req, err := labels.NewRequirement(labelIdentifier, selection.Exists, nil)
+	if err != nil {
+		cp.logger.Error("Invalid OpenShift node label identifier", "label", labelIdentifier, "error", err)
+		return false
+	}
+
+	selector := labels.NewSelector().Add(*req)
+	nodes, err := informer.Lister().List(selector)
+	if err != nil {
+		cp.logger.Error("Failed to list nodes for OpenShift label", "label", labelIdentifier, "error", err)
+		return false
+	}
+
+	if len(nodes) > 0 {
+		cp.logger.Info("Detected OpenShift node label", "label", labelIdentifier)
+		return true
 	}
 	return false
 }
