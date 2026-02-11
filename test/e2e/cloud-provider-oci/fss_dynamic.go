@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"time"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework"
 	"github.com/oracle/oci-go-sdk/v65/containerengine"
 	v1 "k8s.io/api/core/v1"

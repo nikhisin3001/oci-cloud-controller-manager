@@ -15,7 +15,7 @@
 package e2e
 
 import (
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	"github.com/oracle/oci-cloud-controller-manager/pkg/volume/provisioner/core"
 	"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework"
 )

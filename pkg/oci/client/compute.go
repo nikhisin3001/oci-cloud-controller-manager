@@ -339,10 +339,18 @@ func getNonTerminalInstances(instances []core.Instance) []core.Instance {
 }
 
 func (c *client) UpdateInstance(ctx context.Context, request core.UpdateInstanceRequest) (*core.Instance, error) {
-	c.logger.Info("UpdateInstance API call with ", "request", request)
+	var instanceId string
+	if request.InstanceId != nil {
+		instanceId = *request.InstanceId
+	}
 
-	resp, err := c.compute.UpdateInstance(ctx,
-		request)
+	c.logger.With(
+		"instanceOcid", instanceId,
+		"definedTags", request.UpdateInstanceDetails.DefinedTags,
+		"freeformTags", request.UpdateInstanceDetails.FreeformTags,
+	).Info("UpdateInstance API call")
+
+	resp, err := c.compute.UpdateInstance(ctx, request)
 	if err != nil {
 		return nil, errors.WithStack(err)
 	}

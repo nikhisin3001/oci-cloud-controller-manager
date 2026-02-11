@@ -22,7 +22,7 @@ import (
 
 	v1 "k8s.io/api/core/v1"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	csi_util "github.com/oracle/oci-cloud-controller-manager/pkg/csi-util"
 	"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework"
 )

@@ -26,9 +26,9 @@ else
     OSS_REGISTRY   ?= ${OSS_REGISTRY}
 endif
 IMAGE ?= $(OSS_REGISTRY)/cloud-provider-oci
-COMPONENT ?= oci-cloud-controller-manager
+COMPONENT ?= oci-cloud-controller-manager oci-volume-provisioner oci-flexvolume-driver oci-csi-controller-driver oci-csi-node-driver
 
-ALL_ARCH = amd64
+ALL_ARCH = amd64 arm64
 
 ifeq "$(VERSION)" ""
     BUILD := $(shell git describe --exact-match 2> /dev/null || git describe --match=$(git rev-parse --short=8 HEAD) --always --dirty --abbrev=8)
@@ -148,6 +148,8 @@ BUILD_ARGS = --build-arg CI_IMAGE_REGISTRY="$(CI_IMAGE_REGISTRY)" --build-arg CO
 image:
 	docker build $(BUILD_ARGS) \
 		-t $(IMAGE)-amd64:$(VERSION) .
+	docker  build --load $(BUILD_ARGS) \
+		-t $(IMAGE)-arm64:$(VERSION) -f Dockerfile_arm_all . 
 
 .PHONY: push
 push: image

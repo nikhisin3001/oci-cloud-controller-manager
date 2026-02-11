@@ -3,7 +3,7 @@ package e2e
 import (
 	"time"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 
 	csi_util "github.com/oracle/oci-cloud-controller-manager/pkg/csi-util"
 	"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework"

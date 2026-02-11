@@ -26,7 +26,7 @@ import (
 	"strings"
 	"time"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	cloudprovider "github.com/oracle/oci-cloud-controller-manager/pkg/cloudprovider/providers/oci"
 	"github.com/oracle/oci-cloud-controller-manager/pkg/oci/client"
@@ -70,7 +70,7 @@ const (
 
 	// How long to wait for a load balancer to be created/modified.
 	//TODO: once support ticket 21807001 is resolved, reduce this timeout back to something reasonable
-	LoadBalancerCreateTimeoutDefault = 20 * time.Minute
+	LoadBalancerCreateTimeoutDefault = 2 * time.Minute
 	LoadBalancerCreateTimeoutLarge   = 2 * time.Hour
 
 	// Time required by the loadbalancer to cleanup, proportional to numApps/Ing.
@@ -166,7 +166,7 @@ func (j *ServiceTestJig) CreateTCPServiceWithPort(namespace string, tweak func(s
 // defaults.  Callers can provide a function to tweak the Service object before
 // it is created.
 func (j *ServiceTestJig) CreateTCPServiceOrFail(namespace string, tweak func(svc *v1.Service)) *v1.Service {
-	svc := j.newServiceTemplate(namespace, v1.ProtocolTCP, 80)
+	svc := j.newServiceTemplate(namespace, v1.ProtocolTCP, 8080)
 	if tweak != nil {
 		tweak(svc)
 	}
@@ -181,7 +181,7 @@ func (j *ServiceTestJig) CreateTCPServiceOrFail(namespace string, tweak func(svc
 // defaults.  Callers can provide a function to tweak the Service object before
 // it is created.
 func (j *ServiceTestJig) CreateUDPServiceOrFail(namespace string, tweak func(svc *v1.Service)) *v1.Service {
-	svc := j.newServiceTemplate(namespace, v1.ProtocolUDP, 80)
+	svc := j.newServiceTemplate(namespace, v1.ProtocolUDP, 8080)
 	if tweak != nil {
 		tweak(svc)
 	}
@@ -242,7 +242,7 @@ func (j *ServiceTestJig) CreateOnlyLocalNodePortService(namespace, serviceName s
 	svc := j.CreateTCPServiceOrFail(namespace, func(svc *v1.Service) {
 		svc.Spec.Type = v1.ServiceTypeNodePort
 		svc.Spec.ExternalTrafficPolicy = v1.ServiceExternalTrafficPolicyTypeLocal
-		svc.Spec.Ports = []v1.ServicePort{{Protocol: "TCP", Port: 80}}
+		svc.Spec.Ports = []v1.ServicePort{{Protocol: "TCP", Port: 8080}}
 	})
 
 	if createPod {
@@ -603,12 +603,12 @@ func (j *ServiceTestJig) newRCTemplate(namespace string) *v1.ReplicationControll
 						{
 							Name:  "agnhost",
 							Image: agnhost,
-							Args:  []string{"netexec", "--http-port=80", "--udp-port=80"},
+							Args:  []string{"netexec", "--http-port=8080", "--udp-port=8080"},
 							ReadinessProbe: &v1.Probe{
 								PeriodSeconds: 3,
 								ProbeHandler: v1.ProbeHandler{
 									HTTPGet: &v1.HTTPGetAction{
-										Port: intstr.FromInt(80),
+										Port: intstr.FromInt(8080),
 										Path: "/hostName",
 									},
 								},
@@ -1107,8 +1107,8 @@ func (t *ServiceTestFixture) BuildServiceSpec() *v1.Service {
 		Spec: v1.ServiceSpec{
 			Selector: t.Labels,
 			Ports: []v1.ServicePort{{
-				Port:       80,
-				TargetPort: intstr.FromInt(80),
+				Port:       8080,
+				TargetPort: intstr.FromInt(8080),
 			}},
 		},
 	}
@@ -1290,7 +1290,7 @@ func CreateServiceSpec(serviceName, externalName string, isHeadless bool, select
 		headlessService.Spec.ExternalName = externalName
 	} else {
 		headlessService.Spec.Ports = []v1.ServicePort{
-			{Port: 80, Name: "http", Protocol: "TCP"},
+			{Port: 8080, Name: "http", Protocol: "TCP"},
 		}
 	}
 	if isHeadless {

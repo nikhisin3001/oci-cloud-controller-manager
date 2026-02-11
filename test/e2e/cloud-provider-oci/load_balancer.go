@@ -24,7 +24,7 @@ import (
 	"strings"
 	"time"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	cloudprovider "github.com/oracle/oci-cloud-controller-manager/pkg/cloudprovider/providers/oci"
 	sharedfw "github.com/oracle/oci-cloud-controller-manager/test/e2e/framework"
@@ -807,8 +807,8 @@ var _ = Describe("ESIPP - IpMode Proxy [Slow]", func() {
 					s.Spec.Template.Spec.NodeName = nodeName
 				})
 				svc := jig.CreateOnlyLocalLoadBalancerService(namespace, serviceName, loadBalancerCreateTimeout, false, test.CreationAnnotations, func(s *v1.Service) {
-					s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				})
 				serviceLBNames = append(serviceLBNames, cloudprovider.GetLoadBalancerName(svc))
 				defer func() {
@@ -843,7 +843,8 @@ var _ = Describe("ESIPP - IpMode Proxy [Slow]", func() {
 
 				var srcIP, expectedIP string
 				By(fmt.Sprintf("Hitting external lb %v from pod %v (%v) on node %v", ingressIP, podName, execPod.Status.PodIP, nodeName))
-				if pollErr := wait.PollImmediate(sharedfw.K8sResourcePoll, 5*time.Minute, func() (bool, error) {
+				if pollErr := wait.PollImmediate(sharedfw.K8sResourcePoll, 2*time.Minute, func() (bool, error) {
+					//expectedIP = execPod.Status.PodIP // Pod IP
 					expectedIP = execPod.Spec.NodeName // Node IP
 
 					stdout, err := sharedfw.RunHostCmd(execPod.Namespace, execPod.Name, cmd)
@@ -895,8 +896,8 @@ var _ = Describe("End to end TLS", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{cloudprovider.ServiceAnnotationLoadBalancerSSLPorts: "443",
 					cloudprovider.ServiceAnnotationLoadBalancerTLSSecret:           sslSecretName,
 					cloudprovider.ServiceAnnotationLoadBalancerTLSBackendSetSecret: sslSecretName,
@@ -976,8 +977,8 @@ var _ = Describe("CipherSuite tests Loadbalancer TLS", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{
 					cloudprovider.ServiceAnnotationLoadBalancerSSLPorts:            "443",
 					cloudprovider.ServiceAnnotationLoadBalancerTLSSecret:           sslSecretName,
@@ -1081,8 +1082,8 @@ var _ = Describe("Rule Set tests Loadbalancer", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt32(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt32(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{
 					cloudprovider.ServiceAnnotationLoadBalancerInternal: "true",
 					cloudprovider.ServiceAnnotationRuleSets:             `{"header_size":{"items":[{"action":"HTTP_HEADER", "httpLargeHeaderSizeInKB":16}]}}`,
@@ -1217,8 +1218,8 @@ var _ = Describe("BackendSet only enabled TLS", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{cloudprovider.ServiceAnnotationLoadBalancerSSLPorts: "443",
 					cloudprovider.ServiceAnnotationLoadBalancerTLSBackendSetSecret: sslSecretName,
 					cloudprovider.ServiceAnnotationLoadBalancerInternal:            "true",
@@ -1297,8 +1298,8 @@ var _ = Describe("Listener only enabled TLS", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{
 					cloudprovider.ServiceAnnotationLoadBalancerSSLPorts:  "443",
 					cloudprovider.ServiceAnnotationLoadBalancerTLSSecret: sslSecretName,
@@ -1378,10 +1379,10 @@ var _ = Describe("GRPC Listeners only enabled TLS", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{
-					cloudprovider.ServiceAnnotationLoadBalancerSSLPorts:   "80,443",
+					cloudprovider.ServiceAnnotationLoadBalancerSSLPorts:   "8080,443",
 					cloudprovider.ServiceAnnotationLoadBalancerTLSSecret:  sslSecretName,
 					cloudprovider.ServiceAnnotationLoadBalancerInternal:   "true",
 					cloudprovider.ServiceAnnotationLoadBalancerBEProtocol: "GRPC",
@@ -1489,8 +1490,8 @@ var _ = Describe("End to end enabled TLS - different certificates", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{v1.ServicePort{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					v1.ServicePort{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{
 					cloudprovider.ServiceAnnotationLoadBalancerSSLPorts:            "443",
 					cloudprovider.ServiceAnnotationLoadBalancerTLSSecret:           sslListenerSecretName,
@@ -1588,8 +1589,8 @@ var _ = Describe("Configure preservation of source IP in NLB", func() {
 				tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 					s.Spec.Type = v1.ServiceTypeLoadBalancer
 					s.Spec.LoadBalancerIP = requestedIP
-					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 					s.ObjectMeta.Annotations = test.annotations
 					s.Spec.ExternalTrafficPolicy = v1.ServiceExternalTrafficPolicyTypeLocal
 					s.ObjectMeta.Annotations[cloudprovider.ServiceAnnotationLoadBalancerInternal] = "true"
@@ -1625,7 +1626,7 @@ var _ = Describe("Configure preservation of source IP in NLB", func() {
 				sharedfw.ExpectNoError(err)
 
 				By("Validate isPreserveSource in the backend set is as expected")
-				isPreserve := *loadBalancer.BackendSets["TCP-80"].IsPreserveSource
+				isPreserve := *loadBalancer.BackendSets["TCP-8080"].IsPreserveSource
 				Expect(isPreserve == test.isPreserveSource).To(BeTrue())
 
 				isPreserve = *loadBalancer.BackendSets["TCP-443"].IsPreserveSource
@@ -1715,8 +1716,8 @@ var _ = Describe("LB Properties", func() {
 				tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 					s.Spec.Type = v1.ServiceTypeLoadBalancer
 					s.Spec.LoadBalancerIP = requestedIP
-					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 					s.ObjectMeta.Annotations = test.CreationAnnotations
 					if test.lbType == "lb" {
 						s.ObjectMeta.Annotations[cloudprovider.ServiceAnnotationLoadBalancerInternal] = "true"
@@ -1867,8 +1868,8 @@ var _ = Describe("LB Properties", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeClusterIP
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 			})
 			By("creating a pod to be part of the TCP service " + serviceName)
 			jig.RunOrFail(ns, nil)
@@ -1877,8 +1878,8 @@ var _ = Describe("LB Properties", func() {
 				tcpService = jig.UpdateServiceOrFail(ns, jig.Name, func(s *v1.Service) {
 					s.Spec.Type = v1.ServiceTypeLoadBalancer
 					s.Spec.LoadBalancerIP = requestedIP
-					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 					s.ObjectMeta.Annotations = map[string]string{
 						cloudprovider.ServiceAnnotationLoadBalancerShape: lbShapeTest.initialShape,
 						// Setting default values for Min and Max (Does not matter for fixed shape test)
@@ -1955,8 +1956,8 @@ var _ = Describe("LB Properties", func() {
 			tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 				s.Spec.Type = v1.ServiceTypeLoadBalancer
 				s.Spec.LoadBalancerIP = requestedIP
-				s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-					{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+				s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+					{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 				s.ObjectMeta.Annotations = map[string]string{
 					cloudprovider.ServiceAnnotationLoadBalancerConnectionIdleTimeout: "500",
 					cloudprovider.ServiceAnnotationLoadBalancerInternal:              "true",
@@ -2085,8 +2086,8 @@ var _ = Describe("LB Properties", func() {
 				tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 					s.Spec.Type = v1.ServiceTypeLoadBalancer
 					s.Spec.LoadBalancerIP = requestedIP
-					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 					s.ObjectMeta.Annotations = test.Annotations
 				})
 
@@ -2208,8 +2209,8 @@ var _ = Describe("LB Properties", func() {
 				tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 					s.Spec.Type = v1.ServiceTypeLoadBalancer
 					s.Spec.LoadBalancerIP = reservedIP
-					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 					s.ObjectMeta.Annotations = test.CreationAnnotations
 					if test.lbType == "lb" {
 						s.ObjectMeta.Annotations[cloudprovider.ServiceAnnotationLoadBalancerInternal] = "true"
@@ -2334,8 +2335,8 @@ var _ = Describe("LB Properties", func() {
 				tcpService := jig.CreateTCPServiceOrFail(ns, func(s *v1.Service) {
 					s.Spec.Type = v1.ServiceTypeLoadBalancer
 					s.Spec.LoadBalancerIP = reservedIP
-					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 80, TargetPort: intstr.FromInt(80)},
-						{Name: "https", Port: 443, TargetPort: intstr.FromInt(80)}}
+					s.Spec.Ports = []v1.ServicePort{{Name: "http", Port: 8080, TargetPort: intstr.FromInt(8080)},
+						{Name: "https", Port: 443, TargetPort: intstr.FromInt(8080)}}
 					s.ObjectMeta.Annotations = test.CreationAnnotations
 				})
 

@@ -20,12 +20,13 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/apimachinery/pkg/selection"
-	v1 "k8s.io/client-go/informers/core/v1"
 	"os"
 	"strings"
 	"time"
+
+	"k8s.io/apimachinery/pkg/labels"
+	"k8s.io/apimachinery/pkg/selection"
+	v1 "k8s.io/client-go/informers/core/v1"
 
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
@@ -48,8 +49,12 @@ import (
 const (
 	// providerName uniquely identifies the Oracle Cloud Infrastructure
 	// (OCI) cloud-provider.
-	providerName   = "oci"
-	providerPrefix = providerName + "://"
+	providerName         = "oci"
+	providerPrefix       = providerName + "://"
+	openshiftNodeLabelId = "OPENSHIFT_NODE_LABEL_ID"
+	// Default OpenShift node OS label key/value
+	openshiftOSLabelKey  = "node.openshift.io/os_id"
+	openshiftOSLabelRHEL = "rhel"
 )
 
 // ProviderName uniquely identifies the Oracle Bare Metal Cloud Services (OCI)
@@ -212,14 +217,12 @@ func (cp *CloudProvider) Initialize(clientBuilder cloudprovider.ControllerClient
 		if GetIsFeatureEnabledFromEnv(cp.logger, "DISABLE_INSTANCE_TAGGING_CONTROLLER", false) {
 			cp.logger.Info("Tagging controller disabled via environment variable DISABLE_INSTANCE_TAGGING_CONTROLLER")
 		} else {
-			logger := zap.L()
 			cp.logger.Info("Tagging controller enabled")
 			taggingController := NewTaggingController(
-				factory.Core().V1().Nodes(),
+				nodeInformer,
 				cp.kubeclient,
 				cp,
-				logger.With(zap.String("controller", "tagging-controller")).Sugar(),
-				cp.instanceCache,
+				cp.logger.With("controller", "tagging-controller"),
 				cp.client,
 			)
 			go taggingController.Run(wait.NeverStop)
@@ -308,19 +311,30 @@ func instanceCacheKeyFn(obj interface{}) (string, error) {
 }
 
 func (cp *CloudProvider) isOpenShiftCluster(informer v1.NodeInformer) bool {
-	labelIdentifier := strings.TrimSpace(os.Getenv("OPENSHIFT_NODE_LABEL_ID"))
+	labelIdentifier := strings.TrimSpace(os.Getenv(openshiftNodeLabelId))
 	if labelIdentifier == "" {
-		cp.logger.Debug("OpenShift node label identifier not provided")
+		// Fallback: if env var not provided, inspect nodes labels directly for the default OpenShift label
+		cp.logger.Info("OpenShift node label identifier not provided; checking for node label node.openshift.io/os_id=rhel")
+		nodes, err := informer.Lister().List(labels.Everything())
+		if err != nil {
+			cp.logger.Error("Failed to list nodes for OpenShift default label check", "error", err)
+			return false
+		}
+		for _, n := range nodes {
+			if val, ok := n.Labels[openshiftOSLabelKey]; ok && val == openshiftOSLabelRHEL {
+				cp.logger.Info("Detected OpenShift node by default label", "node", n.Name)
+				return true
+			}
+		}
 		return false
 	}
 
-	req, err := labels.NewRequirement(labelIdentifier, selection.Exists, nil)
+	selector, err := parseOpenShiftLabelSelector(labelIdentifier)
 	if err != nil {
 		cp.logger.Error("Invalid OpenShift node label identifier", "label", labelIdentifier, "error", err)
 		return false
 	}
 
-	selector := labels.NewSelector().Add(*req)
 	nodes, err := informer.Lister().List(selector)
 	if err != nil {
 		cp.logger.Error("Failed to list nodes for OpenShift label", "label", labelIdentifier, "error", err)
@@ -332,4 +346,32 @@ func (cp *CloudProvider) isOpenShiftCluster(informer v1.NodeInformer) bool {
 		return true
 	}
 	return false
+}
+
+// parseOpenShiftLabelSelector parses an OpenShift node label identifier into a Kubernetes labels.Selector.
+// The identifier may be in "key" form (Exists) or "key=value" form (Equals). Surrounding whitespace is ignored.
+// It returns a selector matching nodes with the given label or an error if the identifier is empty or malformed.
+func parseOpenShiftLabelSelector(labelIdentifier string) (labels.Selector, error) {
+	labelIdentifier = strings.TrimSpace(labelIdentifier)
+
+	// Support both "key" (Exists) and "key=value" (Equals) forms.
+	if strings.Contains(labelIdentifier, "=") {
+		parts := strings.SplitN(labelIdentifier, "=", 2)
+		key := strings.TrimSpace(parts[0])
+		val := strings.TrimSpace(parts[1])
+		if key == "" || val == "" {
+			return nil, fmt.Errorf("invalid label identifier %q", labelIdentifier)
+		}
+		req, err := labels.NewRequirement(key, selection.Equals, []string{val})
+		if err != nil {
+			return nil, err
+		}
+		return labels.NewSelector().Add(*req), nil
+	}
+
+	req, err := labels.NewRequirement(labelIdentifier, selection.Exists, nil)
+	if err != nil {
+		return nil, err
+	}
+	return labels.NewSelector().Add(*req), nil
 }

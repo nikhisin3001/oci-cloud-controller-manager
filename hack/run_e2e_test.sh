@@ -48,7 +48,7 @@ function run_e2e_tests_existing_cluster() {
     fi
 
     if [ "$ENABLE_PARALLEL_RUN" == "true" ] || [ "$ENABLE_PARALLEL_RUN" == "TRUE" ]; then
-        ginkgo -v -p -progress --trace "${FOCUS_OPT}" "${FOCUS_SKIP_OPT}" "${FOCUS_FP_OPT}"  \
+        ginkgo -v -p -progress --trace "${GINKGO_TIMEOUT_OPT}" "${FOCUS_OPT}" "${FOCUS_SKIP_OPT}" "${FOCUS_FP_OPT}"  \
                     test/e2e/cloud-provider-oci -- \
                     --cluster-kubeconfig=${CLUSTER_KUBECONFIG} \
                     --cloud-config=${CLOUD_CONFIG} \
@@ -70,28 +70,27 @@ function run_e2e_tests_existing_cluster() {
                     --run-uhp-e2e=${RUN_UHP_E2E} \
                     --add-oke-system-tags="false"
     else
-        ginkgo -v -progress --trace -nodes=${E2E_NODE_COUNT} "${FOCUS_OPT}" "${FOCUS_SKIP_OPT}" "${FOCUS_FP_OPT}"  \
-            ginkgo -v -p -progress --trace "${FOCUS_OPT}" "${FOCUS_FP_OPT}"  \
-                    test/e2e/cloud-provider-oci -- \
-                    --cluster-kubeconfig=${CLUSTER_KUBECONFIG} \
-                    --cloud-config=${CLOUD_CONFIG} \
-                    --adlocation=${ADLOCATION} \
-                    --delete-namespace=${DELETE_NAMESPACE} \
-                    --image-pull-repo=${IMAGE_PULL_REPO} \
-                    --cmek-kms-key=${CMEK_KMS_KEY} \
-                    --mnt-target-id=${MNT_TARGET_ID} \
-                    --mnt-target-subnet-id=${MNT_TARGET_SUBNET_ID} \
-                    --mnt-target-compartment-id=${MNT_TARGET_COMPARTMENT_ID} \
-                    --nsg-ocids=${NSG_OCIDS} \
-                    --backend-nsg-ocids=${BACKEND_NSG_OCIDS} \
-                    --reserved-ip=${RESERVED_IP} \
-                    --architecture=${ARCHITECTURE} \
-                    --volume-handle=${FSS_VOLUME_HANDLE} \
-                    --lustre-volume-handle=${LUSTRE_VOLUME_HANDLE} \
-                    --static-snapshot-compartment-id=${STATIC_SNAPSHOT_COMPARTMENT_ID} \
-                    --enable-parallel-run=${ENABLE_PARALLEL_RUN} \
-                    --run-uhp-e2e=${RUN_UHP_E2E} \
-                    --add-oke-system-tags="false"
+        ginkgo -v -progress --trace -nodes=${E2E_NODE_COUNT} "${GINKGO_TIMEOUT_OPT}" "${FOCUS_OPT}" "${FOCUS_SKIP_OPT}" "${FOCUS_FP_OPT}" \
+                test/e2e/cloud-provider-oci -- \
+                --cluster-kubeconfig=${CLUSTER_KUBECONFIG} \
+                --cloud-config=${CLOUD_CONFIG} \
+                --adlocation=${ADLOCATION} \
+                --delete-namespace=${DELETE_NAMESPACE} \
+                --image-pull-repo=${IMAGE_PULL_REPO} \
+                --cmek-kms-key=${CMEK_KMS_KEY} \
+                --mnt-target-id=${MNT_TARGET_ID} \
+                --mnt-target-subnet-id=${MNT_TARGET_SUBNET_ID} \
+                --mnt-target-compartment-id=${MNT_TARGET_COMPARTMENT_ID} \
+                --nsg-ocids=${NSG_OCIDS} \
+                --backend-nsg-ocids=${BACKEND_NSG_OCIDS} \
+                --reserved-ip=${RESERVED_IP} \
+                --architecture=${ARCHITECTURE} \
+                --volume-handle=${FSS_VOLUME_HANDLE} \
+                --lustre-volume-handle=${LUSTRE_VOLUME_HANDLE} \
+                --static-snapshot-compartment-id=${STATIC_SNAPSHOT_COMPARTMENT_ID} \
+                --enable-parallel-run=${ENABLE_PARALLEL_RUN} \
+                --run-uhp-e2e=${RUN_UHP_E2E} \
+                --add-oke-system-tags="false"
     fi
     retval=$?
     return $retval
@@ -146,6 +145,14 @@ function set_focus () {
     fi
 }
 
+function set_ginkgo_timeout () {
+    export GINKGO_TIMEOUT_OPT=""
+    if [ ! -z "${GINKGO_TIMEOUT}" ]; then
+        echo "Setting Ginkgo suite timeout to: ${GINKGO_TIMEOUT}"
+        GINKGO_TIMEOUT_OPT="--timeout=${GINKGO_TIMEOUT}"
+    fi
+}
+
 echo "CLUSTER_KUBECONFIG is ${CLUSTER_KUBECONFIG}"
 echo "CLOUD_CONFIG is ${CLOUD_CONFIG}"
 echo "MNT_TARGET_ID is ${MNT_TARGET_ID}"
@@ -154,6 +161,7 @@ echo "MNT_TARGET_COMPARTMENT_ID is ${MNT_TARGET_COMPARTMENT_ID}"
 
 function run_tests () {
     set_image_pull_repo_and_delete_namespace_flag
+    set_ginkgo_timeout
     set_focus
     # run the ginko test framework for existing cluster
     # run ARM tests

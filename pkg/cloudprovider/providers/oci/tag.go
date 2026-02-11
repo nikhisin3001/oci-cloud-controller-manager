@@ -17,47 +17,44 @@ package oci
 import (
 	"context"
 	"fmt"
+	"reflect"
 	"strings"
 	"time"
 
-	"github.com/oracle/oci-cloud-controller-manager/pkg/cloudprovider/providers/oci/config"
-	"github.com/oracle/oci-cloud-controller-manager/pkg/util"
-	coreinformers "k8s.io/client-go/informers/core/v1"
-
-	"k8s.io/apimachinery/pkg/util/wait"
-
-	"github.com/oracle/oci-cloud-controller-manager/pkg/oci/client"
 	"github.com/oracle/oci-go-sdk/v65/core"
 	"go.uber.org/zap"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/labels"
+	"k8s.io/apimachinery/pkg/util/wait"
+	coreinformers "k8s.io/client-go/informers/core/v1"
 	"k8s.io/client-go/kubernetes"
 	clientset "k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/kubernetes/scheme"
-	v1core "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/client-go/tools/cache"
-	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
-	"k8s.io/klog/v2"
+
+	"github.com/oracle/oci-cloud-controller-manager/pkg/cloudprovider/providers/oci/config"
+	"github.com/oracle/oci-cloud-controller-manager/pkg/oci/client"
+	"github.com/oracle/oci-cloud-controller-manager/pkg/util"
 )
 
 const (
-	reconcileRetry        = 2
-	openshiftTagNamespace = "openshift-tags"
-	openshiftTagKey       = "openshift-resource"
-	openshiftTagValue     = "openshift-resource-infra"
-	//OpenShiftTagNamespacePrefix = "openshift-"
+	reconcileRetry               = 2
+	workerRestartInterval        = 2 * time.Minute
+	openshiftTagNamespace        = "openshift-tags"
+	openshiftTagKey              = "openshift-resource"
+	openshiftTagValue            = "openshift-resource-infra"
+	OpenShiftTagNamespacePrefixs = "openshift-"
+	ociProviderIDPrefix          = "oci://"
+	definedTagLimit              = 64
 )
 
 type TaggingController struct {
-	nodeInformer  coreinformers.NodeInformer
-	logger        *zap.SugaredLogger
-	kubeClient    clientset.Interface
-	recorder      record.EventRecorder
-	cloud         *CloudProvider
-	queue         workqueue.RateLimitingInterface
-	instanceCache cache.Store
-	ociClient     client.Interface
+	nodeInformer coreinformers.NodeInformer
+	logger       *zap.SugaredLogger
+	kubeClient   clientset.Interface
+	cloud        *CloudProvider
+	queue        workqueue.RateLimitingInterface
+	ociClient    client.Interface
 }
 
 // NewTaggingController creates a TaggingController object
@@ -66,28 +63,15 @@ func NewTaggingController(
 	kubeClient kubernetes.Interface,
 	cloud *CloudProvider,
 	logger *zap.SugaredLogger,
-	instanceCache cache.Store,
 	ociClient client.Interface) *TaggingController {
 
-	eventBroadcaster := record.NewBroadcaster()
-	recorder := eventBroadcaster.NewRecorder(scheme.Scheme, v1.EventSource{Component: "tagging-controller"})
-	eventBroadcaster.StartLogging(klog.Infof)
-	if kubeClient != nil {
-		logger.Info("Sending events to api server.")
-		eventBroadcaster.StartRecordingToSink(&v1core.EventSinkImpl{Interface: kubeClient.CoreV1().Events("")})
-	} else {
-		logger.Info("No api server defined - no events will be sent to API server.")
-	}
-
 	tc := &TaggingController{
-		nodeInformer:  nodeInformer,
-		kubeClient:    kubeClient,
-		logger:        logger,
-		recorder:      recorder,
-		cloud:         cloud,
-		queue:         workqueue.NewRateLimitingQueue(workqueue.DefaultControllerRateLimiter()),
-		instanceCache: instanceCache,
-		ociClient:     ociClient,
+		nodeInformer: nodeInformer,
+		kubeClient:   kubeClient,
+		logger:       logger,
+		cloud:        cloud,
+		queue:        workqueue.NewRateLimitingQueue(workqueue.DefaultControllerRateLimiter()),
+		ociClient:    ociClient,
 	}
 
 	// Use shared informer to listen to add nodes
@@ -113,16 +97,12 @@ func (tc *TaggingController) Run(stopCh <-chan struct{}) {
 		if err := tc.runWorker(stopCh); err != nil {
 			tc.logger.Error(err, "runWorker error", "TaggingController")
 		}
-	}, time.Second, stopCh)
+	}, workerRestartInterval, stopCh)
 
 }
 
 func (tc *TaggingController) runWorker(stopCh <-chan struct{}) error {
-
-	tc.logger.Info("Starting unmarshall tags")
-
 	nodeLister := tc.nodeInformer.Lister()
-
 	ticker := time.NewTicker(reconcileRetry * time.Minute)
 	defer ticker.Stop()
 
@@ -138,7 +118,7 @@ func (tc *TaggingController) runWorker(stopCh <-chan struct{}) error {
 				return err
 			}
 			for _, node := range nodes {
-				tc.logger.Info("processing node: ", node)
+				tc.logger.Info("processing node: ", node.Name)
 				tc.ReconcileNodeTags(context.Background(), node)
 			}
 		}
@@ -153,39 +133,61 @@ func (tc *TaggingController) ReconcileNodeTags(ctx context.Context, node *v1.Nod
 		tc.logger.Error("node is nil")
 		return
 	}
-	tc.logger.Info("Getting instanceOcid for node: ", zap.String("node", node.Name))
-	instanceOCID, err := getInstanceIDFromNode(node, tc.logger)
+	tc.logger.Infow("Getting instanceOcid for node", "node", node.Name)
+	instanceOCID, err := MapProviderIDToResourceID(node.Spec.ProviderID)
 	if err != nil {
 		tc.logger.Error("Failed to get/retrieve instanceOCID for node %s: %v", node.Name, err)
 		return
 	}
+	logger := tc.logger.With("nodeName", node.Name, "instanceId", instanceOCID)
 
-	tc.logger.Info("instanceOcid: for node: ", instanceOCID, node.Name)
+	logger.Info("Resolved instance OCID")
 	instance, err := tc.ociClient.Compute().GetInstance(ctx, instanceOCID)
 	if err != nil {
-		tc.logger.Errorf("Failed to get instance for node %s: %v", node.Name, err)
+		logger.Errorw("Failed to get instance for node", "error", err)
 		return
 	}
 
-	tc.logger.Infof("Existing defined tags on node: %v", instance.DefinedTags)
+	logger.Infof("Existing defined tags on node: %v", instance.DefinedTags)
 
 	var t *config.TagConfig
 	if tc.cloud.config.Tags == nil || tc.cloud.config.Tags.Common == nil {
-		tc.logger.Warnf("Tag config is nil; using empty TagConfig for node %s", node.Name)
+		logger.Warnf("Tag config is nil; using empty TagConfig for node")
 		t = &config.TagConfig{
 			FreeformTags: map[string]string{},
 			DefinedTags:  map[string]map[string]interface{}{},
 		}
 	} else {
 		t = tc.cloud.config.Tags.Common
-		tc.logger.Infof("Expected tags on node: %v ", instance.DefinedTags)
 	}
 
-	// If cluster is OpenShift, then make sure the required OpenShift
-	// tags are applied
-	t = tc.checkForOpenShiftClusterType(instance, t)
+	// Ensure the OpenShift defined tag namespace, key and value are present on the TagConfig.
+	ns, ok := t.DefinedTags[openshiftTagNamespace]
+	if !ok {
+		t.DefinedTags[openshiftTagNamespace] = map[string]interface{}{
+			openshiftTagKey: openshiftTagValue,
+		}
+	} else if val, ok := ns[openshiftTagKey]; !ok || !reflect.DeepEqual(val, openshiftTagValue) {
+		ns[openshiftTagKey] = openshiftTagValue
+	}
+
+	logger.Infow(
+		"Defined tags to reconcile on node",
+		"definedTagsToReconcile", t.DefinedTags,
+		"definedTagsExistingOnNode", instance.DefinedTags)
+
+	if tc.hasRequiredDefinedTags(instance.DefinedTags, t.DefinedTags) {
+		logger.Infof("Node already has required defined tags; skipping update")
+		return
+	}
 
 	tags := MergeTags(instance, t)
+
+	// If the instance has already reached the defined tag limit, skip update to avoid API failure
+	if countDefinedTags(instance.DefinedTags) >= definedTagLimit {
+		logger.Warnf("Instance has %d defined tags which is the maximum allowed; cannot add required tags. Skipping update.", countDefinedTags(instance.DefinedTags))
+		return
+	}
 
 	_, err = tc.ociClient.Compute().UpdateInstance(ctx, core.UpdateInstanceRequest{
 		InstanceId: &instanceOCID,
@@ -195,10 +197,10 @@ func (tc *TaggingController) ReconcileNodeTags(ctx context.Context, node *v1.Nod
 		},
 	})
 	if err != nil {
-		tc.logger.Error("Failed to update tags for node %s: %v", node.Name, err)
+		logger.Error("Failed to update defined tags for node : %v", err)
 		return
 	}
-	tc.logger.Info("Successfully updated tags for node %s", node.Name)
+	logger.Info("Successfully updated defined tags for node ")
 }
 
 // getInstanceIDFromNode - Retrieves  the instanceOcid from the Node
@@ -206,15 +208,18 @@ func getInstanceIDFromNode(node *v1.Node, logger *zap.SugaredLogger) (string, er
 	if node == nil {
 		return "", fmt.Errorf("node is nil")
 	}
-	logger.Info("Node providerId", node.Name)
 	providerID := node.Spec.ProviderID
-	if &providerID == nil || providerID == "" {
+	if providerID == "" {
 		return "", fmt.Errorf("providerID is empty for node %s", node.Name)
 	}
-	if !strings.HasPrefix(providerID, "oci://") {
-		return "", fmt.Errorf("providerID %q for node %s is not prefixed with oci://", providerID, node.Name)
+	if providerID_has_prefix(providerID, ociProviderIDPrefix) {
+		return strings.TrimPrefix(providerID, ociProviderIDPrefix), nil
 	}
-	return strings.TrimPrefix(providerID, "oci://"), nil
+	return providerID, nil
+}
+
+func providerID_has_prefix(providerID, prefix string) bool {
+	return strings.HasPrefix(providerID, prefix)
 }
 
 // MergeTags - Retrieve all defined tags currently set on the instance,
@@ -229,30 +234,40 @@ func MergeTags(instance *core.Instance, expectedTags *config.TagConfig) *config.
 
 }
 
-func (tc *TaggingController) checkForOpenShiftClusterType(instance *core.Instance, t *config.TagConfig) *config.TagConfig {
-
-	for namespace := range instance.DefinedTags {
-		if strings.HasPrefix(namespace, OpenShiftTagNamespacePrefix) {
-			// Copy the original TagConfig to avoid mutating input
-			newTagConfig := &config.TagConfig{
-				FreeformTags: t.FreeformTags,
-				DefinedTags:  make(map[string]map[string]interface{}),
+// hasRequiredDefinedTags verifies that all required defined tags exist on the instance.
+// This includes the OpenShift defined tags.
+func (tc *TaggingController) hasRequiredDefinedTags(instanceDefinedTags map[string]map[string]interface{}, requiredDefinedTags map[string]map[string]interface{}) bool {
+	if requiredDefinedTags == nil {
+		return true
+	}
+	if len(requiredDefinedTags) > 0 {
+		if len(instanceDefinedTags) == 0 {
+			return false
+		}
+		for namespace, tags := range requiredDefinedTags {
+			existingNamespace, ok := instanceDefinedTags[namespace]
+			if !ok {
+				return false
 			}
-			// Copy existing DefinedTags
-			for ns, tags := range t.DefinedTags {
-				newTagConfig.DefinedTags[ns] = make(map[string]interface{})
-				for k, v := range tags {
-					newTagConfig.DefinedTags[ns][k] = v
+			for key, value := range tags {
+				existingValue, ok := existingNamespace[key]
+				if !ok || !reflect.DeepEqual(existingValue, value) {
+					return false
 				}
 			}
-			// Add/overwrite the constant tag in the matching namespace
-			if _, ok := newTagConfig.DefinedTags[openshiftTagNamespace]; !ok {
-				newTagConfig.DefinedTags[openshiftTagNamespace] = make(map[string]interface{})
-			}
-			newTagConfig.DefinedTags[openshiftTagNamespace][openshiftTagKey] = openshiftTagValue
-			return newTagConfig
 		}
 	}
-	return t
+	return true
+}
 
+// countDefinedTags returns the total count of defined tag key-value pairs across all namespaces.
+func countDefinedTags(tags map[string]map[string]interface{}) int {
+	if len(tags) == 0 {
+		return 0
+	}
+	total := 0
+	for _, ns := range tags {
+		total += len(ns)
+	}
+	return total
 }

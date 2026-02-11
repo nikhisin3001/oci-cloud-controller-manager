@@ -50,6 +50,11 @@ spec:
             - --leader-elect-resource-lock=leases
             - --concurrent-service-syncs=3
             - --v=2
+          env:
+            - name: OPENSHIFT_NODE_LABEL_ID
+              value: node.openshift.io/os_id=rhel
+            - name: DISABLE_INSTANCE_TAGGING_CONTROLLER
+              value: "false"
           volumeMounts:
             - name: cfg
               mountPath: /etc/oci

@@ -1,0 +1,1081 @@
+./hack/run_e2e_test.sh
+CLUSTER_KUBECONFIG is /Users/nikhilsingh/.kube/config
+CLOUD_CONFIG is /Users/nikhilsingh/work/OpenShift/oci-openshift/cloud-provider.yaml
+MNT_TARGET_ID is ocid1.mounttarget.oc1.us_sanjose_1.aaaaaa4np2whacnsonvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa
+MNT_TARGET_SUBNET_ID is ocid1.subnet.oc1.us-sanjose-1.aaaaaaaalzpjfdtdrewucxanwwxf7omoypho7wmddmflm4l4j5g7okds4qvq
+MNT_TARGET_COMPARTMENT_ID is ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+Running focused tests: \[cloudprovider\]
+Running Suite: Cloud Provider OCI E2E suite - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci
+==========================================================================================================================================================
+Random Seed: [1m1769730531[0m
+
+Will run [1m175[0m of [1m178[0m specs
+[38;5;243m------------------------------[0m
+[0m[1m[SynchronizedBeforeSuite] [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/setup.go:24[0m
+  Jan 29 15:49:01.498: INFO: initializing framework
+  Jan 29 15:49:01.498: INFO: OCI AdLocation: gzqB:US-SANJOSE-1-AD-1
+  Jan 29 15:49:01.498: INFO: OCI AdLabel: US-SANJOSE-1-AD-1
+  Jan 29 15:49:01.498: INFO: OCI Mount Target OCID: ocid1.mounttarget.oc1.us_sanjose_1.aaaaaa4np2whacnsonvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa
+  Jan 29 15:49:01.498: INFO: OCI Mount Target Subnet OCID: ocid1.subnet.oc1.us-sanjose-1.aaaaaaaalzpjfdtdrewucxanwwxf7omoypho7wmddmflm4l4j5g7okds4qvq
+  Jan 29 15:49:01.498: INFO: OCI Mount Target Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Jan 29 15:49:01.498: INFO: FSS Volume Handle is : ocid1.filesystem.oc1.us_sanjose_1.aaaaaaaaaanbt4o4onvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa:10.0.26.74:/FileSystem-20260128-1519-40
+  Jan 29 15:49:01.498: INFO: Lustre Volume Handle is : dummy
+  Jan 29 15:49:01.498: INFO: Lustre Subnet CIDR is : 
+  Jan 29 15:49:01.498: INFO: Static Snapshot Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Jan 29 15:49:01.498: INFO: Custom CSI Driver Handle: 
+  Jan 29 15:49:01.498: INFO: Block Provisioner name: blockvolume.csi.oraclecloud.com
+  Jan 29 15:49:01.498: INFO: FSS Provisioner name: fss.csi.oraclecloud.com
+  Jan 29 15:49:01.498: INFO: Run Uhp E2Es as well: false
+  Jan 29 15:49:01.498: INFO: CMEK KMS Key: ocid1.key.oc1.us-sanjose-1.gruxvfxvaafdk.abzwuljrvphi4cwueby5qsjzbalmn7ncaw3oat6qflsksks2xsofq6shxmvq
+  Jan 29 15:49:01.498: INFO: NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Jan 29 15:49:01.498: INFO: Backend NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Jan 29 15:49:01.498: INFO: Reserved IP: 192.9.145.36
+  Jan 29 15:49:01.498: INFO: Architecture: 
+  Jan 29 15:49:01.498: INFO: OCI compartment1 OCID: 
+  Jan 29 15:49:01.498: INFO: Cluster Type: BASIC_CLUSTER
+  Jan 29 15:49:01.498: INFO: CloudProviderFramework Setup
+  Jan 29 15:49:01.498: INFO: Running tests with existing cluster.
+  Jan 29 15:49:01.498: INFO: initializing framework
+  Jan 29 15:49:01.498: INFO: OCI AdLocation: gzqB:US-SANJOSE-1-AD-1
+  Jan 29 15:49:01.498: INFO: OCI AdLabel: US-SANJOSE-1-AD-1
+  Jan 29 15:49:01.498: INFO: OCI Mount Target OCID: ocid1.mounttarget.oc1.us_sanjose_1.aaaaaa4np2whacnsonvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa
+  Jan 29 15:49:01.498: INFO: OCI Mount Target Subnet OCID: ocid1.subnet.oc1.us-sanjose-1.aaaaaaaalzpjfdtdrewucxanwwxf7omoypho7wmddmflm4l4j5g7okds4qvq
+  Jan 29 15:49:01.498: INFO: OCI Mount Target Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Jan 29 15:49:01.498: INFO: FSS Volume Handle is : ocid1.filesystem.oc1.us_sanjose_1.aaaaaaaaaanbt4o4onvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa:10.0.26.74:/FileSystem-20260128-1519-40
+  Jan 29 15:49:01.498: INFO: Lustre Volume Handle is : dummy
+  Jan 29 15:49:01.498: INFO: Lustre Subnet CIDR is : 
+  Jan 29 15:49:01.498: INFO: Static Snapshot Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Jan 29 15:49:01.498: INFO: Custom CSI Driver Handle: 
+  Jan 29 15:49:01.498: INFO: Block Provisioner name: blockvolume.csi.oraclecloud.com
+  Jan 29 15:49:01.498: INFO: FSS Provisioner name: fss.csi.oraclecloud.com
+  Jan 29 15:49:01.498: INFO: Run Uhp E2Es as well: false
+  Jan 29 15:49:01.498: INFO: CMEK KMS Key: ocid1.key.oc1.us-sanjose-1.gruxvfxvaafdk.abzwuljrvphi4cwueby5qsjzbalmn7ncaw3oat6qflsksks2xsofq6shxmvq
+  Jan 29 15:49:01.498: INFO: NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Jan 29 15:49:01.498: INFO: Backend NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Jan 29 15:49:01.498: INFO: Reserved IP: 192.9.145.36
+  Jan 29 15:49:01.498: INFO: Architecture: 
+  Jan 29 15:49:01.498: INFO: OCI compartment1 OCID: 
+  Jan 29 15:49:01.498: INFO: Cluster Type: BASIC_CLUSTER
+[38;5;10m[SynchronizedBeforeSuite] PASSED [0.000 seconds][0m
+[38;5;243m------------------------------[0m
+[0mNode Local Routing [Slow] [38;5;243m[cloudprovider][ccm][lb][node-local] [0m[1mshould only target nodes with endpoints[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:541[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 15:49:01.5[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 15:49:06.506[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 15:49:06.509[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 15:49:06.51[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 15:49:06.511[0m
+  [1mSTEP:[0m Running test for: lb [38;5;243m@ 01/29/26 15:49:06.59[0m
+  [1mSTEP:[0m creating a service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-lb with type=LoadBalancer and ExternalTrafficPolicy=Local [38;5;243m@ 01/29/26 15:49:06.623[0m
+  [1mSTEP:[0m waiting for loadbalancer for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-lb [38;5;243m@ 01/29/26 15:49:06.692[0m
+  Jan 29 15:49:06.692: INFO: Waiting up to 2m0s for service "external-local-lb" to have a LoadBalancer
+  [1mSTEP:[0m creating a pod to be part of the service external-local-lb on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:49:28.739[0m
+  Jan 29 15:49:28.756: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:49:28.768: INFO: Found 0/1 pods - will retry
+  Jan 29 15:49:30.783: INFO: Found all 1 pods
+  Jan 29 15:49:30.783: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-lb-fnjnp]
+  Jan 29 15:49:30.783: INFO: Waiting up to 3m0s for pod "external-local-lb-fnjnp" in namespace "cloud-provider-e2e-tests-node-local-routing-btww6" to be "running and ready"
+  Jan 29 15:49:30.799: INFO: Pod "external-local-lb-fnjnp": Phase="Running", Reason="", readiness=true. Elapsed: 15.152417ms
+  Jan 29 15:49:30.799: INFO: Pod "external-local-lb-fnjnp" satisfied condition "running and ready"
+  Jan 29 15:49:30.799: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-lb-fnjnp]
+  [1mSTEP:[0m waiting for service endpoint on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:49:30.799[0m
+I0129 15:49:30.810395   68522 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+  Jan 29 15:49:30.810: INFO: Pod for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-lb is on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 15:49:30.810: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  [1mSTEP:[0m Creating a job to check pods health [38;5;243m@ 01/29/26 15:49:30.864[0m
+  Jan 29 15:49:30.864: INFO: Script used: healthCheckPassed=$(curl -s http://10.0.20.214:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="0")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.19.129:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.31.26:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;
+  [1mSTEP:[0m deleting ReplicationController external-local-lb in namespace cloud-provider-e2e-tests-node-local-routing-btww6, will wait for the garbage collector to delete the pods [38;5;243m@ 01/29/26 15:49:45.925[0m
+  Jan 29 15:49:46.005: INFO: Deleting ReplicationController external-local-lb took: 15.321459ms
+  Jan 29 15:49:46.106: INFO: Terminating ReplicationController external-local-lb pods took: 100.856833ms
+  [1mSTEP:[0m creating a pod to be part of the service external-local-lb on node arm-compute-2.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:49:46.106[0m
+  Jan 29 15:49:46.124: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:49:46.138: INFO: Found all 1 pods
+  Jan 29 15:49:46.138: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-lb-jlpk7]
+  Jan 29 15:49:46.138: INFO: Waiting up to 3m0s for pod "external-local-lb-jlpk7" in namespace "cloud-provider-e2e-tests-node-local-routing-btww6" to be "running and ready"
+  Jan 29 15:49:46.155: INFO: Pod "external-local-lb-jlpk7": Phase="Pending", Reason="", readiness=false. Elapsed: 16.85625ms
+  Jan 29 15:49:48.170: INFO: Pod "external-local-lb-jlpk7": Phase="Running", Reason="", readiness=true. Elapsed: 2.031112958s
+  Jan 29 15:49:48.170: INFO: Pod "external-local-lb-jlpk7" satisfied condition "running and ready"
+  Jan 29 15:49:48.170: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-lb-jlpk7]
+  [1mSTEP:[0m waiting for service endpoint on node arm-compute-2.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:49:48.17[0m
+I0129 15:49:48.180439   68522 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+  Jan 29 15:49:48.180: INFO: Pod for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-lb is on node arm-compute-2.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 15:49:48.180: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:49:48.205: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59788->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:49:50.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:49:50.231: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59794->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:49:52.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:49:52.234: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59801->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:49:54.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:49:54.239: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59813->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:49:56.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:49:56.237: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59819->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:49:58.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:49:58.243: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59832->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:00.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:00.238: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59837->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:02.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:02.231: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59843->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:04.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:04.229: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59854->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:06.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:06.231: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59860->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:08.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:08.237: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59871->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:10.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:10.231: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59879->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:12.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:12.229: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59886->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:14.206: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  [1mSTEP:[0m Creating a job to check pods health [38;5;243m@ 01/29/26 15:50:14.231[0m
+  Jan 29 15:50:14.231: INFO: Script used: healthCheckPassed=$(curl -s http://10.0.20.214:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.19.129:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="0")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.31.26:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;
+  [1mSTEP:[0m deleting ReplicationController external-local-lb in namespace cloud-provider-e2e-tests-node-local-routing-btww6, will wait for the garbage collector to delete the pods [38;5;243m@ 01/29/26 15:50:29.291[0m
+  Jan 29 15:50:29.369: INFO: Deleting ReplicationController external-local-lb took: 15.600084ms
+  Jan 29 15:50:29.469: INFO: Terminating ReplicationController external-local-lb pods took: 100.674708ms
+  [1mSTEP:[0m creating a pod to be part of the service external-local-lb on node arm-compute-3.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:50:29.47[0m
+  Jan 29 15:50:29.495: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:50:29.509: INFO: Found all 1 pods
+  Jan 29 15:50:29.509: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-lb-sn5lr]
+  Jan 29 15:50:29.509: INFO: Waiting up to 3m0s for pod "external-local-lb-sn5lr" in namespace "cloud-provider-e2e-tests-node-local-routing-btww6" to be "running and ready"
+  Jan 29 15:50:29.521: INFO: Pod "external-local-lb-sn5lr": Phase="Pending", Reason="", readiness=false. Elapsed: 12.267541ms
+  Jan 29 15:50:31.535: INFO: Pod "external-local-lb-sn5lr": Phase="Pending", Reason="", readiness=false. Elapsed: 2.025852125s
+  Jan 29 15:50:33.549: INFO: Pod "external-local-lb-sn5lr": Phase="Running", Reason="", readiness=true. Elapsed: 4.040604166s
+  Jan 29 15:50:33.549: INFO: Pod "external-local-lb-sn5lr" satisfied condition "running and ready"
+  Jan 29 15:50:33.549: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-lb-sn5lr]
+  [1mSTEP:[0m waiting for service endpoint on node arm-compute-3.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:50:33.549[0m
+I0129 15:50:33.562539   68522 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+  Jan 29 15:50:33.562: INFO: Pod for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-lb is on node arm-compute-3.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 15:50:33.562: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:33.601: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59979->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:35.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:35.628: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59986->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:37.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:37.626: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:59992->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:39.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:39.633: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60003->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:41.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:41.626: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60009->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:43.601: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:43.623: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60021->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:45.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:45.633: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60027->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:47.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:47.627: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60034->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:49.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:49.627: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60045->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:51.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:51.627: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": read tcp 192.168.1.193:60052->167.234.215.88:8081: read: connection reset by peer
+  Jan 29 15:50:53.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:53.627: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": EOF
+  Jan 29 15:50:55.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:55.625: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": EOF
+  Jan 29 15:50:57.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:57.625: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": EOF
+  Jan 29 15:50:59.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:50:59.626: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": EOF
+  Jan 29 15:51:01.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  Jan 29 15:51:01.626: INFO: Got error testing for reachability of http://167.234.215.88:8081/echo?msg=hello: Get "http://167.234.215.88:8081/echo?msg=hello": EOF
+  Jan 29 15:51:03.602: INFO: Testing HTTP reachability of http://167.234.215.88:8081/echo?msg=hello
+  [1mSTEP:[0m Creating a job to check pods health [38;5;243m@ 01/29/26 15:51:03.63[0m
+  Jan 29 15:51:03.630: INFO: Script used: healthCheckPassed=$(curl -s http://10.0.20.214:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.19.129:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.31.26:30552/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="0")); then exit 1; fi;
+  [1mSTEP:[0m deleting ReplicationController external-local-lb in namespace cloud-provider-e2e-tests-node-local-routing-btww6, will wait for the garbage collector to delete the pods [38;5;243m@ 01/29/26 15:51:18.692[0m
+  Jan 29 15:51:18.772: INFO: Deleting ReplicationController external-local-lb took: 17.3785ms
+  Jan 29 15:51:18.873: INFO: Terminating ReplicationController external-local-lb pods took: 100.963041ms
+  [1mSTEP:[0m Running test for: nlb [38;5;243m@ 01/29/26 15:51:18.873[0m
+  [1mSTEP:[0m creating a service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-nlb with type=LoadBalancer and ExternalTrafficPolicy=Local [38;5;243m@ 01/29/26 15:51:18.908[0m
+  [1mSTEP:[0m waiting for loadbalancer for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-nlb [38;5;243m@ 01/29/26 15:51:18.95[0m
+  Jan 29 15:51:18.950: INFO: Waiting up to 2m0s for service "external-local-nlb" to have a LoadBalancer
+  [1mSTEP:[0m creating a pod to be part of the service external-local-nlb on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:51:40.976[0m
+  Jan 29 15:51:40.992: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:51:41.004: INFO: Found 0/1 pods - will retry
+  Jan 29 15:51:43.018: INFO: Found all 1 pods
+  Jan 29 15:51:43.018: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-nlb-66vjd]
+  Jan 29 15:51:43.018: INFO: Waiting up to 3m0s for pod "external-local-nlb-66vjd" in namespace "cloud-provider-e2e-tests-node-local-routing-btww6" to be "running and ready"
+  Jan 29 15:51:43.032: INFO: Pod "external-local-nlb-66vjd": Phase="Running", Reason="", readiness=true. Elapsed: 13.865542ms
+  Jan 29 15:51:43.032: INFO: Pod "external-local-nlb-66vjd" satisfied condition "running and ready"
+  Jan 29 15:51:43.032: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-nlb-66vjd]
+  [1mSTEP:[0m waiting for service endpoint on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:51:43.032[0m
+  Jan 29 15:51:43.044: INFO: Pod for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-nlb is on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 15:51:43.044: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+I0129 15:51:43.044880   68522 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+  Jan 29 15:51:48.046: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:51:50.047: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:51:55.047: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:51:56.047: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:01.048: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:52:02.047: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:07.047: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:52:08.047: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:13.047: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:52:14.047: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:19.048: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:52:20.047: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:25.048: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Jan 29 15:52:26.046: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  [1mSTEP:[0m Creating a job to check pods health [38;5;243m@ 01/29/26 15:52:26.066[0m
+  Jan 29 15:52:26.067: INFO: Script used: healthCheckPassed=$(curl -s http://10.0.20.214:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="0")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.19.129:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.31.26:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;
+  [1mSTEP:[0m deleting ReplicationController external-local-nlb in namespace cloud-provider-e2e-tests-node-local-routing-btww6, will wait for the garbage collector to delete the pods [38;5;243m@ 01/29/26 15:52:41.131[0m
+  Jan 29 15:52:41.208: INFO: Deleting ReplicationController external-local-nlb took: 14.85375ms
+  Jan 29 15:52:41.310: INFO: Terminating ReplicationController external-local-nlb pods took: 101.124416ms
+  [1mSTEP:[0m creating a pod to be part of the service external-local-nlb on node arm-compute-2.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:52:41.31[0m
+  Jan 29 15:52:41.326: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:52:41.337: INFO: Found all 1 pods
+  Jan 29 15:52:41.337: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-nlb-cdfrr]
+  Jan 29 15:52:41.337: INFO: Waiting up to 3m0s for pod "external-local-nlb-cdfrr" in namespace "cloud-provider-e2e-tests-node-local-routing-btww6" to be "running and ready"
+  Jan 29 15:52:41.349: INFO: Pod "external-local-nlb-cdfrr": Phase="Pending", Reason="", readiness=false. Elapsed: 12.209042ms
+  Jan 29 15:52:43.364: INFO: Pod "external-local-nlb-cdfrr": Phase="Running", Reason="", readiness=true. Elapsed: 2.02692925s
+  Jan 29 15:52:43.364: INFO: Pod "external-local-nlb-cdfrr" satisfied condition "running and ready"
+  Jan 29 15:52:43.364: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-nlb-cdfrr]
+  [1mSTEP:[0m waiting for service endpoint on node arm-compute-2.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:52:43.364[0m
+I0129 15:52:43.375947   68522 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+  Jan 29 15:52:43.375: INFO: Pod for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-nlb is on node arm-compute-2.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 15:52:43.376: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:43.385: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:45.386: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:45.396: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:47.386: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:47.399: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:49.386: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:49.395: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:51.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:51.396: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:53.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:53.398: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:55.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:55.397: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:57.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:57.398: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:52:59.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:52:59.400: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:01.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:01.403: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:03.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:03.402: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:05.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:05.397: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:07.387: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:07.396: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:09.386: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  [1mSTEP:[0m Creating a job to check pods health [38;5;243m@ 01/29/26 15:53:09.414[0m
+  Jan 29 15:53:09.414: INFO: Script used: healthCheckPassed=$(curl -s http://10.0.20.214:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.19.129:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="0")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.31.26:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;
+  [1mSTEP:[0m deleting ReplicationController external-local-nlb in namespace cloud-provider-e2e-tests-node-local-routing-btww6, will wait for the garbage collector to delete the pods [38;5;243m@ 01/29/26 15:53:24.475[0m
+  Jan 29 15:53:24.555: INFO: Deleting ReplicationController external-local-nlb took: 16.592667ms
+  Jan 29 15:53:24.656: INFO: Terminating ReplicationController external-local-nlb pods took: 100.756208ms
+  [1mSTEP:[0m creating a pod to be part of the service external-local-nlb on node arm-compute-3.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:53:24.656[0m
+  Jan 29 15:53:24.674: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:53:24.688: INFO: Found all 1 pods
+  Jan 29 15:53:24.688: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-nlb-8npcc]
+  Jan 29 15:53:24.688: INFO: Waiting up to 3m0s for pod "external-local-nlb-8npcc" in namespace "cloud-provider-e2e-tests-node-local-routing-btww6" to be "running and ready"
+  Jan 29 15:53:24.705: INFO: Pod "external-local-nlb-8npcc": Phase="Pending", Reason="", readiness=false. Elapsed: 17.650375ms
+  Jan 29 15:53:26.720: INFO: Pod "external-local-nlb-8npcc": Phase="Running", Reason="", readiness=true. Elapsed: 2.031861875s
+  Jan 29 15:53:26.720: INFO: Pod "external-local-nlb-8npcc" satisfied condition "running and ready"
+  Jan 29 15:53:26.720: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-nlb-8npcc]
+  [1mSTEP:[0m waiting for service endpoint on node arm-compute-3.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:53:26.72[0m
+I0129 15:53:26.731429   68522 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+  Jan 29 15:53:26.731: INFO: Pod for service cloud-provider-e2e-tests-node-local-routing-btww6/external-local-nlb is on node arm-compute-3.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 15:53:26.731: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:26.742: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:28.743: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:28.754: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:30.743: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:30.755: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:32.743: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:32.758: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:34.743: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:34.758: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:36.743: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:36.754: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:38.743: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:38.752: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:40.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:40.754: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:42.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:42.759: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:44.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:44.753: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:46.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:46.760: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:48.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:48.757: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:50.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  Jan 29 15:53:50.756: INFO: Got error testing for reachability of http://159.54.173.151:8081/echo?msg=hello: Get "http://159.54.173.151:8081/echo?msg=hello": dial tcp 159.54.173.151:8081: connect: connection refused
+  Jan 29 15:53:52.744: INFO: Testing HTTP reachability of http://159.54.173.151:8081/echo?msg=hello
+  [1mSTEP:[0m Creating a job to check pods health [38;5;243m@ 01/29/26 15:53:52.773[0m
+  Jan 29 15:53:52.773: INFO: Script used: healthCheckPassed=$(curl -s http://10.0.20.214:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.19.129:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="1")); then exit 1; fi;healthCheckPassed=$(curl -s http://10.0.31.26:31525/healthz | grep -i localEndpoints* | cut -d ':' -f2);if (("$healthCheckPassed"=="0")); then exit 1; fi;
+  [1mSTEP:[0m deleting ReplicationController external-local-nlb in namespace cloud-provider-e2e-tests-node-local-routing-btww6, will wait for the garbage collector to delete the pods [38;5;243m@ 01/29/26 15:54:07.832[0m
+  Jan 29 15:54:07.921: INFO: Deleting ReplicationController external-local-nlb took: 23.213041ms
+  Jan 29 15:54:08.023: INFO: Terminating ReplicationController external-local-nlb pods took: 101.171709ms
+  Jan 29 15:54:08.071: INFO: Waiting up to 2m0s for service "external-local-nlb" to have no LoadBalancer
+  Jan 29 15:54:08.140: INFO: Waiting up to 2m0s for service "external-local-lb" to have no LoadBalancer
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-node-local-routing-btww6" for this suite. [38;5;243m@ 01/29/26 15:54:08.191[0m
+  Jan 29 15:54:46.460: INFO: namespace cloud-provider-e2e-tests-node-local-routing-btww6 deletion completed in 38.268589667s
+[38;5;10m• [344.958 seconds][0m
+[38;5;243m------------------------------[0m
+[0mNode Local Routing [Slow] [38;5;243m[cloudprovider][ccm][lb][node-local] [0m[1mshould work from pods[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:601[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 15:54:46.46[0m
+  [1mSTEP:[0m Running test for: lb [38;5;243m@ 01/29/26 15:54:46.486[0m
+  [1mSTEP:[0m creating a service cloud-provider-e2e-tests-node-local-routing-8pdm4/external-local-lb with type=LoadBalancer and ExternalTrafficPolicy=Local [38;5;243m@ 01/29/26 15:54:46.638[0m
+  [1mSTEP:[0m creating a pod to be part of the service external-local-lb [38;5;243m@ 01/29/26 15:54:46.682[0m
+  Jan 29 15:54:46.704: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:54:46.726: INFO: Found 0/1 pods - will retry
+  Jan 29 15:54:48.743: INFO: Found all 1 pods
+  Jan 29 15:54:48.743: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-lb-m9zhc]
+  Jan 29 15:54:48.743: INFO: Waiting up to 3m0s for pod "external-local-lb-m9zhc" in namespace "cloud-provider-e2e-tests-node-local-routing-8pdm4" to be "running and ready"
+  Jan 29 15:54:48.756: INFO: Pod "external-local-lb-m9zhc": Phase="Running", Reason="", readiness=true. Elapsed: 13.297292ms
+  Jan 29 15:54:48.757: INFO: Pod "external-local-lb-m9zhc" satisfied condition "running and ready"
+  Jan 29 15:54:48.757: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-lb-m9zhc]
+  [1mSTEP:[0m waiting for loadbalancer for service cloud-provider-e2e-tests-node-local-routing-8pdm4/external-local-lb [38;5;243m@ 01/29/26 15:54:48.757[0m
+  Jan 29 15:54:48.757: INFO: Waiting up to 2m0s for service "external-local-lb" to have a LoadBalancer
+  [1mSTEP:[0m Creating execpod-sourceip on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:55:02.786[0m
+  Jan 29 15:55:02.786: INFO: Creating new exec pod
+I0129 15:55:02.825764   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"exec\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"exec\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"exec\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"exec\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  Jan 29 15:55:04.878: INFO: Waiting up to 5m0s wget 10.0.13.236:8080/clientip
+  [1mSTEP:[0m Hitting external lb 10.0.13.236 from pod execpod-sourceip on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:55:04.878[0m
+  Jan 29 15:55:04.879: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-node-local-routing-8pdm4 execpod-sourceip4lrvc -- /bin/sh -c wget -T 30 -qO- 10.0.13.236:8080/clientip'
+  Jan 29 15:55:05.382: INFO: stderr: ""
+  [1mSTEP:[0m Running test for: nlb [38;5;243m@ 01/29/26 15:55:05.383[0m
+  [1mSTEP:[0m creating a service cloud-provider-e2e-tests-node-local-routing-8pdm4/external-local-nlb with type=LoadBalancer and ExternalTrafficPolicy=Local [38;5;243m@ 01/29/26 15:55:05.421[0m
+  [1mSTEP:[0m creating a pod to be part of the service external-local-nlb [38;5;243m@ 01/29/26 15:55:05.461[0m
+  Jan 29 15:55:05.492: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 15:55:05.506: INFO: Found all 1 pods
+  Jan 29 15:55:05.506: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [external-local-nlb-bqmmc]
+  Jan 29 15:55:05.506: INFO: Waiting up to 3m0s for pod "external-local-nlb-bqmmc" in namespace "cloud-provider-e2e-tests-node-local-routing-8pdm4" to be "running and ready"
+  Jan 29 15:55:05.525: INFO: Pod "external-local-nlb-bqmmc": Phase="Pending", Reason="", readiness=false. Elapsed: 18.82775ms
+  Jan 29 15:55:07.542: INFO: Pod "external-local-nlb-bqmmc": Phase="Running", Reason="", readiness=true. Elapsed: 2.03544125s
+  Jan 29 15:55:07.542: INFO: Pod "external-local-nlb-bqmmc" satisfied condition "running and ready"
+  Jan 29 15:55:07.542: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [external-local-nlb-bqmmc]
+  [1mSTEP:[0m waiting for loadbalancer for service cloud-provider-e2e-tests-node-local-routing-8pdm4/external-local-nlb [38;5;243m@ 01/29/26 15:55:07.542[0m
+  Jan 29 15:55:07.542: INFO: Waiting up to 2m0s for service "external-local-nlb" to have a LoadBalancer
+  [1mSTEP:[0m Creating execpod-sourceip on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:55:27.577[0m
+  Jan 29 15:55:27.577: INFO: Creating new exec pod
+I0129 15:55:27.618308   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"exec\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"exec\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"exec\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"exec\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  Jan 29 15:55:31.660: INFO: Waiting up to 5m0s wget 152.67.251.52:8080/clientip
+  [1mSTEP:[0m Hitting external lb 152.67.251.52 from pod execpod-sourceip on node arm-compute-1.privateocp.openshiftvcn.oraclevcn.com [38;5;243m@ 01/29/26 15:55:31.66[0m
+  Jan 29 15:55:31.660: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-node-local-routing-8pdm4 execpod-sourceipfbk5m -- /bin/sh -c wget -T 30 -qO- 152.67.251.52:8080/clientip'
+  Jan 29 15:55:32.046: INFO: stderr: ""
+  Jan 29 15:55:32.128: INFO: Waiting up to 2m0s for service "external-local-nlb" to have no LoadBalancer
+  Jan 29 15:55:32.244: INFO: Waiting up to 2m0s for service "external-local-lb" to have no LoadBalancer
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-node-local-routing-btww6" for this suite. [38;5;243m@ 01/29/26 15:55:32.282[0m
+  Jan 29 15:55:32.297: INFO: Namespace cloud-provider-e2e-tests-node-local-routing-btww6 was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-node-local-routing-8pdm4" for this suite. [38;5;243m@ 01/29/26 15:55:32.297[0m
+  Jan 29 15:56:02.673: INFO: namespace cloud-provider-e2e-tests-node-local-routing-8pdm4 deletion completed in 30.379538083s
+[38;5;10m• [76.216 seconds][0m
+[38;5;243m------------------------------[0m
+[0mVolume Snapshot Deletion Tests [38;5;243m[cloudprovider][storage][csi][snapshot] [0m[1mBasic Delete POD and VS[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:357[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 15:56:02.673[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 15:56:07.679[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 15:56:07.68[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 15:56:07.681[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 15:56:07.682[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 15:56:07.696[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 15:56:07.696[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-delete-6pdnq/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 15:56:07.783[0m
+  Jan 29 15:56:07.821: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-tests6pj7g to have phase Pending
+  Jan 29 15:56:07.836: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-tests6pj7g found and phase=Pending (15.003375ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 15:56:07.836[0m
+I0129 15:56:07.878086   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-delete-6pdnq/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-tests6pj7g" [38;5;243m@ 01/29/26 15:56:52.918[0m
+  Jan 29 15:56:52.949: INFO: Waiting up to 10m0s for VolumeSnapshot csi-snapshot-restore-e2e-teststrjpb to have readyToUse true
+  Jan 29 15:56:52.962: INFO: Failed to read volume snapshot "csi-snapshot-restore-e2e-teststrjpb" status field, retrying in 15s
+  Jan 29 15:57:07.982: INFO: VolumeSnapshot csi-snapshot-restore-e2e-teststrjpb found but readyToUse is false instead of true.
+  Jan 29 15:57:22.997: INFO: VolumeSnapshot csi-snapshot-restore-e2e-teststrjpb found but readyToUse is false instead of true.
+  Jan 29 15:57:38.012: INFO: VolumeSnapshot csi-snapshot-restore-e2e-teststrjpb found and readyToUse=true (45.062717709s)
+  Jan 29 15:58:38.030: INFO: Deleting VolumeSnapshot "csi-snapshot-restore-e2e-teststrjpb"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-delete-6pdnq" for this suite. [38;5;243m@ 01/29/26 15:58:53.114[0m
+  Jan 29 15:59:37.162: INFO: namespace cloud-provider-e2e-tests-snapshot-delete-6pdnq deletion completed in 44.0477485s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-delete-6pdnq" [38;5;243m@ 01/29/26 15:59:37.162[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 15:59:37.177[0m
+  Jan 29 15:59:37.177: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [214.504 seconds][0m
+[38;5;243m------------------------------[0m
+[0mVolume Snapshot Deletion Tests [38;5;243m[cloudprovider][storage][csi][snapshot] [0m[1mTest VSContent not deleted when reclaim policy is Retain[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:394[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 15:59:37.177[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 15:59:37.198[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 15:59:37.199[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-delete-f4tg9/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 15:59:37.289[0m
+  Jan 29 15:59:37.320: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-testscd9jr to have phase Pending
+  Jan 29 15:59:37.333: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-testscd9jr found and phase=Pending (13.406458ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 15:59:37.333[0m
+I0129 15:59:37.371368   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-delete-f4tg9/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-testscd9jr" [38;5;243m@ 01/29/26 16:00:37.412[0m
+  Jan 29 16:00:37.441: INFO: Waiting up to 10m0s for VolumeSnapshot csi-snapshot-restore-e2e-testsqg784 to have readyToUse true
+  Jan 29 16:00:37.455: INFO: Failed to read volume snapshot "csi-snapshot-restore-e2e-testsqg784" status field, retrying in 15s
+  Jan 29 16:00:52.469: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsqg784 found but readyToUse is false instead of true.
+  Jan 29 16:01:07.485: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsqg784 found but readyToUse is false instead of true.
+  Jan 29 16:01:22.499: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsqg784 found but readyToUse is false instead of true.
+  Jan 29 16:01:37.516: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsqg784 found and readyToUse=true (1m0.075095292s)
+  Jan 29 16:02:37.554: INFO: Deleting VolumeSnapshot "csi-snapshot-restore-e2e-testsqg784"
+  Jan 29 16:04:07.652: INFO: Deleting VolumeSnapshotContent "snapcontent-38093352-bbcf-415e-8db8-be043024aa07"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-delete-6pdnq" for this suite. [38;5;243m@ 01/29/26 16:04:07.908[0m
+  Jan 29 16:04:07.923: INFO: Namespace cloud-provider-e2e-tests-snapshot-delete-6pdnq was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-delete-f4tg9" for this suite. [38;5;243m@ 01/29/26 16:04:07.923[0m
+  Jan 29 16:04:57.967: INFO: namespace cloud-provider-e2e-tests-snapshot-delete-f4tg9 deletion completed in 50.043708458s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-delete-6pdnq" [38;5;243m@ 01/29/26 16:04:57.967[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-delete-f4tg9" [38;5;243m@ 01/29/26 16:04:57.98[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:04:57.994[0m
+  Jan 29 16:04:57.994: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:04:57.994[0m
+  Jan 29 16:04:57.994: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [320.816 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Static Volume Creation [38;5;243m[cloudprovider][storage][csi][static] [0m[1mStatic Provisioning CSI[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:925[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:04:57.994[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:05:02.999[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:05:03[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:05:03.001[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:05:03.002[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 16:05:03.02[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 16:05:03.02[0m
+Waiting for volume to be AVAILABLE...
+Volume ocid1.volume.oc1.us-sanjose-1.abzwuljrqi3kwy5dfd7lyba7oys3okmvcuykigfqkhupl7u5dkg3qwoycqiq not yet in expected state. Current: PROVISIONING, Expected: AVAILABLE
+Volume is AVAILABLE
+  Jan 29 16:05:13.532: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-staticm9mps to have phase Available
+  Jan 29 16:05:13.545: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-staticm9mps found and phase=Available (13.67175ms)
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-static-zth62/csi-provisioner-e2e-tests-pvc-with-static" of volume size "50Gi" [38;5;243m@ 01/29/26 16:05:13.545[0m
+  Jan 29 16:05:13.578: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-staticpsh8d to have phase Pending
+  Jan 29 16:05:13.590: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-staticpsh8d found and phase=Pending (11.387584ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:05:13.59[0m
+I0129 16:05:13.627641   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app4\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app4\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app4\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app4\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-static-zth62" for this suite. [38;5;243m@ 01/29/26 16:06:58.705[0m
+  Jan 29 16:07:48.757: INFO: namespace cloud-provider-e2e-tests-csi-static-zth62 deletion completed in 50.0523095s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-static-zth62" [38;5;243m@ 01/29/26 16:07:48.757[0m
+  [1mSTEP:[0m Deleting volumes "csi-provisioner-e2e-tests-pvc-with-staticm9mps" [38;5;243m@ 01/29/26 16:07:48.772[0m
+  [1mSTEP:[0m Deleting volumes "ocid1.volume.oc1.us-sanjose-1.abzwuljrqi3kwy5dfd7lyba7oys3okmvcuykigfqkhupl7u5dkg3qwoycqiq" [38;5;243m@ 01/29/26 16:07:48.795[0m
+[38;5;10m• [170.816 seconds][0m
+[38;5;243m------------------------------[0m
+[0mDynamic FSS test with ReadWriteOnce access mode [38;5;243m[cloudprovider][storage][csi][fss][mtexist][rwo] [0m[1mCreate PVC and POD for CSI-FSS with RWO AccessMode [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_dynamic.go:705[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:07:48.811[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:07:53.816[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:07:53.817[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:07:53.818[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:07:53.819[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-fss-dynamic-c2xlp/csi-rwo-fss-dyn-e2e-test" of volume size "50Gi" [38;5;243m@ 01/29/26 16:07:53.869[0m
+  Jan 29 16:07:53.911: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-rwo-fss-dyn-e2e-testkqjkv to have phase Bound
+  Jan 29 16:07:53.922: INFO: PersistentVolumeClaim csi-rwo-fss-dyn-e2e-testkqjkv found but phase is Pending instead of Bound.
+  Jan 29 16:08:08.940: INFO: PersistentVolumeClaim csi-rwo-fss-dyn-e2e-testkqjkv found and phase=Bound (15.028636083s)
+  [1mSTEP:[0m Checking the claim and volume are bound. [38;5;243m@ 01/29/26 16:08:08.94[0m
+  [1mSTEP:[0m Creating Pod that can create and write to the file [38;5;243m@ 01/29/26 16:08:08.965[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:08:08.965[0m
+I0129 16:08:09.000932   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"76996825-ca7c-45ba-ae6e-f1d19d26026a\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"76996825-ca7c-45ba-ae6e-f1d19d26026a\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"76996825-ca7c-45ba-ae6e-f1d19d26026a\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"76996825-ca7c-45ba-ae6e-f1d19d26026a\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 01/29/26 16:08:54.032[0m
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 01/29/26 16:08:54.033[0m
+  Jan 29 16:08:54.033: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-fss-dynamic-c2xlp csi-rwo-fss-dyn-e2e-testzgh9f -- /bin/sh -c ls /data'
+  Jan 29 16:08:54.391: INFO: stderr: ""
+  [1mSTEP:[0m Creating Pod that can read contents of existing file [38;5;243m@ 01/29/26 16:08:54.391[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:08:54.392[0m
+I0129 16:08:54.432911   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"readapp\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"readapp\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"readapp\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"readapp\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-fss-dynamic-c2xlp" for this suite. [38;5;243m@ 01/29/26 16:09:09.463[0m
+  Jan 29 16:10:01.519: INFO: namespace cloud-provider-e2e-tests-fss-dynamic-c2xlp deletion completed in 52.055099167s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-fss-dynamic-c2xlp" [38;5;243m@ 01/29/26 16:10:01.519[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-fss-dynamic-c2xlp" [38;5;243m@ 01/29/26 16:10:01.537[0m
+[38;5;10m• [132.738 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI RWX Raw Block Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags][raw-block][rwx] [0m[1mCreate RWX raw block PVC and POD for CSI.[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_rwx_volume_creation.go:49[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:10:01.55[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:10:06.555[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:10:06.556[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:10:06.557[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:10:06.558[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-wpvqp/csi-provisioner-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:10:06.607[0m
+  Jan 29 16:10:06.650: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-testswtjrp to have phase Pending
+  Jan 29 16:10:06.666: INFO: PersistentVolumeClaim csi-provisioner-e2e-testswtjrp found and phase=Pending (15.240459ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:10:06.666[0m
+I0129 16:10:06.738941   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  Jan 29 16:10:51.783: INFO: Found pvc csi-provisioner-e2e-testswtjrp bound to pv csi-378cde95-8754-4683-a5d4-d239ebb7dbd7
+  Jan 29 16:10:51.872: INFO: volume details { AvailabilityDomain=gzqB:US-SANJOSE-1-AD-1 CompartmentId=ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa DisplayName=csi-378cde95-8754-4683-a5d4-d239ebb7dbd7 Id=ocid1.volume.oc1.us-sanjose-1.abzwuljr7cowuadsennmnspnqeffa7e4hpmrs52dphw25opoxv44k3mzxv5q LifecycleState=AVAILABLE SizeInMBs=51200 TimeCreated=2026-01-30 00:10:06.965 +0000 UTC DefinedTags=map[Oracle-Tags:map[CreatedBy:ocid1.instance.oc1.us-sanjose-1.anzwuljr2bh44rycqm4phehmhzn3dgao6ikjq4pl7ksct7i3hrvfdjwrcoza CreatedOn:2026-01-30T00:10:06.956Z] openshift-tags:map[openshift-resource:openshift-resource-infra]] FreeformTags=map[] SystemTags=map[] IsHydrated=true KmsKeyId=<nil> VpusPerGB=10 ClusterPlacementGroupId=<nil> SizeInGBs=50 SourceDetails=<nil> VolumeGroupId=<nil> IsAutoTuneEnabled=false AutoTunedVpusPerGB=<nil> BlockVolumeReplicas=[] AutotunePolicies=[] } :
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-wpvqp" for this suite. [38;5;243m@ 01/29/26 16:10:51.873[0m
+  Jan 29 16:11:41.921: INFO: namespace cloud-provider-e2e-tests-csi-basic-wpvqp deletion completed in 50.0482735s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-wpvqp" [38;5;243m@ 01/29/26 16:11:41.921[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:11:41.936[0m
+  Jan 29 16:11:41.936: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [100.386 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI RWX Raw Block Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags][raw-block][rwx] [0m[1mCreate RWX raw block PVC with VolumeSize 1Gi but should use default 50Gi[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_rwx_volume_creation.go:72[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:11:41.936[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-hw5cg/csi-provisioner-e2e-tests-pvc-with-1gi" of volume size "1Gi" [38;5;243m@ 01/29/26 16:11:41.981[0m
+  Jan 29 16:11:42.015: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-1girmlmw to have phase Pending
+  Jan 29 16:11:42.030: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-1girmlmw found and phase=Pending (15.174084ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:11:42.03[0m
+I0129 16:11:42.073338   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app2\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app2\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app2\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app2\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-wpvqp" for this suite. [38;5;243m@ 01/29/26 16:12:27.127[0m
+  Jan 29 16:12:27.139: INFO: Namespace cloud-provider-e2e-tests-csi-basic-wpvqp was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-hw5cg" for this suite. [38;5;243m@ 01/29/26 16:12:27.139[0m
+  Jan 29 16:13:19.183: INFO: namespace cloud-provider-e2e-tests-csi-basic-hw5cg deletion completed in 52.04390875s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-wpvqp" [38;5;243m@ 01/29/26 16:13:19.183[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-hw5cg" [38;5;243m@ 01/29/26 16:13:19.194[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:13:19.211[0m
+  Jan 29 16:13:19.211: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:13:19.211[0m
+  Jan 29 16:13:19.211: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [97.275 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI RWX Raw Block Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags][raw-block][rwx] [0m[1mCreate RWX raw block PVC with VolumeSize 100Gi should use 100Gi[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_rwx_volume_creation.go:83[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:13:19.212[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-fw6zv/csi-provisioner-e2e-tests-pvc-with-100gi" of volume size "100Gi" [38;5;243m@ 01/29/26 16:13:19.258[0m
+  Jan 29 16:13:19.290: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-100giwfxdj to have phase Pending
+  Jan 29 16:13:19.303: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-100giwfxdj found and phase=Pending (12.898041ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:13:19.303[0m
+I0129 16:13:19.342899   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app3\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app3\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app3\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app3\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-wpvqp" for this suite. [38;5;243m@ 01/29/26 16:14:04.398[0m
+  Jan 29 16:14:04.412: INFO: Namespace cloud-provider-e2e-tests-csi-basic-wpvqp was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-hw5cg" for this suite. [38;5;243m@ 01/29/26 16:14:04.412[0m
+  Jan 29 16:14:04.424: INFO: Namespace cloud-provider-e2e-tests-csi-basic-hw5cg was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-fw6zv" for this suite. [38;5;243m@ 01/29/26 16:14:04.424[0m
+  Jan 29 16:14:54.466: INFO: namespace cloud-provider-e2e-tests-csi-basic-fw6zv deletion completed in 50.041714125s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-wpvqp" [38;5;243m@ 01/29/26 16:14:54.466[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-hw5cg" [38;5;243m@ 01/29/26 16:14:54.478[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-fw6zv" [38;5;243m@ 01/29/26 16:14:54.491[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:14:54.506[0m
+  Jan 29 16:14:54.506: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:14:54.506[0m
+  Jan 29 16:14:54.506: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:14:54.506[0m
+  Jan 29 16:14:54.506: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [95.294 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI RWX Raw Block Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags][raw-block][rwx] [0m[1mData should persist on CSI RWX raw block volume on pod restart[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_rwx_volume_creation.go:94[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:14:54.506[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-vbwcg/csi-pod-restart-data-persistence" of volume size "50Gi" [38;5;243m@ 01/29/26 16:14:54.543[0m
+  Jan 29 16:14:54.583: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-pod-restart-data-persistencedgq89 to have phase Pending
+  Jan 29 16:14:54.594: INFO: PersistentVolumeClaim csi-pod-restart-data-persistencedgq89 found and phase=Pending (10.749625ms)
+  [1mSTEP:[0m Creating a deployment [38;5;243m@ 01/29/26 16:14:54.643[0m
+I0129 16:14:54.680869   68522 warnings.go:110] "Warning: spec.template.spec.nodeSelector[beta.kubernetes.io/arch]: deprecated since v1.14; use \"kubernetes.io/arch\" instead"
+I0129 16:14:54.680903   68522 warnings.go:110] "Warning: spec.template.spec.nodeSelector[beta.kubernetes.io/instance-type]: deprecated since v1.17; use \"node.kubernetes.io/instance-type\" instead"
+I0129 16:14:54.680920   68522 warnings.go:110] "Warning: spec.template.spec.nodeSelector[failure-domain.beta.kubernetes.io/region]: deprecated since v1.17; use \"topology.kubernetes.io/region\" instead"
+I0129 16:14:54.680926   68522 warnings.go:110] "Warning: spec.template.spec.nodeSelector[beta.kubernetes.io/os]: deprecated since v1.14; use \"kubernetes.io/os\" instead"
+I0129 16:14:54.680931   68522 warnings.go:110] "Warning: spec.template.spec.nodeSelector[failure-domain.beta.kubernetes.io/zone]: deprecated since v1.17; use \"topology.kubernetes.io/zone\" instead"
+  Jan 29 16:14:54.681: INFO: Waiting up to 5m0s for deployment data-persistence-deployment to be completed
+  [1mSTEP:[0m Writing to the volume using the pod [38;5;243m@ 01/29/26 16:15:39.743[0m
+  Jan 29 16:15:39.743: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-basic-vbwcg data-persistence-deployment-5fcccbfc7b-6px2b -- /bin/sh -c echo "Hello CSI Tester for RBV" > /tmp/test.txt; dd if=/tmp/test.txt of=/dev/xvda count=1;'
+  Jan 29 16:15:40.090: INFO: stderr: "0+1 records in\n0+1 records out\n25 bytes copied, 5.544e-05 s, 451 kB/s\n"
+  [1mSTEP:[0m Deleting the pod used to write to the volume [38;5;243m@ 01/29/26 16:15:40.09[0m
+  [1mSTEP:[0m Waiting timeout for pod to not be found in namespace [38;5;243m@ 01/29/26 16:15:40.108[0m
+  [1mSTEP:[0m Waiting for pod to be restarted [38;5;243m@ 01/29/26 16:16:25.136[0m
+  [1mSTEP:[0m Reading from the volume using the pod and checking data integrity [38;5;243m@ 01/29/26 16:16:25.163[0m
+  Jan 29 16:16:25.164: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-basic-vbwcg data-persistence-deployment-5fcccbfc7b-pvbhs -- /bin/sh -c dd if=/dev/xvda bs=512 count=1'
+  Jan 29 16:16:25.500: INFO: stderr: "1+0 records in\n1+0 records out\n512 bytes copied, 3.108e-05 s, 16.5 MB/s\n"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-wpvqp" for this suite. [38;5;243m@ 01/29/26 16:16:25.501[0m
+  Jan 29 16:16:25.513: INFO: Namespace cloud-provider-e2e-tests-csi-basic-wpvqp was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-hw5cg" for this suite. [38;5;243m@ 01/29/26 16:16:25.513[0m
+  Jan 29 16:16:25.525: INFO: Namespace cloud-provider-e2e-tests-csi-basic-hw5cg was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-fw6zv" for this suite. [38;5;243m@ 01/29/26 16:16:25.525[0m
+  Jan 29 16:16:25.536: INFO: Namespace cloud-provider-e2e-tests-csi-basic-fw6zv was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-vbwcg" for this suite. [38;5;243m@ 01/29/26 16:16:25.536[0m
+  Jan 29 16:17:17.577: INFO: namespace cloud-provider-e2e-tests-csi-basic-vbwcg deletion completed in 52.040888042s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-wpvqp" [38;5;243m@ 01/29/26 16:17:17.578[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-hw5cg" [38;5;243m@ 01/29/26 16:17:17.59[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-fw6zv" [38;5;243m@ 01/29/26 16:17:17.602[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-vbwcg" [38;5;243m@ 01/29/26 16:17:17.613[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:17:17.629[0m
+  Jan 29 16:17:17.629: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:17:17.629[0m
+  Jan 29 16:17:17.629: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:17:17.629[0m
+  Jan 29 16:17:17.629: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:17:17.629[0m
+  Jan 29 16:17:17.629: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [143.122 seconds][0m
+[38;5;243m------------------------------[0m
+[0mFSS Static in-transit encryption test [38;5;243m[cloudprovider][storage][csi][fss][static] [0m[1mCreate PVC and POD for FSS in-transit encryption[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:45[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:17:17.629[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:17:22.637[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:17:22.638[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:17:22.639[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:17:22.64[0m
+  [38;5;14m[SKIPPED][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:131 [38;5;243m@ 01/29/26 16:17:22.682[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-fss-basic-99qnr" for this suite. [38;5;243m@ 01/29/26 16:17:22.682[0m
+  Jan 29 16:17:30.733: INFO: namespace cloud-provider-e2e-tests-fss-basic-99qnr deletion completed in 8.050737583s
+[38;5;14mS [SKIPPED] [13.104 seconds][0m
+[0mFSS Static in-transit encryption test [38;5;243m[cloudprovider][storage][csi][fss][static] [38;5;14m[1m[It] Create PVC and POD for FSS in-transit encryption[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:45[0m
+
+  [38;5;14m[SKIPPED] Skipping test due to non-availability of nodes with label "oke.oraclecloud.com/e2e.oci-fss-util"[0m
+  [38;5;14mIn [1m[It][0m[38;5;14m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:131[0m [38;5;243m@ 01/29/26 16:17:22.682[0m
+
+  [38;5;14mFull Stack Trace[0m
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.checkNodeAvailability(0x14000debe98?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:131 +0x1e0
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func63.1.1()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:46 +0x24
+[38;5;243m------------------------------[0m
+[0mMultiple Pods Static FSS test [38;5;243m[cloudprovider][storage][csi][fss][static] [0m[1mMultiple Pods should be able to read write same file[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:92[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:17:30.733[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:17:30.739[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:17:30.741[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:17:30.742[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:17:30.743[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-multiple-pod-4t6j4/csi-fss-e2e-test" of volume size "50Gi" [38;5;243m@ 01/29/26 16:17:30.786[0m
+  Jan 29 16:17:30.869: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-fss-e2e-testnfw64 to have phase Bound
+  Jan 29 16:17:30.886: INFO: PersistentVolumeClaim csi-fss-e2e-testnfw64 found but phase is Pending instead of Bound.
+  Jan 29 16:17:45.900: INFO: PersistentVolumeClaim csi-fss-e2e-testnfw64 found and phase=Bound (15.031086041s)
+  [1mSTEP:[0m Checking the claim and volume are bound. [38;5;243m@ 01/29/26 16:17:45.9[0m
+  [1mSTEP:[0m Creating Pod that can create and write to the file [38;5;243m@ 01/29/26 16:17:45.924[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:17:45.924[0m
+I0129 16:17:45.960398   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"075409bf-bb5a-4440-ba77-e7d5a88a14c2\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"075409bf-bb5a-4440-ba77-e7d5a88a14c2\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"075409bf-bb5a-4440-ba77-e7d5a88a14c2\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"075409bf-bb5a-4440-ba77-e7d5a88a14c2\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 01/29/26 16:18:30.992[0m
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 01/29/26 16:18:30.992[0m
+  Jan 29 16:18:30.992: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-multiple-pod-4t6j4 csi-fss-e2e-testq9bm2 -- /bin/sh -c ls /data'
+  Jan 29 16:18:31.489: INFO: stderr: ""
+  [1mSTEP:[0m Creating Pod that can create and write to the file [38;5;243m@ 01/29/26 16:18:31.489[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:18:31.489[0m
+I0129 16:18:31.530912   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"4f4918f7-5cc8-480b-ac09-95a9c9238690\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"4f4918f7-5cc8-480b-ac09-95a9c9238690\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"4f4918f7-5cc8-480b-ac09-95a9c9238690\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"4f4918f7-5cc8-480b-ac09-95a9c9238690\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating Pod that can read contents of existing file [38;5;243m@ 01/29/26 16:19:16.564[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:19:16.564[0m
+I0129 16:19:16.601343   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"readapp\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"readapp\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"readapp\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"readapp\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating Pod that can read contents of existing file [38;5;243m@ 01/29/26 16:19:31.63[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:19:31.63[0m
+I0129 16:19:31.667178   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"readapp\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"readapp\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"readapp\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"readapp\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-multiple-pod-4t6j4" for this suite. [38;5;243m@ 01/29/26 16:19:46.695[0m
+  Jan 29 16:20:36.735: INFO: namespace cloud-provider-e2e-tests-multiple-pod-4t6j4 deletion completed in 50.040161042s
+  [1mSTEP:[0m Deleting volumes "csi-fss-e2e-test5d9nh" [38;5;243m@ 01/29/26 16:20:36.735[0m
+[38;5;10m• [186.017 seconds][0m
+[38;5;243m------------------------------[0m
+[0mMultiple Pods Static FSS test [38;5;243m[cloudprovider][storage][csi][fss][static] [0m[1mMultiple Pods should be able to read write same file with InTransit encryption enabled[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:103[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:20:36.751[0m
+  [38;5;14m[SKIPPED][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:131 [38;5;243m@ 01/29/26 16:20:36.813[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-multiple-pod-4t6j4" for this suite. [38;5;243m@ 01/29/26 16:20:36.814[0m
+  Jan 29 16:20:36.830: INFO: Namespace cloud-provider-e2e-tests-multiple-pod-4t6j4 was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-multiple-pod-smm4m" for this suite. [38;5;243m@ 01/29/26 16:20:36.83[0m
+  Jan 29 16:20:44.874: INFO: namespace cloud-provider-e2e-tests-multiple-pod-smm4m deletion completed in 8.043947916s
+  [1mSTEP:[0m Deleting volumes "csi-fss-e2e-test5d9nh" [38;5;243m@ 01/29/26 16:20:44.874[0m
+[38;5;14mS [SKIPPED] [8.134 seconds][0m
+[0mMultiple Pods Static FSS test [38;5;243m[cloudprovider][storage][csi][fss][static] [38;5;14m[1m[It] Multiple Pods should be able to read write same file with InTransit encryption enabled[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:103[0m
+
+  [38;5;14m[SKIPPED] Skipping test due to non-availability of nodes with label "oke.oraclecloud.com/e2e.oci-fss-util"[0m
+  [38;5;14mIn [1m[It][0m[38;5;14m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:131[0m [38;5;243m@ 01/29/26 16:20:36.813[0m
+
+  [38;5;14mFull Stack Trace[0m
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.checkNodeAvailability(0x14000944288?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:131 +0x1e0
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func65.1.2()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:104 +0x2c
+[38;5;243m------------------------------[0m
+[0mCSI CMEK,PV attachment and in-transit encryption test [38;5;243m[cloudprovider][storage][csi][cmek][paravirtualized][raw-block] [0m[1mCreate raw block PVC and POD for CSI with CMEK,PV attachment and in-transit encryption[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:1010[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:20:44.885[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:20:49.891[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:20:49.892[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:20:49.893[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:20:49.894[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-pfvjt/csi-cmek-iscsi-in-transit-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:20:49.945[0m
+  Jan 29 16:20:49.977: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-cmek-iscsi-in-transit-e2e-testsgklr7 to have phase Pending
+  Jan 29 16:20:49.991: INFO: PersistentVolumeClaim csi-cmek-iscsi-in-transit-e2e-testsgklr7 found and phase=Pending (14.007625ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:20:49.991[0m
+I0129 16:20:50.027545   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Checking is Expected and Actual CMEK key matches [38;5;243m@ 01/29/26 16:21:35.056[0m
+  Jan 29 16:21:35.252: INFO: Expected KMSKey:ocid1.key.oc1.us-sanjose-1.gruxvfxvaafdk.abzwuljrvphi4cwueby5qsjzbalmn7ncaw3oat6qflsksks2xsofq6shxmvq, Actual KMSKey:0x140003890e0
+  [1mSTEP:[0m Checking attachment type [38;5;243m@ 01/29/26 16:21:35.252[0m
+  Jan 29 16:21:35.266: INFO: node is:arm-compute-1.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 16:21:35.417: INFO: AttachmentType is paravirtualized for attachmentID:ocid1.volumeattachment.oc1.us-sanjose-1.anzwuljr2bh44rycxup5v7w3zqx3y6glgmverktus5y62okh6ihtipacizqq
+  [1mSTEP:[0m Checking encryption type [38;5;243m@ 01/29/26 16:21:35.52[0m
+  Jan 29 16:21:35.520: INFO: instance launch option has in-transit encryption false: volume attachment has in-transit encryption false
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-pfvjt" for this suite. [38;5;243m@ 01/29/26 16:21:35.535[0m
+  Jan 29 16:22:25.576: INFO: namespace cloud-provider-e2e-tests-csi-basic-pfvjt deletion completed in 50.040578917s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-pfvjt" [38;5;243m@ 01/29/26 16:22:25.576[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:22:25.588[0m
+  Jan 29 16:22:25.588: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [100.702 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI CMEK,PV attachment and in-transit encryption test [38;5;243m[cloudprovider][storage][csi][cmek][iscsi][raw-block] [0m[1mCreate raw block PVC and POD for CSI with CMEK,ISCSI attachment and in-transit encryption[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:1016[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:22:25.588[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-2jsgg/csi-cmek-iscsi-in-transit-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:22:25.632[0m
+  Jan 29 16:22:25.662: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-cmek-iscsi-in-transit-e2e-tests6c4ds to have phase Pending
+  Jan 29 16:22:25.673: INFO: PersistentVolumeClaim csi-cmek-iscsi-in-transit-e2e-tests6c4ds found and phase=Pending (10.684958ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:22:25.673[0m
+I0129 16:22:25.713164   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Checking is Expected and Actual CMEK key matches [38;5;243m@ 01/29/26 16:23:10.747[0m
+  Jan 29 16:23:10.861: INFO: Expected KMSKey:ocid1.key.oc1.us-sanjose-1.gruxvfxvaafdk.abzwuljrvphi4cwueby5qsjzbalmn7ncaw3oat6qflsksks2xsofq6shxmvq, Actual KMSKey:0x140008ef8e0
+  [1mSTEP:[0m Checking attachment type [38;5;243m@ 01/29/26 16:23:10.861[0m
+  Jan 29 16:23:10.874: INFO: node is:arm-compute-2.privateocp.openshiftvcn.oraclevcn.com
+  Jan 29 16:23:11.010: INFO: AttachmentType is iscsi for attachmentID:ocid1.volumeattachment.oc1.us-sanjose-1.anzwuljr2bh44rycwzz2zvutsqla2ja37obinnxy2ubscmjgt2t7wxtp7qzq
+  [1mSTEP:[0m Checking encryption type [38;5;243m@ 01/29/26 16:23:11.13[0m
+  Jan 29 16:23:11.130: INFO: instance launch option has in-transit encryption false: volume attachment has in-transit encryption false
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-pfvjt" for this suite. [38;5;243m@ 01/29/26 16:23:11.145[0m
+  Jan 29 16:23:11.156: INFO: Namespace cloud-provider-e2e-tests-csi-basic-pfvjt was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-2jsgg" for this suite. [38;5;243m@ 01/29/26 16:23:11.156[0m
+  Jan 29 16:24:01.199: INFO: namespace cloud-provider-e2e-tests-csi-basic-2jsgg deletion completed in 50.042446833s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-pfvjt" [38;5;243m@ 01/29/26 16:24:01.199[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-2jsgg" [38;5;243m@ 01/29/26 16:24:01.211[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:24:01.222[0m
+  Jan 29 16:24:01.222: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:24:01.222[0m
+  Jan 29 16:24:01.222: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [95.634 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCipherSuite tests Loadbalancer TLS [38;5;243m[cloudprovider][ccm][lb][sslconfig] [0m[1mshould be possible to create and mutate a CipherSuite for Service type:LoadBalancer [Canary][0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:951[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:24:01.222[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:24:06.228[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:24:06.229[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:24:06.229[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:24:06.23[0m
+  [1mSTEP:[0m creating a pod to be part of the TCP service e2e-tls-lb-test [38;5;243m@ 01/29/26 16:24:06.394[0m
+  Jan 29 16:24:06.420: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 16:24:06.440: INFO: Found 0/1 pods - will retry
+  Jan 29 16:24:08.457: INFO: Found all 1 pods
+  Jan 29 16:24:08.457: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [e2e-tls-lb-test-ctvfp]
+  Jan 29 16:24:08.457: INFO: Waiting up to 3m0s for pod "e2e-tls-lb-test-ctvfp" in namespace "cloud-provider-e2e-tests-endtoendtls-service-qvzs8" to be "running and ready"
+  Jan 29 16:24:08.470: INFO: Pod "e2e-tls-lb-test-ctvfp": Phase="Running", Reason="", readiness=true. Elapsed: 12.505417ms
+  Jan 29 16:24:08.470: INFO: Pod "e2e-tls-lb-test-ctvfp" satisfied condition "running and ready"
+  Jan 29 16:24:08.470: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [e2e-tls-lb-test-ctvfp]
+  [1mSTEP:[0m waiting for the TCP service to have a load balancer [38;5;243m@ 01/29/26 16:24:08.47[0m
+  Jan 29 16:24:08.470: INFO: Waiting up to 2m0s for service "e2e-tls-lb-test" to have a LoadBalancer
+  Jan 29 16:24:30.494: INFO: TCP node port: 32258
+  Jan 29 16:24:30.494: INFO: LB Name is 71234d69-6c90-4bc9-915b-154a0c34fbce
+  Jan 29 16:24:30.494: INFO: TCP load balancer: 10.0.2.104
+Listener Actual SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for CipherSuiteName 443 : oci-default-http2-ssl-cipher-suite-v1
+Listener Expected SSL Config for Protocols 443 : TLSv1.2
+BackendSet Actual SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for CipherSuiteName 443 : oci-default-http2-ssl-cipher-suite-v1
+BackendSet Expected SSL Config for Protocols 443 : TLSv1.2
+  [1mSTEP:[0m changing the TCP service's CipherSuite and Protocols [38;5;243m@ 01/29/26 16:24:45.659[0m
+Listener Actual SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for CipherSuiteName 443 : oci-tls-13-recommended-ssl-cipher-suite-v1
+Listener Expected SSL Config for Protocols 443 : TLSv1.3
+BackendSet Actual SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for CipherSuiteName 443 : oci-tls-13-recommended-ssl-cipher-suite-v1
+BackendSet Expected SSL Config for Protocols 443 : TLSv1.3
+Listener Actual SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for CipherSuiteName 443 : oci-tls-13-recommended-ssl-cipher-suite-v1
+Listener Expected SSL Config for Protocols 443 : TLSv1.3
+BackendSet Actual SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for CipherSuiteName 443 : oci-tls-13-recommended-ssl-cipher-suite-v1
+BackendSet Expected SSL Config for Protocols 443 : TLSv1.3
+Listener Actual SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for  443 : ssl-certificate-secret
+Listener Expected SSL Config for CipherSuiteName 443 : oci-tls-13-recommended-ssl-cipher-suite-v1
+Listener Expected SSL Config for Protocols 443 : TLSv1.3
+BackendSet Actual SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for  443 : ssl-certificate-secret
+BackendSet Expected SSL Config for CipherSuiteName 443 : oci-tls-13-recommended-ssl-cipher-suite-v1
+BackendSet Expected SSL Config for Protocols 443 : TLSv1.3
+  [1mSTEP:[0m changing TCP service back to type=ClusterIP [38;5;243m@ 01/29/26 16:25:30.753[0m
+  Jan 29 16:25:30.798: INFO: Waiting up to 2m0s for service "e2e-tls-lb-test" to have no LoadBalancer
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-endtoendtls-service-qvzs8" for this suite. [38;5;243m@ 01/29/26 16:25:30.827[0m
+  Jan 29 16:25:54.868: INFO: namespace cloud-provider-e2e-tests-endtoendtls-service-qvzs8 deletion completed in 24.040567458s
+[38;5;10m• [113.645 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Volume Capabilites [38;5;243m[cloudprovider][storage][csi] [0m[1mCreate volume fails with accessMode set to ReadWriteMany[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:1052[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:25:54.868[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:25:59.875[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:25:59.876[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:25:59.877[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:25:59.878[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-c9852/csi-provisioner-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:25:59.925[0m
+  Jan 29 16:25:59.963: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests7zjbx to have phase Pending
+  Jan 29 16:25:59.975: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests7zjbx found and phase=Pending (12.386542ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 01/29/26 16:25:59.975[0m
+I0129 16:26:00.032257   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-c9852" for this suite. [38;5;243m@ 01/29/26 16:34:00.087[0m
+  Jan 29 16:34:14.127: INFO: namespace cloud-provider-e2e-tests-csi-basic-c9852 deletion completed in 14.040430792s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-c9852" [38;5;243m@ 01/29/26 16:34:14.127[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:34:14.142[0m
+  Jan 29 16:34:14.142: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [499.277 seconds][0m
+[38;5;243m------------------------------[0m
+[0mListener only enabled TLS [38;5;243m[cloudprovider][ccm][lb] [0m[1mshould be possible to create and mutate a Service type:LoadBalancer [Canary][0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:1271[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:34:14.142[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:34:19.147[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:34:19.147[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:34:19.148[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:34:19.148[0m
+  [1mSTEP:[0m creating a pod to be part of the TCP service listener-tls-lb-test [38;5;243m@ 01/29/26 16:34:19.27[0m
+  Jan 29 16:34:19.284: INFO: Waiting up to 5m0s for 1 pods to be created
+  Jan 29 16:34:19.304: INFO: Found 0/1 pods - will retry
+  Jan 29 16:34:21.320: INFO: Found all 1 pods
+  Jan 29 16:34:21.320: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [listener-tls-lb-test-f2rfj]
+  Jan 29 16:34:21.320: INFO: Waiting up to 3m0s for pod "listener-tls-lb-test-f2rfj" in namespace "cloud-provider-e2e-tests-listener-service-2t8s7" to be "running and ready"
+  Jan 29 16:34:21.335: INFO: Pod "listener-tls-lb-test-f2rfj": Phase="Running", Reason="", readiness=true. Elapsed: 14.208458ms
+  Jan 29 16:34:21.335: INFO: Pod "listener-tls-lb-test-f2rfj" satisfied condition "running and ready"
+  Jan 29 16:34:21.335: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [listener-tls-lb-test-f2rfj]
+  [1mSTEP:[0m waiting for the TCP service to have a load balancer [38;5;243m@ 01/29/26 16:34:21.335[0m
+  Jan 29 16:34:21.335: INFO: Waiting up to 2m0s for service "listener-tls-lb-test" to have a LoadBalancer
+  Jan 29 16:34:37.360: INFO: TCP node port: 30629
+  Jan 29 16:34:37.360: INFO: TCP load balancer: 10.0.0.231
+  [1mSTEP:[0m changing TCP service back to type=ClusterIP [38;5;243m@ 01/29/26 16:34:37.36[0m
+  Jan 29 16:34:37.395: INFO: Waiting up to 2m0s for service "listener-tls-lb-test" to have no LoadBalancer
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-listener-service-2t8s7" for this suite. [38;5;243m@ 01/29/26 16:34:37.421[0m
+  Jan 29 16:35:09.474: INFO: namespace cloud-provider-e2e-tests-listener-service-2t8s7 deletion completed in 32.052445416s
+[38;5;10m• [55.331 seconds][0m
+[38;5;243m------------------------------[0m
+[0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block] [0m[1mShould be able to create and restore full snapshot from iscsi raw block volume[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 01/29/26 16:35:09.474[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 01/29/26 16:35:14.478[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 01/29/26 16:35:14.479[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 01/29/26 16:35:14.48[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:35:14.481[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 16:35:14.494[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 16:35:14.495[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-bgd2b/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:35:14.571[0m
+  Jan 29 16:35:14.600: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-teststmnlf to have phase Pending
+  Jan 29 16:35:14.617: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-teststmnlf found and phase=Pending (17.005ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:35:14.617[0m
+I0129 16:35:14.660537   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-restore-bgd2b/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-teststmnlf" [38;5;243m@ 01/29/26 16:36:29.704[0m
+  Jan 29 16:36:29.729: INFO: Waiting up to 10m0s for VolumeSnapshot csi-snapshot-restore-e2e-testssw896 to have readyToUse true
+  Jan 29 16:36:29.745: INFO: Failed to read volume snapshot "csi-snapshot-restore-e2e-testssw896" status field, retrying in 15s
+  Jan 29 16:36:44.759: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testssw896 found but readyToUse is false instead of true.
+  Jan 29 16:36:59.773: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testssw896 found but readyToUse is false instead of true.
+  Jan 29 16:37:14.787: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testssw896 found but readyToUse is false instead of true.
+  Jan 29 16:37:29.805: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testssw896 found and readyToUse=true (1m0.075873208s)
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-bgd2b/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:37:29.805[0m
+  Jan 29 16:37:29.834: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-testspjhvf to have phase Pending
+  Jan 29 16:37:29.845: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-testspjhvf found and phase=Pending (11.075666ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:37:29.845[0m
+I0129 16:37:29.882509   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the block device has data [38;5;243m@ 01/29/26 16:38:29.908[0m
+  Jan 29 16:38:29.909: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-snapshot-restore-bgd2b pvc-pod-tester-cfe619b9-f34d-4935-8849-1acb77172e59rts72 -- /bin/sh -c dd if=/dev/xvda bs=2048 count=1 status=none'
+  Jan 29 16:38:30.489: INFO: stderr: ""
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-bgd2b" for this suite. [38;5;243m@ 01/29/26 16:38:30.524[0m
+  Jan 29 16:39:22.568: INFO: namespace cloud-provider-e2e-tests-snapshot-restore-bgd2b deletion completed in 52.044488167s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-restore-bgd2b" [38;5;243m@ 01/29/26 16:39:22.568[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:39:22.581[0m
+  Jan 29 16:39:22.581: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [253.106 seconds][0m
+[38;5;243m------------------------------[0m
+[0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block] [0m[1mShould be able to create and restore full snapshot from paravirtualized raw block volume[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:39:22.581[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 16:39:22.599[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 16:39:22.599[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-w42xt/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:39:22.691[0m
+  Jan 29 16:39:22.726: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-testszbphq to have phase Pending
+  Jan 29 16:39:22.737: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-testszbphq found and phase=Pending (11.848167ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:39:22.738[0m
+I0129 16:39:22.772862   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-restore-w42xt/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-testszbphq" [38;5;243m@ 01/29/26 16:40:37.817[0m
+  Jan 29 16:40:37.844: INFO: Waiting up to 10m0s for VolumeSnapshot csi-snapshot-restore-e2e-tests9k72h to have readyToUse true
+  Jan 29 16:40:37.858: INFO: Failed to read volume snapshot "csi-snapshot-restore-e2e-tests9k72h" status field, retrying in 15s
+  Jan 29 16:40:52.875: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests9k72h found but readyToUse is false instead of true.
+  Jan 29 16:41:07.889: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests9k72h found but readyToUse is false instead of true.
+  Jan 29 16:41:22.903: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests9k72h found but readyToUse is false instead of true.
+  Jan 29 16:41:37.920: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests9k72h found and readyToUse=true (1m0.074924667s)
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-w42xt/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:41:37.92[0m
+  Jan 29 16:41:37.947: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-testsrhrq6 to have phase Pending
+  Jan 29 16:41:37.959: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-testsrhrq6 found and phase=Pending (12.19725ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:41:37.959[0m
+I0129 16:41:37.997204   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the block device has data [38;5;243m@ 01/29/26 16:42:23.023[0m
+  Jan 29 16:42:23.023: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-snapshot-restore-w42xt pvc-pod-tester-57d44898-3bca-4568-b3e7-ec4b6f42bb62qshq4 -- /bin/sh -c dd if=/dev/xvda bs=2048 count=1 status=none'
+  Jan 29 16:42:23.364: INFO: stderr: ""
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-bgd2b" for this suite. [38;5;243m@ 01/29/26 16:42:23.396[0m
+  Jan 29 16:42:23.409: INFO: Namespace cloud-provider-e2e-tests-snapshot-restore-bgd2b was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-w42xt" for this suite. [38;5;243m@ 01/29/26 16:42:23.409[0m
+  Jan 29 16:43:13.452: INFO: namespace cloud-provider-e2e-tests-snapshot-restore-w42xt deletion completed in 50.042921583s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-restore-bgd2b" [38;5;243m@ 01/29/26 16:43:13.452[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-restore-w42xt" [38;5;243m@ 01/29/26 16:43:13.465[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:43:13.477[0m
+  Jan 29 16:43:13.477: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:43:13.477[0m
+  Jan 29 16:43:13.477: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [230.896 seconds][0m
+[38;5;243m------------------------------[0m
+[0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block] [0m[1mShould be able to create and restore incremental snapshot from iscsi raw block volume[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:43:13.477[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 16:43:13.49[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 16:43:13.49[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-jg5hj/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:43:13.579[0m
+  Jan 29 16:43:13.608: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-testsgr7t2 to have phase Pending
+  Jan 29 16:43:13.620: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-testsgr7t2 found and phase=Pending (11.749458ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:43:13.62[0m
+I0129 16:43:13.656589   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-restore-jg5hj/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-testsgr7t2" [38;5;243m@ 01/29/26 16:44:28.7[0m
+  Jan 29 16:44:28.729: INFO: Waiting up to 10m0s for VolumeSnapshot csi-snapshot-restore-e2e-testsvpdcc to have readyToUse true
+  Jan 29 16:44:28.742: INFO: Failed to read volume snapshot "csi-snapshot-restore-e2e-testsvpdcc" status field, retrying in 15s
+  Jan 29 16:44:43.756: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsvpdcc found but readyToUse is false instead of true.
+  Jan 29 16:44:58.772: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsvpdcc found but readyToUse is false instead of true.
+  Jan 29 16:45:13.790: INFO: VolumeSnapshot csi-snapshot-restore-e2e-testsvpdcc found and readyToUse=true (45.060866167s)
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-jg5hj/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:45:13.79[0m
+  Jan 29 16:45:13.820: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-teststp7rt to have phase Pending
+  Jan 29 16:45:13.831: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-teststp7rt found and phase=Pending (10.491208ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:45:13.831[0m
+I0129 16:45:13.866589   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the block device has data [38;5;243m@ 01/29/26 16:46:13.894[0m
+  Jan 29 16:46:13.895: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-snapshot-restore-jg5hj pvc-pod-tester-6a9d8898-769e-48d6-a8b5-131e4ac86d7e8qvvq -- /bin/sh -c dd if=/dev/xvda bs=2048 count=1 status=none'
+  Jan 29 16:46:14.433: INFO: stderr: ""
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-bgd2b" for this suite. [38;5;243m@ 01/29/26 16:46:14.466[0m
+  Jan 29 16:46:14.479: INFO: Namespace cloud-provider-e2e-tests-snapshot-restore-bgd2b was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-w42xt" for this suite. [38;5;243m@ 01/29/26 16:46:14.479[0m
+  Jan 29 16:46:14.492: INFO: Namespace cloud-provider-e2e-tests-snapshot-restore-w42xt was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-jg5hj" for this suite. [38;5;243m@ 01/29/26 16:46:14.492[0m
+  Jan 29 16:47:06.534: INFO: namespace cloud-provider-e2e-tests-snapshot-restore-jg5hj deletion completed in 52.042471667s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-restore-bgd2b" [38;5;243m@ 01/29/26 16:47:06.534[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-restore-w42xt" [38;5;243m@ 01/29/26 16:47:06.546[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-snapshot-restore-jg5hj" [38;5;243m@ 01/29/26 16:47:06.558[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:47:06.57[0m
+  Jan 29 16:47:06.570: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:47:06.57[0m
+  Jan 29 16:47:06.570: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 01/29/26 16:47:06.57[0m
+  Jan 29 16:47:06.570: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [233.093 seconds][0m
+[38;5;243m------------------------------[0m
+[0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block] [0m[1mShould be able to create and restore incremental snapshot from paravirtualized raw block volume[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 01/29/26 16:47:06.57[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 01/29/26 16:47:06.588[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 01/29/26 16:47:06.588[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-2778z/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:47:06.681[0m
+  Jan 29 16:47:06.745: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-snapshot-restore-e2e-testsmcjkk to have phase Pending
+  Jan 29 16:47:06.757: INFO: PersistentVolumeClaim csi-snapshot-restore-e2e-testsmcjkk found and phase=Pending (12.141459ms)
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 01/29/26 16:47:06.758[0m
+I0129 16:47:06.795210   68522 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-restore-2778z/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-testsmcjkk" [38;5;243m@ 01/29/26 16:48:21.844[0m
+  Jan 29 16:48:21.871: INFO: Waiting up to 10m0s for VolumeSnapshot csi-snapshot-restore-e2e-tests8487b to have readyToUse true
+  Jan 29 16:48:21.884: INFO: Failed to read volume snapshot "csi-snapshot-restore-e2e-tests8487b" status field, retrying in 15s
+  Jan 29 16:48:36.913: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests8487b found but readyToUse is false instead of true.
+  Jan 29 16:48:51.926: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests8487b found but readyToUse is false instead of true.
+  [38;5;214m[TIMEDOUT][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218 [38;5;243m@ 01/29/26 16:48:53.085[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-bgd2b" for this suite. [38;5;243m@ 01/29/26 16:48:53.087[0m
+  Jan 29 16:48:53.103: INFO: Namespace cloud-provider-e2e-tests-snapshot-restore-bgd2b was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-w42xt" for this suite. [38;5;243m@ 01/29/26 16:48:53.103[0m
+  Jan 29 16:48:53.116: INFO: Namespace cloud-provider-e2e-tests-snapshot-restore-w42xt was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-jg5hj" for this suite. [38;5;243m@ 01/29/26 16:48:53.116[0m
+  Jan 29 16:48:53.126: INFO: Namespace cloud-provider-e2e-tests-snapshot-restore-jg5hj was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-snapshot-restore-2778z" for this suite. [38;5;243m@ 01/29/26 16:48:53.126[0m
+  Jan 29 16:49:06.940: INFO: VolumeSnapshot csi-snapshot-restore-e2e-tests8487b found and readyToUse=true (45.068850625s)
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-snapshot-restore-2778z/csi-snapshot-restore-e2e-tests" of volume size "50Gi" [38;5;243m@ 01/29/26 16:49:06.94[0m
+  Jan 29 16:49:06.950: INFO: Failed to create persistent volume claim "cloud-provider-e2e-tests-snapshot-restore-2778z/csi-snapshot-restore-e2e-tests": persistentvolumeclaims "csi-snapshot-restore-e2e-tests" is forbidden: unable to create new content in namespace cloud-provider-e2e-tests-snapshot-restore-2778z because it is being terminated
+  [38;5;214m[TIMEDOUT][0m in [AfterEach] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/cloud_provider_framework.go:142 [38;5;243m@ 01/29/26 16:49:23.088[0m
+[38;5;214m• [TIMEDOUT] [136.520 seconds][0m
+[0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block] [38;5;214m[1m[It] Should be able to create and restore incremental snapshot from paravirtualized raw block volume[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+
+  [38;5;214m[TIMEDOUT] A suite timeout occurred[0m
+  [38;5;214mIn [1m[It][0m[38;5;214m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m [38;5;243m@ 01/29/26 16:48:53.085[0m
+
+  [38;5;214mFull Stack Trace[0m
+
+  [1mThis is the Progress Report generated when the suite timeout occurred:[0m
+    [0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block][0m [1m[38;5;214mShould be able to create and restore incremental snapshot from paravirtualized raw block volume[0m (Spec Runtime: 1m46.514s)
+      [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+      In [1m[38;5;214m[It][0m (Node Runtime: 1m46.488s)
+        [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+        At [1m[38;5;214m[By Step] Creating a Volume Snapshot "cloud-provider-e2e-tests-snapshot-restore-2778z/csi-snapshot-restore-e2e-tests" using pvc "csi-snapshot-restore-e2e-testsmcjkk"[0m (Step Runtime: 31.241s)
+          [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:88[0m
+
+        [1m[4mSpec Goroutine[0m
+        [38;5;214mgoroutine 1937 [sleep][0m
+          [38;5;243mtime.Sleep(0x37e11d600)[0m
+            [38;5;243m/opt/homebrew/opt/go/libexec/src/runtime/time.go:363[0m
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).WaitForVSReadyToUse(0x14000093dc0, {0x140007456e0, 0x2f}, {0x14001094120, 0x23})[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:132[0m
+              | func (j *PVCTestJig) WaitForVSReadyToUse(ns string, vsName string) error {
+              | 	Logf("Waiting up to %v for VolumeSnapshot %s to have readyToUse true", DefaultTimeout, vsName)
+              [1m[38;5;214m> 	for start := time.Now(); time.Since(start) < DefaultTimeout; time.Sleep(Poll) {[0m
+              | 		vs, err := j.SnapClient.SnapshotV1().VolumeSnapshots(ns).Get(context.Background(), vsName, metav1.GetOptions{})
+              | 		if err != nil {
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitVolumeSnapshotOrFail.func1(0x14000fe80e0?)[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:100[0m
+              | vs = j.waitForConditionOrFailVS(namespace, vs.Name, DefaultTimeout, "to be provisioned",
+              | 	func(*snapshot.VolumeSnapshot) bool {
+              [1m[38;5;214m> 		err := j.WaitForVSReadyToUse(namespace, vs.Name)[0m
+              | 		if err != nil {
+              | 			Failf("Volume Snapshot %q did not reach readyToUse true state : %v", vs.Name, err)
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFailVS.func1()[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:117[0m
+              | 	return false, err
+              | }
+              [1m[38;5;214m> if conditionFn(v) {[0m
+              | 	vs = v
+              | 	return true, nil
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x108102858?, 0x10a3a0288?}, 0x10?)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.poll({0x108102858, 0x10a3a0288}, 0x0?, 0x14000093b00, 0x14000093b58)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x108102858?, 0x10a3a0288?}, 0x0?, 0x0?, 0x0?)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.PollImmediate(0x0?, 0x0?, 0x0?)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157[0m
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFailVS(0x1077828e0?, {0x140007456e0?, 0x14000093c98?}, {0x14001094120?, 0x14000093dc0?}, 0x1400041eb40?, {0x106fc5bde, 0x11}, 0x2f?)[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:123[0m
+              | 	return false, nil
+              | }
+              [1m[38;5;214m> if err := wait.PollImmediate(Poll, timeout, pollFunc); err != nil {[0m
+              | 	Failf("Timed out waiting for volume snapshot %q to %s", vs.Name, message)
+              | }
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitVolumeSnapshotOrFail(0x14000093dc0?, 0x1400041ec80, {0x140007456e0?, 0x14000c94690?})[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:98[0m
+              | 
+              | func (j *PVCTestJig) CheckAndAwaitVolumeSnapshotOrFail(vs *snapshot.VolumeSnapshot, namespace string) *snapshot.VolumeSnapshot {
+              [1m[38;5;214m> 	vs = j.waitForConditionOrFailVS(namespace, vs.Name, DefaultTimeout, "to be provisioned",[0m
+              | 		func(*snapshot.VolumeSnapshot) bool {
+              | 			err := j.WaitForVSReadyToUse(namespace, vs.Name)
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitVolumeSnapshotOrFail(0x14000093dc0, {0x140007456e0, 0x2f}, {0x14000c94690?, 0x1f?}, {0x14000c95350?, 0x106f87139?}, 0x106fd95ed?)[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/volumesnapshot_util.go:45[0m
+              | 	tweak func(vs *snapshot.VolumeSnapshot)) *snapshot.VolumeSnapshot {
+              | 	vs := j.CreateVolumeSnapshotOrFail(namespace, vscName, pvcName, tweak)
+              [1m[38;5;214m> 	return j.CheckAndAwaitVolumeSnapshotOrFail(vs, namespace)[0m
+              | }
+              | 
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.testSnapshotAndRestore(0x140007c9688, 0x14000b27b00, 0x14000b27b30, {0x106f84a15, 0x5})[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:556[0m
+              | 
+              | vscName := f.CreateVolumeSnapshotClassOrFail(f.Namespace.Name, setupF.BlockProvisionerName, vscParams, ReclaimPolicyDelete)
+              [1m[38;5;214m> vs := pvcJig.CreateAndAwaitVolumeSnapshotOrFail(f.Namespace.Name, vscName, pvc.Name, nil)[0m
+              | 
+              | if volumeMode == v1.PersistentVolumeFilesystem {
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func25.1.1()[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:222[0m
+              | 		vscParams := map[string]string{framework.BackupType: entry.backupType}
+              | 		scParams[framework.FstypeKey] = entry.fsType
+              [1m[38;5;214m> 		testSnapshotAndRestore(f, scParams, vscParams, v1.PersistentVolumeBlock)[0m
+              | 	})
+              | }
+          [38;5;243mgithub.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x107c21aa0?, 0x1054ad43c?})[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/node.go:524[0m
+          [38;5;243mgithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:942[0m
+          [38;5;243mgithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 96[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:907[0m
+
+  There were [1m[38;5;9madditional failures[0m detected.  To view them in detail run [1mginkgo -vv[0m
+[38;5;243m------------------------------[0m
+[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m
+[38;5;243m------------------------------[0m
+[0m[1m[SynchronizedAfterSuite] [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/setup.go:36[0m
+  Jan 29 16:49:23.092: INFO: Running AfterSuite actions on all node
+[38;5;10m[SynchronizedAfterSuite] PASSED [0.000 seconds][0m
+[38;5;243m------------------------------[0m
+
+[38;5;9m[1mSummarizing 1 Failure:[0m
+  [38;5;214m[TIMEDOUT][0m [0mRaw Block Volume Snapshot Creation and Restore [38;5;243m[cloudprovider][storage][csi][snapshot][restore][raw-block] [38;5;214m[1m[It] Should be able to create and restore incremental snapshot from paravirtualized raw block volume[0m
+  [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_snapshot_restore.go:218[0m
+
+[38;5;9m[1mRan 20 of 178 Specs in 3621.590 seconds[0m
+[38;5;9m[1mFAIL! - Suite Timeout Elapsed[0m -- [38;5;10m[1m19 Passed[0m | [38;5;9m[1m1 Failed[0m | [38;5;11m[1m0 Pending[0m | [38;5;14m[1m158 Skipped[0m
+--- FAIL: TestE2E (3621.59s)
+FAIL
+
+Ginkgo ran 1 suite in 1h0m31.134996667s
+
+Test Suite Failed
+[0;31mARM Failed[0m

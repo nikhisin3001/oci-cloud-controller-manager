@@ -19,12 +19,12 @@ import (
 
 	sharedfw "github.com/oracle/oci-cloud-controller-manager/test/e2e/framework"
 
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	apitypes "k8s.io/apimachinery/pkg/types"
 	clientset "k8s.io/client-go/kubernetes"
-	"k8s.io/cloud-provider"
+	cloudprovider "k8s.io/cloud-provider"
 )
 
 var _ = Describe("Zones", func() {
@@ -45,7 +45,7 @@ var _ = Describe("Zones", func() {
 		node = nodes.Items[0]
 	})
 
-	Context("[cloudprovider][ccm]", func() {
+	Context("[cloudprovider][ccm][zones]", func() {
 		It("should be possible to get a non-empty zone by provider ID", func() {
 			providerID := node.Spec.ProviderID
 			Expect(providerID).NotTo(BeEmpty())

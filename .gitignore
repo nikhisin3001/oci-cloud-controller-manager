@@ -48,3 +48,6 @@ config.yaml
 
 .idea/
 *.iml
+
+.gocache
+.gomodcache

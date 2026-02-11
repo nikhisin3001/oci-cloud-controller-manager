@@ -1,0 +1,1115 @@
+./hack/run_e2e_test.sh
+CLUSTER_KUBECONFIG is /Users/nikhilsingh/.kube/config
+CLOUD_CONFIG is /Users/nikhilsingh/work/OpenShift/oci-openshift/cloud-provider.yaml
+MNT_TARGET_ID is ocid1.mounttarget.oc1.us_sanjose_1.aaaaaa4np2whacnsonvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa
+MNT_TARGET_SUBNET_ID is ocid1.subnet.oc1.us-sanjose-1.aaaaaaaalzpjfdtdrewucxanwwxf7omoypho7wmddmflm4l4j5g7okds4qvq
+MNT_TARGET_COMPARTMENT_ID is ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+Running focused tests: \[cloudprovider\]
+Skipping focused tests: \[cloudprovider\]\[storage\]\[csi\]\[snapshot\]\[restore\]\[raw-block\]
+Running Suite: Cloud Provider OCI E2E suite - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci
+==========================================================================================================================================================
+Random Seed: [1m1770067477[0m
+
+Will run [1m166[0m of [1m178[0m specs
+[38;5;243m------------------------------[0m
+[0m[1m[SynchronizedBeforeSuite] [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/setup.go:24[0m
+  Feb  2 13:24:49.697: INFO: initializing framework
+  Feb  2 13:24:49.697: INFO: OCI AdLocation: gzqB:US-SANJOSE-1-AD-1
+  Feb  2 13:24:49.697: INFO: OCI AdLabel: US-SANJOSE-1-AD-1
+  Feb  2 13:24:49.697: INFO: OCI Mount Target OCID: ocid1.mounttarget.oc1.us_sanjose_1.aaaaaa4np2whacnsonvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa
+  Feb  2 13:24:49.697: INFO: OCI Mount Target Subnet OCID: ocid1.subnet.oc1.us-sanjose-1.aaaaaaaalzpjfdtdrewucxanwwxf7omoypho7wmddmflm4l4j5g7okds4qvq
+  Feb  2 13:24:49.697: INFO: OCI Mount Target Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Feb  2 13:24:49.697: INFO: FSS Volume Handle is : ocid1.filesystem.oc1.us_sanjose_1.aaaaaaaaaanbt4o4onvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa:10.0.26.74:/FileSystem-20260128-1519-40
+  Feb  2 13:24:49.697: INFO: Lustre Volume Handle is : dummy
+  Feb  2 13:24:49.697: INFO: Lustre Subnet CIDR is : 
+  Feb  2 13:24:49.697: INFO: Static Snapshot Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Feb  2 13:24:49.697: INFO: Custom CSI Driver Handle: 
+  Feb  2 13:24:49.697: INFO: Block Provisioner name: blockvolume.csi.oraclecloud.com
+  Feb  2 13:24:49.697: INFO: FSS Provisioner name: fss.csi.oraclecloud.com
+  Feb  2 13:24:49.697: INFO: Run Uhp E2Es as well: false
+  Feb  2 13:24:49.697: INFO: CMEK KMS Key: ocid1.key.oc1.us-sanjose-1.gruxvfxvaafdk.abzwuljrvphi4cwueby5qsjzbalmn7ncaw3oat6qflsksks2xsofq6shxmvq
+  Feb  2 13:24:49.697: INFO: NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Feb  2 13:24:49.697: INFO: Backend NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Feb  2 13:24:49.697: INFO: Reserved IP: 192.9.145.36
+  Feb  2 13:24:49.697: INFO: Architecture: 
+  Feb  2 13:24:49.697: INFO: OCI compartment1 OCID: 
+  Feb  2 13:24:49.697: INFO: Cluster Type: BASIC_CLUSTER
+  Feb  2 13:24:49.697: INFO: CloudProviderFramework Setup
+  Feb  2 13:24:49.697: INFO: Running tests with existing cluster.
+  Feb  2 13:24:49.697: INFO: initializing framework
+  Feb  2 13:24:49.697: INFO: OCI AdLocation: gzqB:US-SANJOSE-1-AD-1
+  Feb  2 13:24:49.697: INFO: OCI AdLabel: US-SANJOSE-1-AD-1
+  Feb  2 13:24:49.697: INFO: OCI Mount Target OCID: ocid1.mounttarget.oc1.us_sanjose_1.aaaaaa4np2whacnsonvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa
+  Feb  2 13:24:49.697: INFO: OCI Mount Target Subnet OCID: ocid1.subnet.oc1.us-sanjose-1.aaaaaaaalzpjfdtdrewucxanwwxf7omoypho7wmddmflm4l4j5g7okds4qvq
+  Feb  2 13:24:49.697: INFO: OCI Mount Target Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Feb  2 13:24:49.697: INFO: FSS Volume Handle is : ocid1.filesystem.oc1.us_sanjose_1.aaaaaaaaaanbt4o4onvggllqojxwiotvomwxgylonjxxgzjngewwczbngeaaaaaa:10.0.26.74:/FileSystem-20260128-1519-40
+  Feb  2 13:24:49.697: INFO: Lustre Volume Handle is : dummy
+  Feb  2 13:24:49.697: INFO: Lustre Subnet CIDR is : 
+  Feb  2 13:24:49.697: INFO: Static Snapshot Compartment OCID: ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa
+  Feb  2 13:24:49.697: INFO: Custom CSI Driver Handle: 
+  Feb  2 13:24:49.697: INFO: Block Provisioner name: blockvolume.csi.oraclecloud.com
+  Feb  2 13:24:49.697: INFO: FSS Provisioner name: fss.csi.oraclecloud.com
+  Feb  2 13:24:49.697: INFO: Run Uhp E2Es as well: false
+  Feb  2 13:24:49.697: INFO: CMEK KMS Key: ocid1.key.oc1.us-sanjose-1.gruxvfxvaafdk.abzwuljrvphi4cwueby5qsjzbalmn7ncaw3oat6qflsksks2xsofq6shxmvq
+  Feb  2 13:24:49.697: INFO: NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Feb  2 13:24:49.697: INFO: Backend NSG OCIDS: ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaakzmhtzwl4gfeba2ihsa7v6nizknaven4c4oruj2x2fcg3v6lvr2a,ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaabneoig24e3nhk77rl722gvzg3gdcg4rvglephltlqzbfbkimxdvq
+  Feb  2 13:24:49.697: INFO: Reserved IP: 192.9.145.36
+  Feb  2 13:24:49.697: INFO: Architecture: 
+  Feb  2 13:24:49.697: INFO: OCI compartment1 OCID: 
+  Feb  2 13:24:49.698: INFO: Cluster Type: BASIC_CLUSTER
+[38;5;10m[SynchronizedBeforeSuite] PASSED [0.000 seconds][0m
+[38;5;243m------------------------------[0m
+[0mEnd to end enabled TLS - different certificates [38;5;243m[cloudprovider][ccm][lb] [0m[1mshould be possible to create and mutate a Service type:LoadBalancer [Canary][0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:1449[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 13:24:49.698[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 13:24:59.704[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 13:24:59.709[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 13:24:59.709[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 13:24:59.71[0m
+  [1mSTEP:[0m creating a pod to be part of the TCP service e2e-diff-certs-service [38;5;243m@ 02/02/26 13:25:01.501[0m
+  Feb  2 13:25:01.652: INFO: Waiting up to 5m0s for 1 pods to be created
+  Feb  2 13:25:01.802: INFO: Found all 1 pods
+  Feb  2 13:25:01.802: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [e2e-diff-certs-service-2lrlt]
+  Feb  2 13:25:01.802: INFO: Waiting up to 3m0s for pod "e2e-diff-certs-service-2lrlt" in namespace "cloud-provider-e2e-tests-e2e-diff-certs-69bzp" to be "running and ready"
+  Feb  2 13:25:01.949: INFO: Pod "e2e-diff-certs-service-2lrlt": Phase="Pending", Reason="", readiness=false. Elapsed: 146.760167ms
+  Feb  2 13:25:04.097: INFO: Pod "e2e-diff-certs-service-2lrlt": Phase="Running", Reason="", readiness=true. Elapsed: 2.294809709s
+  Feb  2 13:25:04.097: INFO: Pod "e2e-diff-certs-service-2lrlt" satisfied condition "running and ready"
+  Feb  2 13:25:04.097: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [e2e-diff-certs-service-2lrlt]
+  [1mSTEP:[0m waiting for the TCP service to have a load balancer [38;5;243m@ 02/02/26 13:25:04.097[0m
+  Feb  2 13:25:04.097: INFO: Waiting up to 2m0s for service "e2e-diff-certs-service" to have a LoadBalancer
+  Feb  2 13:25:20.393: INFO: TCP node port: 30935
+  Feb  2 13:25:20.393: INFO: TCP load balancer: 10.0.2.147
+  [1mSTEP:[0m changing TCP service back to type=ClusterIP [38;5;243m@ 02/02/26 13:25:20.393[0m
+  Feb  2 13:25:20.700: INFO: Waiting up to 2m0s for service "e2e-diff-certs-service" to have no LoadBalancer
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-e2e-diff-certs-69bzp" for this suite. [38;5;243m@ 02/02/26 13:25:21.144[0m
+  Feb  2 13:25:43.588: INFO: namespace cloud-provider-e2e-tests-e2e-diff-certs-69bzp deletion completed in 22.443710042s
+[38;5;10m• [53.890 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Volume Cloning with static source Volume [38;5;243m[cloudprovider][storage][csi][static][cloning] [0m[1mCreate Clone PVC from a statically created source volume[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_cloning.go:319[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 13:25:43.588[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 13:25:53.595[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 13:25:53.596[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 13:25:53.597[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 13:25:53.598[0m
+  [1mSTEP:[0m Creating an OCI block storage client [38;5;243m@ 02/02/26 13:25:53.748[0m
+  [1mSTEP:[0m Creating an OCI compute client [38;5;243m@ 02/02/26 13:25:53.748[0m
+Waiting for volume to be AVAILABLE...
+Volume ocid1.volume.oc1.us-sanjose-1.abzwuljrlddsudigiuawribr3ecfcqnkgugzdpoecvxywmbc3ibxcsrinwqa not yet in expected state. Current: PROVISIONING, Expected: AVAILABLE
+Volume is AVAILABLE
+  Feb  2 13:26:05.506: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-static-cloning-test8hmj6 to have phase Available
+  Feb  2 13:26:05.653: INFO: PersistentVolumeClaim csi-static-cloning-test8hmj6 found and phase=Available (146.891458ms)
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-static-cloning-gdmjf/csi-static-cloning-test" of volume size "50Gi" [38;5;243m@ 02/02/26 13:26:05.653[0m
+  Feb  2 13:26:05.953: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-static-cloning-test27vgx to have phase Pending
+  Feb  2 13:26:06.098: INFO: PersistentVolumeClaim csi-static-cloning-test27vgx found and phase=Pending (145.219125ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 13:26:06.098[0m
+I0202 13:26:06.266661   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-static-cloning-gdmjf/csi-static-cloning-test" of volume size "50Gi" [38;5;243m@ 02/02/26 13:28:22.159[0m
+  Feb  2 13:28:22.456: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-static-cloning-testgvmgn to have phase Pending
+  Feb  2 13:28:22.612: INFO: PersistentVolumeClaim csi-static-cloning-testgvmgn found and phase=Pending (156.911166ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 13:28:22.612[0m
+I0202 13:28:22.787298   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app2\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app2\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app2\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app2\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 02/02/26 13:29:53.08[0m
+  Feb  2 13:29:53.081: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-static-cloning-gdmjf csi-static-cloning-testw7vcj -- /bin/sh -c ls /data'
+  Feb  2 13:29:55.912: INFO: stderr: ""
+  [1mSTEP:[0m check if the file is corrupt [38;5;243m@ 02/02/26 13:29:55.912[0m
+  Feb  2 13:29:55.913: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-static-cloning-gdmjf csi-static-cloning-testw7vcj -- /bin/sh -c md5sum /data/testdata.txt'
+  Feb  2 13:29:58.266: INFO: stderr: ""
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-static-cloning-gdmjf" for this suite. [38;5;243m@ 02/02/26 13:29:58.266[0m
+  Feb  2 13:30:48.710: INFO: namespace cloud-provider-e2e-tests-csi-static-cloning-gdmjf deletion completed in 50.444007542s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-static-cloning-gdmjf" [38;5;243m@ 02/02/26 13:30:48.71[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 13:30:48.859[0m
+  Feb  2 13:30:48.859: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "ocid1.volume.oc1.us-sanjose-1.abzwuljrlddsudigiuawribr3ecfcqnkgugzdpoecvxywmbc3ibxcsrinwqa" [38;5;243m@ 02/02/26 13:30:48.859[0m
+[38;5;10m• [305.419 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI RWX Raw Block Volume Creation - Immediate Volume Binding [38;5;243m[cloudprovider][storage][csi][raw-block][rwx] [0m[1mCreate PVC without pod and wait to be bound.[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_rwx_volume_creation.go:33[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 13:30:49.006[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 13:30:59.014[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 13:30:59.015[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 13:30:59.016[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 13:30:59.017[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-immediate-s5zwn/csi-provisioner-e2e-immediate-bind" of volume size "50Gi" [38;5;243m@ 02/02/26 13:30:59.481[0m
+  Feb  2 13:30:59.892: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-immediate-bindfxplj to have phase Bound
+  Feb  2 13:31:00.038: INFO: PersistentVolumeClaim csi-provisioner-e2e-immediate-bindfxplj found but phase is Pending instead of Bound.
+  Feb  2 13:31:15.254: INFO: PersistentVolumeClaim csi-provisioner-e2e-immediate-bindfxplj found and phase=Bound (15.361027958s)
+  [1mSTEP:[0m Checking the claim and volume are bound. [38;5;243m@ 02/02/26 13:31:15.254[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-immediate-s5zwn" for this suite. [38;5;243m@ 02/02/26 13:31:15.696[0m
+  Feb  2 13:31:30.141: INFO: namespace cloud-provider-e2e-tests-csi-immediate-s5zwn deletion completed in 14.445206084s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-immediate-s5zwn" [38;5;243m@ 02/02/26 13:31:30.141[0m
+[38;5;10m• [41.283 seconds][0m
+[38;5;243m------------------------------[0m
+[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m
+[38;5;243m------------------------------[0m
+[0mZones [38;5;243m[cloudprovider][ccm][zones] [0m[1mshould be possible to get a non-empty zone by provider ID[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/zones.go:49[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 13:31:30.29[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 13:31:40.296[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 13:31:40.298[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 13:31:40.298[0m
+  [1mSTEP:[0m calling GetZoneByProviderID() [38;5;243m@ 02/02/26 13:31:51.098[0m
+  Feb  2 13:31:51.931: INFO: "oci://ocid1.instance.oc1.us-sanjose-1.anzwuljr2bh44rycyxp5td4v53q66gnpt5ucrcd2ewkurl3rfexnh2276l3a": Region="us-sanjose-1"
+  Feb  2 13:31:51.931: INFO: "oci://ocid1.instance.oc1.us-sanjose-1.anzwuljr2bh44rycyxp5td4v53q66gnpt5ucrcd2ewkurl3rfexnh2276l3a": FailureDomain="US-SANJOSE-1-AD-1"
+[38;5;10m• [21.641 seconds][0m
+[38;5;243m------------------------------[0m
+[0mZones [38;5;243m[cloudprovider][ccm][zones] [0m[1mshould be possible to get a non-empty zone by node name[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/zones.go:62[0m
+  [1mSTEP:[0m calling GetZoneByNodeName() [38;5;243m@ 02/02/26 13:32:02.834[0m
+  Feb  2 13:32:06.582: INFO: "arm-compute-1.privateocp.openshiftvcn.oraclevcn.com": Region="us-sanjose-1"
+  Feb  2 13:32:06.582: INFO: "arm-compute-1.privateocp.openshiftvcn.oraclevcn.com": FailureDomain="US-SANJOSE-1-AD-1"
+[38;5;10m• [14.652 seconds][0m
+[38;5;243m------------------------------[0m
+[0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [0m[1mShould be possible to create a persistent volume claim for a block storage (PVC)[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:27[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 13:32:06.582[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 13:32:16.59[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 13:32:16.591[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 13:32:16.592[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 13:32:16.593[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-block-basic-7shkg/volume-provisioner-e2e-tests-pvc" of volume size "50Gi" [38;5;243m@ 02/02/26 13:32:17.033[0m
+  Feb  2 13:32:17.338: INFO: Waiting up to 10m0s for PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd to have phase Bound
+  Feb  2 13:32:17.485: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:32:32.631: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:32:47.779: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:33:02.926: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:33:18.074: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:33:33.220: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:33:48.366: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:34:03.514: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:34:18.661: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:34:33.811: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:34:48.957: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:35:04.102: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:35:19.248: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:35:34.398: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:35:49.552: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:36:04.697: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:36:19.844: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:36:34.990: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:36:50.136: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:37:05.280: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:37:20.426: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:37:35.572: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:37:50.717: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:38:05.863: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:38:21.007: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:38:36.152: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:38:51.299: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:39:06.445: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:39:21.591: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:39:36.736: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:39:51.882: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:40:07.033: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:40:22.179: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:40:37.509: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:40:52.655: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:41:07.801: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:41:22.946: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:41:38.092: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:41:53.240: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:42:08.386: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd found but phase is Pending instead of Bound.
+  Feb  2 13:42:23.387: INFO: PVC "volume-provisioner-e2e-tests-pvcd9wtd" did not reach Bound state : PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd not in phase Bound within 10m0s
+E0202 13:42:23.390043   13140 runtime.go:142] "Observed a panic" panic=<
+	[1m[38;5;9mYour Test Panicked[0m
+	[38;5;246mFailf("PVC %q did not reach %v state : %v", pvc.Name, pvcPhase, err)[0m
+	[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m
+	  When you, or your assertion library, calls Ginkgo's Fail(),
+	  Ginkgo panics to prevent subsequent assertions from running.
+	
+	  Normally Ginkgo rescues this panic so you shouldn't see it.
+	
+	  However, if you make an assertion in a goroutine, Ginkgo can't capture the
+	  panic.
+	  To circumvent this, you should call
+	
+	  	defer GinkgoRecover()
+	
+	  at the top of the goroutine that caused this panic.
+	
+	  Alternatively, you may have made an assertion outside of a Ginkgo
+	  leaf node (e.g. in a container node or some out-of-band function) - please
+	  move your assertion to
+	  an appropriate Ginkgo node (e.g. a BeforeSuite, BeforeEach, It, etc...).
+	
+	  [1mLearn more at:[0m
+	  [38;5;14m[4mhttp://onsi.github.io/ginkgo/#mental-model-how-ginkgo-handles-failure[0m
+ > panicGoValue="types.GinkgoError{Heading:\"Your Test Panicked\", Message:\"When you, or your assertion library, calls Ginkgo's Fail(),\\nGinkgo panics to prevent subsequent assertions from running.\\n\\nNormally Ginkgo rescues this panic so you shouldn't see it.\\n\\nHowever, if you make an assertion in a goroutine, Ginkgo can't capture the panic.\\nTo circumvent this, you should call\\n\\n\\tdefer GinkgoRecover()\\n\\nat the top of the goroutine that caused this panic.\\n\\nAlternatively, you may have made an assertion outside of a Ginkgo\\nleaf node (e.g. in a container node or some out-of-band function) - please move your assertion to\\nan appropriate Ginkgo node (e.g. a BeforeSuite, BeforeEach, It, etc...).\", DocLink:\"mental-model-how-ginkgo-handles-failure\", CodeLocation:types.CodeLocation{FileName:\"/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go\", LineNumber:377, FullStackTrace:\"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c780)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0\\nk8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24\\nk8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000e7c3c0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60\\nk8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000de3af0, 0x14000de3b48)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34\\nk8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c\\nk8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000de3c98?, 0x106b4d13c?, 0x14000e26600?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000de3c48?, {0x140012d17d0?, 0x10?}, {0x14000e2a510?, 0x106c17301?}, 0x14000a68540?, {0x106c4dbde, 0x11}, 0x140012d17d0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000de3e30, 0x140012d17d0?, {0x140012d17d0?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000de3e30, {0x140012d17d0, 0x2a}, {0x106c0b5d6?, 0xe?}, {0x140001ac9db?, 0x14000b0fc80?}, {0x0?, 0x0?}, 0x1400107a400?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.1()\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:31 +0x19c\", CustomMessage:\"\"}}" stacktrace=<
+	goroutine 563 [running]:
+	k8s.io/apimachinery/pkg/util/runtime.logPanic({0x107d8a858, 0x10a02c288}, {0x107a2de60, 0x140009bea80})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:132 +0x94
+	k8s.io/apimachinery/pkg/util/runtime.handleCrash({0x107d8a858, 0x10a02c288}, {0x107a2de60, 0x140009bea80}, {0x0, 0x0, 0x14000de3648?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:107 +0xdc
+	k8s.io/apimachinery/pkg/util/runtime.HandleCrashWithContext({0x107d8a858, 0x10a02c288}, {0x0, 0x0, 0x0})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:78 +0x5c
+	panic({0x107a2de60?, 0x140009bea80?})
+		/opt/homebrew/Cellar/go/1.25.0/libexec/src/runtime/panic.go:783 +0x120
+	github.com/onsi/ginkgo/v2.Fail({0x140007bf8c0, 0xb8}, {0x14000de38c8?, 0x106c09be2?, 0x0?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/core_dsl.go:447 +0x13c
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.FailfWithOffset(0x1, {0x106ca0ce7?, 0x5?}, {0x14000de3948?, 0x2a?, 0x14000e2a660?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/util.go:51 +0xac
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.Failf(...)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/util.go:43
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c780)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0
+	k8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24
+	k8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000e7c3c0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60
+	k8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000de3af0, 0x14000de3b48)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34
+	k8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c
+	k8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000de3c98?, 0x106b4d13c?, 0x14000e26600?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000de3c48?, {0x140012d17d0?, 0x10?}, {0x14000e2a510?, 0x106c17301?}, 0x14000a68540?, {0x106c4dbde, 0x11}, 0x140012d17d0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000de3e30, 0x140012d17d0?, {0x140012d17d0?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000de3e30, {0x140012d17d0, 0x2a}, {0x106c0b5d6?, 0xe?}, {0x140001ac9db?, 0x14000b0fc80?}, {0x0?, 0x0?}, 0x1400107a400?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.1()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:31 +0x19c
+	github.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x1078a9aa0?, 0x382b4d00000000?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/node.go:524 +0x24
+	github.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:942 +0x27c
+	created by github.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 183
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:907 +0xa3c
+ >
+  [38;5;9m[FAILED][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 [38;5;243m@ 02/02/26 13:42:23.39[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-block-basic-7shkg" for this suite. [38;5;243m@ 02/02/26 13:42:23.39[0m
+  Feb  2 13:42:37.833: INFO: namespace cloud-provider-e2e-tests-block-basic-7shkg deletion completed in 14.4430035s
+  [1mSTEP:[0m Deleting storage class "oci" [38;5;243m@ 02/02/26 13:42:37.833[0m
+[38;5;9m• [FAILED] [631.402 seconds][0m
+[0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [38;5;9m[1m[It] Should be possible to create a persistent volume claim for a block storage (PVC)[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:27[0m
+
+  [38;5;9m[FAILED] Feb  2 13:42:23.387: PVC "volume-provisioner-e2e-tests-pvcd9wtd" did not reach Bound state : PersistentVolumeClaim volume-provisioner-e2e-tests-pvcd9wtd not in phase Bound within 10m0s[0m
+  [38;5;9mIn [1m[It][0m[38;5;9m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m [38;5;243m@ 02/02/26 13:42:23.39[0m
+
+  [38;5;9mFull Stack Trace[0m
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c780)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0
+    k8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24
+    k8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000e7c3c0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60
+    k8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000de3af0, 0x14000de3b48)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34
+    k8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c
+    k8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000de3c98?, 0x106b4d13c?, 0x14000e26600?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000de3c48?, {0x140012d17d0?, 0x10?}, {0x14000e2a510?, 0x106c17301?}, 0x14000a68540?, {0x106c4dbde, 0x11}, 0x140012d17d0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000de3e30, 0x140012d17d0?, {0x140012d17d0?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000de3e30, {0x140012d17d0, 0x2a}, {0x106c0b5d6?, 0xe?}, {0x140001ac9db?, 0x14000b0fc80?}, {0x0?, 0x0?}, 0x1400107a400?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.1()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:31 +0x19c
+[38;5;243m------------------------------[0m
+[0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [0m[1mShould be possible to create a persistent volume claim (PVC) for a block storage of Ext3 file system [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:35[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 13:42:37.983[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-block-basic-jxcxw/volume-provisioner-e2e-tests-pvc" of volume size "50Gi" [38;5;243m@ 02/02/26 13:42:38.423[0m
+  Feb  2 13:42:38.719: INFO: Waiting up to 10m0s for PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p to have phase Bound
+  Feb  2 13:42:38.864: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:42:54.014: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:43:09.160: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:43:24.307: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:43:39.452: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:43:54.598: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:44:09.746: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:44:24.892: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:44:40.038: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:44:55.185: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:45:10.331: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:45:25.477: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:45:40.624: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:45:55.774: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:46:10.921: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:46:26.072: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:46:41.219: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:46:56.366: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:47:11.516: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:47:26.662: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:47:41.808: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:47:56.960: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:48:12.112: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:48:27.323: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:48:42.468: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:48:57.618: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:49:12.766: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:49:27.912: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:49:43.057: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:49:58.205: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:50:13.350: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:50:28.499: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:50:43.646: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:50:58.793: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:51:13.938: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:51:29.085: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:51:44.231: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:51:59.377: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:52:14.523: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:52:29.669: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p found but phase is Pending instead of Bound.
+  Feb  2 13:52:44.670: INFO: PVC "volume-provisioner-e2e-tests-pvcfp56p" did not reach Bound state : PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p not in phase Bound within 10m0s
+E0202 13:52:44.672320   13140 runtime.go:142] "Observed a panic" panic=<
+	[1m[38;5;9mYour Test Panicked[0m
+	[38;5;246mFailf("PVC %q did not reach %v state : %v", pvc.Name, pvcPhase, err)[0m
+	[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m
+	  When you, or your assertion library, calls Ginkgo's Fail(),
+	  Ginkgo panics to prevent subsequent assertions from running.
+	
+	  Normally Ginkgo rescues this panic so you shouldn't see it.
+	
+	  However, if you make an assertion in a goroutine, Ginkgo can't capture the
+	  panic.
+	  To circumvent this, you should call
+	
+	  	defer GinkgoRecover()
+	
+	  at the top of the goroutine that caused this panic.
+	
+	  Alternatively, you may have made an assertion outside of a Ginkgo
+	  leaf node (e.g. in a container node or some out-of-band function) - please
+	  move your assertion to
+	  an appropriate Ginkgo node (e.g. a BeforeSuite, BeforeEach, It, etc...).
+	
+	  [1mLearn more at:[0m
+	  [38;5;14m[4mhttp://onsi.github.io/ginkgo/#mental-model-how-ginkgo-handles-failure[0m
+ > panicGoValue="types.GinkgoError{Heading:\"Your Test Panicked\", Message:\"When you, or your assertion library, calls Ginkgo's Fail(),\\nGinkgo panics to prevent subsequent assertions from running.\\n\\nNormally Ginkgo rescues this panic so you shouldn't see it.\\n\\nHowever, if you make an assertion in a goroutine, Ginkgo can't capture the panic.\\nTo circumvent this, you should call\\n\\n\\tdefer GinkgoRecover()\\n\\nat the top of the goroutine that caused this panic.\\n\\nAlternatively, you may have made an assertion outside of a Ginkgo\\nleaf node (e.g. in a container node or some out-of-band function) - please move your assertion to\\nan appropriate Ginkgo node (e.g. a BeforeSuite, BeforeEach, It, etc...).\", DocLink:\"mental-model-how-ginkgo-handles-failure\", CodeLocation:types.CodeLocation{FileName:\"/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go\", LineNumber:377, FullStackTrace:\"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c3c0)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0\\nk8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24\\nk8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000bb94a0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60\\nk8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000ea5ae0, 0x14000ea5b38)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34\\nk8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c\\nk8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000ea5c88?, 0x106b4d13c?, 0x14001031080?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000ea5c38?, {0x140011fa780?, 0x10?}, {0x140011fa8d0?, 0x106c17301?}, 0x14000d7a540?, {0x106c4dbde, 0x11}, 0x140011fa780?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000ea5e30, 0x140011fa780?, {0x140011fa780?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000ea5e30, {0x140011fa780, 0x2a}, {0x106c0b5d6?, 0x10740a8e0?}, {0x14000dd8090?, 0x14000963440?}, {0x0?, 0x0?}, 0x1046ca400?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.2()\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:40 +0x290\", CustomMessage:\"\"}}" stacktrace=<
+	goroutine 620 [running]:
+	k8s.io/apimachinery/pkg/util/runtime.logPanic({0x107d8a858, 0x10a02c288}, {0x107a2de60, 0x14000528f50})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:132 +0x94
+	k8s.io/apimachinery/pkg/util/runtime.handleCrash({0x107d8a858, 0x10a02c288}, {0x107a2de60, 0x14000528f50}, {0x0, 0x0, 0x14000ea5638?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:107 +0xdc
+	k8s.io/apimachinery/pkg/util/runtime.HandleCrashWithContext({0x107d8a858, 0x10a02c288}, {0x0, 0x0, 0x0})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:78 +0x5c
+	panic({0x107a2de60?, 0x14000528f50?})
+		/opt/homebrew/Cellar/go/1.25.0/libexec/src/runtime/panic.go:783 +0x120
+	github.com/onsi/ginkgo/v2.Fail({0x14000fd0300, 0xb8}, {0x14000ea58b8?, 0x106c09be2?, 0x0?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/core_dsl.go:447 +0x13c
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.FailfWithOffset(0x1, {0x106ca0ce7?, 0x5?}, {0x14000ea5938?, 0x2a?, 0x14000dd81e0?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/util.go:51 +0xac
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.Failf(...)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/util.go:43
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c3c0)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0
+	k8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24
+	k8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000bb94a0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60
+	k8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000ea5ae0, 0x14000ea5b38)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34
+	k8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c
+	k8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000ea5c88?, 0x106b4d13c?, 0x14001031080?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000ea5c38?, {0x140011fa780?, 0x10?}, {0x140011fa8d0?, 0x106c17301?}, 0x14000d7a540?, {0x106c4dbde, 0x11}, 0x140011fa780?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000ea5e30, 0x140011fa780?, {0x140011fa780?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000ea5e30, {0x140011fa780, 0x2a}, {0x106c0b5d6?, 0x10740a8e0?}, {0x14000dd8090?, 0x14000963440?}, {0x0?, 0x0?}, 0x1046ca400?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.2()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:40 +0x290
+	github.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x1078a9aa0?, 0x1400040576c?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/node.go:524 +0x24
+	github.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:942 +0x27c
+	created by github.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 183
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:907 +0xa3c
+ >
+  [38;5;9m[FAILED][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 [38;5;243m@ 02/02/26 13:52:44.672[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-block-basic-7shkg" for this suite. [38;5;243m@ 02/02/26 13:52:44.672[0m
+  Feb  2 13:52:44.820: INFO: Namespace cloud-provider-e2e-tests-block-basic-7shkg was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-block-basic-jxcxw" for this suite. [38;5;243m@ 02/02/26 13:52:44.82[0m
+  Feb  2 13:52:59.267: INFO: namespace cloud-provider-e2e-tests-block-basic-jxcxw deletion completed in 14.447355209s
+  [1mSTEP:[0m Deleting storage class "oci" [38;5;243m@ 02/02/26 13:52:59.267[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-block-basic-jxcxw" [38;5;243m@ 02/02/26 13:52:59.416[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-block-basic-jxcxw" [38;5;243m@ 02/02/26 13:52:59.566[0m
+[38;5;9m• [FAILED] [621.728 seconds][0m
+[0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [38;5;9m[1m[It] Should be possible to create a persistent volume claim (PVC) for a block storage of Ext3 file system [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:35[0m
+
+  [38;5;9m[FAILED] Feb  2 13:52:44.670: PVC "volume-provisioner-e2e-tests-pvcfp56p" did not reach Bound state : PersistentVolumeClaim volume-provisioner-e2e-tests-pvcfp56p not in phase Bound within 10m0s[0m
+  [38;5;9mIn [1m[It][0m[38;5;9m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m [38;5;243m@ 02/02/26 13:52:44.672[0m
+
+  [38;5;9mFull Stack Trace[0m
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c3c0)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0
+    k8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24
+    k8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000bb94a0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60
+    k8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000ea5ae0, 0x14000ea5b38)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34
+    k8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c
+    k8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000ea5c88?, 0x106b4d13c?, 0x14001031080?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000ea5c38?, {0x140011fa780?, 0x10?}, {0x140011fa8d0?, 0x106c17301?}, 0x14000d7a540?, {0x106c4dbde, 0x11}, 0x140011fa780?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000ea5e30, 0x140011fa780?, {0x140011fa780?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000ea5e30, {0x140011fa780, 0x2a}, {0x106c0b5d6?, 0x10740a8e0?}, {0x14000dd8090?, 0x14000963440?}, {0x0?, 0x0?}, 0x1046ca400?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.2()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:40 +0x290
+[38;5;243m------------------------------[0m
+[0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [0m[1mShould be possible to create a persistent volume claim (PVC) for a block storage with no AD specified [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:45[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 13:52:59.71[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-block-basic-r6gxz/volume-provisioner-e2e-tests-pvc" of volume size "50Gi" [38;5;243m@ 02/02/26 13:53:00.149[0m
+  Feb  2 13:53:00.446: INFO: Waiting up to 10m0s for PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq to have phase Bound
+  Feb  2 13:53:00.591: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:53:15.738: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:53:30.884: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:53:46.040: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:54:01.191: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:54:16.336: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:54:31.482: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:54:46.629: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:55:01.775: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:55:16.921: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:55:32.071: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:55:47.218: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:56:02.369: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:56:17.516: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:56:32.662: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:56:47.808: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:57:02.958: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:57:18.104: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:57:33.250: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:57:48.396: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:58:03.549: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:58:18.696: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:58:33.843: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:58:48.992: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:59:04.144: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:59:19.291: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:59:34.442: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 13:59:49.640: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:00:04.785: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:00:19.932: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:00:35.079: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:00:50.230: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:01:05.376: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:01:20.521: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:01:35.666: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:01:50.812: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:02:05.967: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:02:21.115: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:02:36.259: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:02:51.405: INFO: PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq found but phase is Pending instead of Bound.
+  Feb  2 14:03:06.406: INFO: PVC "volume-provisioner-e2e-tests-pvch6sjq" did not reach Bound state : PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq not in phase Bound within 10m0s
+E0202 14:03:06.407650   13140 runtime.go:142] "Observed a panic" panic=<
+	[1m[38;5;9mYour Test Panicked[0m
+	[38;5;246mFailf("PVC %q did not reach %v state : %v", pvc.Name, pvcPhase, err)[0m
+	[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m
+	  When you, or your assertion library, calls Ginkgo's Fail(),
+	  Ginkgo panics to prevent subsequent assertions from running.
+	
+	  Normally Ginkgo rescues this panic so you shouldn't see it.
+	
+	  However, if you make an assertion in a goroutine, Ginkgo can't capture the
+	  panic.
+	  To circumvent this, you should call
+	
+	  	defer GinkgoRecover()
+	
+	  at the top of the goroutine that caused this panic.
+	
+	  Alternatively, you may have made an assertion outside of a Ginkgo
+	  leaf node (e.g. in a container node or some out-of-band function) - please
+	  move your assertion to
+	  an appropriate Ginkgo node (e.g. a BeforeSuite, BeforeEach, It, etc...).
+	
+	  [1mLearn more at:[0m
+	  [38;5;14m[4mhttp://onsi.github.io/ginkgo/#mental-model-how-ginkgo-handles-failure[0m
+ > panicGoValue="types.GinkgoError{Heading:\"Your Test Panicked\", Message:\"When you, or your assertion library, calls Ginkgo's Fail(),\\nGinkgo panics to prevent subsequent assertions from running.\\n\\nNormally Ginkgo rescues this panic so you shouldn't see it.\\n\\nHowever, if you make an assertion in a goroutine, Ginkgo can't capture the panic.\\nTo circumvent this, you should call\\n\\n\\tdefer GinkgoRecover()\\n\\nat the top of the goroutine that caused this panic.\\n\\nAlternatively, you may have made an assertion outside of a Ginkgo\\nleaf node (e.g. in a container node or some out-of-band function) - please move your assertion to\\nan appropriate Ginkgo node (e.g. a BeforeSuite, BeforeEach, It, etc...).\", DocLink:\"mental-model-how-ginkgo-handles-failure\", CodeLocation:types.CodeLocation{FileName:\"/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go\", LineNumber:377, FullStackTrace:\"github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c960)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0\\nk8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24\\nk8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000bb94a0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60\\nk8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000fa1af0, 0x14000fa1b48)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34\\nk8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c\\nk8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000fa1c98?, 0x106b4d13c?, 0x14000e06200?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000fa1c48?, {0x14000f3faa0?, 0x10?}, {0x1400130baa0?, 0x106c17301?}, 0x140013314a0?, {0x106c4dbde, 0x11}, 0x14000f3faa0?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000fa1e30, 0x14000f3faa0?, {0x14000f3faa0?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000fa1e30, {0x14000f3faa0, 0x2a}, {0x106c0b5d6?, 0xe?}, {0x1400071412b?, 0x14000706960?}, {0x0?, 0x0?}, 0x105762200?)\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54\\ngithub.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.3()\\n\\t/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:49 +0x19c\", CustomMessage:\"\"}}" stacktrace=<
+	goroutine 708 [running]:
+	k8s.io/apimachinery/pkg/util/runtime.logPanic({0x107d8a858, 0x10a02c288}, {0x107a2de60, 0x140009bed90})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:132 +0x94
+	k8s.io/apimachinery/pkg/util/runtime.handleCrash({0x107d8a858, 0x10a02c288}, {0x107a2de60, 0x140009bed90}, {0x0, 0x0, 0x14000fa1648?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:107 +0xdc
+	k8s.io/apimachinery/pkg/util/runtime.HandleCrashWithContext({0x107d8a858, 0x10a02c288}, {0x0, 0x0, 0x0})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/runtime/runtime.go:78 +0x5c
+	panic({0x107a2de60?, 0x140009bed90?})
+		/opt/homebrew/Cellar/go/1.25.0/libexec/src/runtime/panic.go:783 +0x120
+	github.com/onsi/ginkgo/v2.Fail({0x140007bfa40, 0xb8}, {0x14000fa18c8?, 0x106c09be2?, 0x0?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/core_dsl.go:447 +0x13c
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.FailfWithOffset(0x1, {0x106ca0ce7?, 0x5?}, {0x14000fa1948?, 0x2a?, 0x14000dd8480?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/util.go:51 +0xac
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.Failf(...)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/util.go:43
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c960)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0
+	k8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24
+	k8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000bb94a0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60
+	k8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000fa1af0, 0x14000fa1b48)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34
+	k8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c
+	k8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000fa1c98?, 0x106b4d13c?, 0x14000e06200?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000fa1c48?, {0x14000f3faa0?, 0x10?}, {0x1400130baa0?, 0x106c17301?}, 0x140013314a0?, {0x106c4dbde, 0x11}, 0x14000f3faa0?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000fa1e30, 0x14000f3faa0?, {0x14000f3faa0?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000fa1e30, {0x14000f3faa0, 0x2a}, {0x106c0b5d6?, 0xe?}, {0x1400071412b?, 0x14000706960?}, {0x0?, 0x0?}, 0x105762200?)
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54
+	github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.3()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:49 +0x19c
+	github.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x1078a9aa0?, 0x1079afda0?})
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/node.go:524 +0x24
+	github.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:942 +0x27c
+	created by github.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 183
+		/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:907 +0xa3c
+ >
+  [38;5;9m[FAILED][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 [38;5;243m@ 02/02/26 14:03:06.408[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-block-basic-7shkg" for this suite. [38;5;243m@ 02/02/26 14:03:06.408[0m
+  Feb  2 14:03:06.552: INFO: Namespace cloud-provider-e2e-tests-block-basic-7shkg was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-block-basic-jxcxw" for this suite. [38;5;243m@ 02/02/26 14:03:06.552[0m
+  Feb  2 14:03:06.698: INFO: Namespace cloud-provider-e2e-tests-block-basic-jxcxw was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-block-basic-r6gxz" for this suite. [38;5;243m@ 02/02/26 14:03:06.698[0m
+  Feb  2 14:03:21.139: INFO: namespace cloud-provider-e2e-tests-block-basic-r6gxz deletion completed in 14.441124459s
+  [1mSTEP:[0m Deleting storage class "oci" [38;5;243m@ 02/02/26 14:03:21.139[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-block-basic-jxcxw" [38;5;243m@ 02/02/26 14:03:21.289[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-block-basic-jxcxw" [38;5;243m@ 02/02/26 14:03:21.433[0m
+  [1mSTEP:[0m Deleting storage class "oci" [38;5;243m@ 02/02/26 14:03:21.577[0m
+[38;5;9m• [FAILED] [622.013 seconds][0m
+[0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [38;5;9m[1m[It] Should be possible to create a persistent volume claim (PVC) for a block storage with no AD specified [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:45[0m
+
+  [38;5;9m[FAILED] Feb  2 14:03:06.406: PVC "volume-provisioner-e2e-tests-pvch6sjq" did not reach Bound state : PersistentVolumeClaim volume-provisioner-e2e-tests-pvch6sjq not in phase Bound within 10m0s[0m
+  [38;5;9mIn [1m[It][0m[38;5;9m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m [38;5;243m@ 02/02/26 14:03:06.408[0m
+
+  [38;5;9mFull Stack Trace[0m
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail.func1(0x14000e7c960)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377 +0xbc
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail.func1()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1510 +0xc0
+    k8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x0?, 0xc9?})
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113 +0x24
+    k8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x14000bb94a0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159 +0x60
+    k8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0x0?, 0x14000fa1af0, 0x14000fa1b48)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:245 +0x34
+    k8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?, 0x0?, 0x0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175 +0x3c
+    k8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000fa1c98?, 0x106b4d13c?, 0x14000e06200?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157 +0x44
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).waitForConditionOrFail(0x14000fa1c48?, {0x14000f3faa0?, 0x10?}, {0x1400130baa0?, 0x106c17301?}, 0x140013314a0?, {0x106c4dbde, 0x11}, 0x14000f3faa0?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:1516 +0x74
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CheckAndAwaitPVCOrFail(0x14000fa1e30, 0x14000f3faa0?, {0x14000f3faa0?, 0x106c0b5d6?}, {0x106c0ca1a, 0x5})
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:373 +0x7c
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*PVCTestJig).CreateAndAwaitPVCOrFail(0x14000fa1e30, {0x14000f3faa0, 0x2a}, {0x106c0b5d6?, 0xe?}, {0x1400071412b?, 0x14000706960?}, {0x0?, 0x0?}, 0x105762200?)
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:399 +0x54
+    github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func2.1.3()
+    	/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/block_volume_creation.go:49 +0x19c
+[38;5;243m------------------------------[0m
+[0mCSI Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags] [0m[1mCreate PVC and POD for CSI.[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:32[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 14:03:21.723[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 14:03:31.729[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 14:03:31.731[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 14:03:31.731[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:03:31.732[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-jnx6w/csi-provisioner-e2e-tests" of volume size "50Gi" [38;5;243m@ 02/02/26 14:03:32.174[0m
+  Feb  2 14:03:32.478: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-testsnpcd6 to have phase Pending
+  Feb  2 14:03:32.625: INFO: PersistentVolumeClaim csi-provisioner-e2e-testsnpcd6 found and phase=Pending (146.842292ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:03:32.625[0m
+I0202 14:03:32.797800   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  Feb  2 14:04:33.239: INFO: Found pvc csi-provisioner-e2e-testsnpcd6 bound to pv csi-1656153e-b492-4160-8fe8-b0cbc76a644f
+  Feb  2 14:04:34.045: INFO: volume details { AvailabilityDomain=gzqB:US-SANJOSE-1-AD-1 CompartmentId=ocid1.compartment.oc1..aaaaaaaay5mbk3dxua6vfyo7akpbk5h4ausrpo64igaq4u5hfx7ntxccleaa DisplayName=csi-1656153e-b492-4160-8fe8-b0cbc76a644f Id=ocid1.volume.oc1.us-sanjose-1.abzwuljrhktcginbytmcwabd5gyjytm3o3j2oc4zhfhiqdhdnlokaijadqla LifecycleState=AVAILABLE SizeInMBs=51200 TimeCreated=2026-02-02 22:03:33.729 +0000 UTC DefinedTags=map[Oracle-Tags:map[CreatedBy:ocid1.instance.oc1.us-sanjose-1.anzwuljr2bh44rycqm4phehmhzn3dgao6ikjq4pl7ksct7i3hrvfdjwrcoza CreatedOn:2026-02-02T22:03:33.720Z] openshift-tags:map[openshift-resource:openshift-resource-infra]] FreeformTags=map[] SystemTags=map[] IsHydrated=true KmsKeyId=<nil> VpusPerGB=10 ClusterPlacementGroupId=<nil> SizeInGBs=50 SourceDetails=<nil> VolumeGroupId=<nil> IsAutoTuneEnabled=false AutoTunedVpusPerGB=<nil> BlockVolumeReplicas=[] AutotunePolicies=[] } :
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-jnx6w" for this suite. [38;5;243m@ 02/02/26 14:04:34.046[0m
+  Feb  2 14:05:24.485: INFO: namespace cloud-provider-e2e-tests-csi-basic-jnx6w deletion completed in 50.439333125s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-jnx6w" [38;5;243m@ 02/02/26 14:05:24.485[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:05:24.634[0m
+  Feb  2 14:05:24.634: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [122.912 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags] [0m[1mCreate PVC with VolumeSize 1Gi but should use default 50Gi[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:54[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:05:24.634[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-ln5ls/csi-provisioner-e2e-tests-pvc-with-1gi" of volume size "1Gi" [38;5;243m@ 02/02/26 14:05:25.082[0m
+  Feb  2 14:05:25.377: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-1gicmf48 to have phase Pending
+  Feb  2 14:05:25.525: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-1gicmf48 found and phase=Pending (148.500625ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:05:25.525[0m
+I0202 14:05:25.829022   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app2\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app2\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app2\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app2\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-jnx6w" for this suite. [38;5;243m@ 02/02/26 14:07:11.413[0m
+  Feb  2 14:07:11.558: INFO: Namespace cloud-provider-e2e-tests-csi-basic-jnx6w was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-ln5ls" for this suite. [38;5;243m@ 02/02/26 14:07:11.558[0m
+  Feb  2 14:08:02.006: INFO: namespace cloud-provider-e2e-tests-csi-basic-ln5ls deletion completed in 50.448226125s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-jnx6w" [38;5;243m@ 02/02/26 14:08:02.006[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-ln5ls" [38;5;243m@ 02/02/26 14:08:02.15[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:08:02.301[0m
+  Feb  2 14:08:02.301: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:08:02.301[0m
+  Feb  2 14:08:02.301: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [157.667 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags] [0m[1mCreate PVC with VolumeSize 100Gi should use 100Gi[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:67[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:08:02.301[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-d2kvb/csi-provisioner-e2e-tests-pvc-with-100gi" of volume size "100Gi" [38;5;243m@ 02/02/26 14:08:02.845[0m
+  Feb  2 14:08:03.171: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-100gi9w4gn to have phase Pending
+  Feb  2 14:08:03.340: INFO: PersistentVolumeClaim csi-provisioner-e2e-tests-pvc-with-100gi9w4gn found and phase=Pending (168.594875ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:08:03.34[0m
+I0202 14:08:03.512973   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"app3\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"app3\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"app3\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"app3\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-jnx6w" for this suite. [38;5;243m@ 02/02/26 14:10:04.091[0m
+  Feb  2 14:10:04.237: INFO: Namespace cloud-provider-e2e-tests-csi-basic-jnx6w was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-ln5ls" for this suite. [38;5;243m@ 02/02/26 14:10:04.237[0m
+  Feb  2 14:10:04.383: INFO: Namespace cloud-provider-e2e-tests-csi-basic-ln5ls was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-d2kvb" for this suite. [38;5;243m@ 02/02/26 14:10:04.383[0m
+  Feb  2 14:10:54.821: INFO: namespace cloud-provider-e2e-tests-csi-basic-d2kvb deletion completed in 50.439296417s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-jnx6w" [38;5;243m@ 02/02/26 14:10:54.821[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-ln5ls" [38;5;243m@ 02/02/26 14:10:54.967[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-d2kvb" [38;5;243m@ 02/02/26 14:10:55.112[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:10:55.261[0m
+  Feb  2 14:10:55.261: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:10:55.261[0m
+  Feb  2 14:10:55.261: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:10:55.261[0m
+  Feb  2 14:10:55.261: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [172.966 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags] [0m[1mData should persist on CSI volume on pod restart[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:80[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:10:55.261[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-mbxn2/csi-pod-restart-data-persistence" of volume size "50Gi" [38;5;243m@ 02/02/26 14:10:55.7[0m
+  Feb  2 14:10:55.996: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-pod-restart-data-persistencevpglv to have phase Pending
+  Feb  2 14:10:56.149: INFO: PersistentVolumeClaim csi-pod-restart-data-persistencevpglv found and phase=Pending (152.896792ms)
+  [1mSTEP:[0m Creating a deployment [38;5;243m@ 02/02/26 14:10:56.599[0m
+I0202 14:10:56.767760   13140 warnings.go:110] "Warning: spec.template.spec.nodeSelector[beta.kubernetes.io/arch]: deprecated since v1.14; use \"kubernetes.io/arch\" instead"
+I0202 14:10:56.767773   13140 warnings.go:110] "Warning: spec.template.spec.nodeSelector[beta.kubernetes.io/os]: deprecated since v1.14; use \"kubernetes.io/os\" instead"
+I0202 14:10:56.767776   13140 warnings.go:110] "Warning: spec.template.spec.nodeSelector[failure-domain.beta.kubernetes.io/region]: deprecated since v1.17; use \"topology.kubernetes.io/region\" instead"
+I0202 14:10:56.767779   13140 warnings.go:110] "Warning: spec.template.spec.nodeSelector[failure-domain.beta.kubernetes.io/zone]: deprecated since v1.17; use \"topology.kubernetes.io/zone\" instead"
+I0202 14:10:56.767780   13140 warnings.go:110] "Warning: spec.template.spec.nodeSelector[beta.kubernetes.io/instance-type]: deprecated since v1.17; use \"node.kubernetes.io/instance-type\" instead"
+  Feb  2 14:10:56.767: INFO: Waiting up to 5m0s for deployment data-persistence-deployment to be completed
+  [1mSTEP:[0m Writing to the volume using the pod [38;5;243m@ 02/02/26 14:11:57.35[0m
+  Feb  2 14:11:57.350: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-basic-mbxn2 data-persistence-deployment-7498f6b475-bbntj -- /bin/sh -c echo "Data written" >> /data/out.txt;'
+  Feb  2 14:11:59.863: INFO: stderr: ""
+  [1mSTEP:[0m Deleting the pod used to write to the volume [38;5;243m@ 02/02/26 14:11:59.863[0m
+  [1mSTEP:[0m Waiting timeout for pod to not be found in namespace [38;5;243m@ 02/02/26 14:12:00.013[0m
+  [1mSTEP:[0m Waiting for pod to be restarted [38;5;243m@ 02/02/26 14:12:45.303[0m
+  [1mSTEP:[0m Reading from the volume using the pod and checking data integrity [38;5;243m@ 02/02/26 14:12:45.598[0m
+  Feb  2 14:12:45.598: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-basic-mbxn2 data-persistence-deployment-7498f6b475-rwgtb -- /bin/sh -c cat /data/out.txt'
+  Feb  2 14:12:48.097: INFO: stderr: ""
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-jnx6w" for this suite. [38;5;243m@ 02/02/26 14:12:48.097[0m
+  Feb  2 14:12:48.242: INFO: Namespace cloud-provider-e2e-tests-csi-basic-jnx6w was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-ln5ls" for this suite. [38;5;243m@ 02/02/26 14:12:48.242[0m
+  Feb  2 14:12:48.387: INFO: Namespace cloud-provider-e2e-tests-csi-basic-ln5ls was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-d2kvb" for this suite. [38;5;243m@ 02/02/26 14:12:48.387[0m
+  Feb  2 14:12:48.532: INFO: Namespace cloud-provider-e2e-tests-csi-basic-d2kvb was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-mbxn2" for this suite. [38;5;243m@ 02/02/26 14:12:48.532[0m
+  Feb  2 14:13:34.976: INFO: namespace cloud-provider-e2e-tests-csi-basic-mbxn2 deletion completed in 46.443509042s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-jnx6w" [38;5;243m@ 02/02/26 14:13:34.976[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-ln5ls" [38;5;243m@ 02/02/26 14:13:35.121[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-d2kvb" [38;5;243m@ 02/02/26 14:13:35.266[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-mbxn2" [38;5;243m@ 02/02/26 14:13:35.41[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:13:35.559[0m
+  Feb  2 14:13:35.559: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:13:35.559[0m
+  Feb  2 14:13:35.559: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:13:35.559[0m
+  Feb  2 14:13:35.559: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:13:35.559[0m
+  Feb  2 14:13:35.559: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [160.299 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Volume Creation [38;5;243m[cloudprovider][storage][csi][system-tags] [0m[1mFsGroup test for CSI[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_volume_creation.go:89[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:13:35.559[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-basic-j9ddw/csi-pod-nginx" of volume size "50Gi" [38;5;243m@ 02/02/26 14:13:35.995[0m
+  Feb  2 14:13:36.293: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-pod-nginx62zb5 to have phase Pending
+  Feb  2 14:13:36.437: INFO: PersistentVolumeClaim csi-pod-nginx62zb5 found and phase=Pending (143.841083ms)
+  [1mSTEP:[0m checking the created volume is writable and has the PV's mount options [38;5;243m@ 02/02/26 14:13:36.582[0m
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 02/02/26 14:13:36.582[0m
+I0202 14:13:36.750278   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 02/02/26 14:14:22.045[0m
+  Feb  2 14:14:22.045: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-basic-j9ddw pvc-pod-tester-755e9074-700b-4948-9c74-1b7329382821mpfrw -- /bin/sh -c stat -c '%g' /usr/share/nginx/html/out.txt'
+  Feb  2 14:14:24.561: INFO: stderr: ""
+  Feb  2 14:14:24.561: INFO: Expected group owner, group owner is 1000 
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-jnx6w" for this suite. [38;5;243m@ 02/02/26 14:14:24.561[0m
+  Feb  2 14:14:24.705: INFO: Namespace cloud-provider-e2e-tests-csi-basic-jnx6w was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-ln5ls" for this suite. [38;5;243m@ 02/02/26 14:14:24.705[0m
+  Feb  2 14:14:24.850: INFO: Namespace cloud-provider-e2e-tests-csi-basic-ln5ls was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-d2kvb" for this suite. [38;5;243m@ 02/02/26 14:14:24.85[0m
+  Feb  2 14:14:24.994: INFO: Namespace cloud-provider-e2e-tests-csi-basic-d2kvb was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-mbxn2" for this suite. [38;5;243m@ 02/02/26 14:14:24.994[0m
+  Feb  2 14:14:25.138: INFO: Namespace cloud-provider-e2e-tests-csi-basic-mbxn2 was already deleted
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-basic-j9ddw" for this suite. [38;5;243m@ 02/02/26 14:14:25.138[0m
+  Feb  2 14:15:15.587: INFO: namespace cloud-provider-e2e-tests-csi-basic-j9ddw deletion completed in 50.448617666s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-jnx6w" [38;5;243m@ 02/02/26 14:15:15.587[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-ln5ls" [38;5;243m@ 02/02/26 14:15:15.731[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-d2kvb" [38;5;243m@ 02/02/26 14:15:15.877[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-mbxn2" [38;5;243m@ 02/02/26 14:15:16.022[0m
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-basic-j9ddw" [38;5;243m@ 02/02/26 14:15:16.166[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:15:16.323[0m
+  Feb  2 14:15:16.323: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:15:16.323[0m
+  Feb  2 14:15:16.323: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:15:16.323[0m
+  Feb  2 14:15:16.323: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:15:16.323[0m
+  Feb  2 14:15:16.323: INFO: Failed to delete persistent volume "": resource name may not be empty
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:15:16.323[0m
+  Feb  2 14:15:16.323: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [100.764 seconds][0m
+[38;5;243m------------------------------[0m
+[0mBasic Static FSS test [38;5;243m[cloudprovider][storage][csi][fss][static] [0m[1mCreate PVC and POD for CSI-FSS[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:29[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 14:15:16.323[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 14:15:26.328[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 14:15:26.328[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 14:15:26.329[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:15:26.329[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-fss-basic-d65fh/csi-fss-e2e-test" of volume size "50Gi" [38;5;243m@ 02/02/26 14:15:26.769[0m
+  Feb  2 14:15:27.063: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-fss-e2e-testtfs9h to have phase Bound
+  Feb  2 14:15:27.206: INFO: PersistentVolumeClaim csi-fss-e2e-testtfs9h found and phase=Bound (142.990583ms)
+  [1mSTEP:[0m Checking the claim and volume are bound. [38;5;243m@ 02/02/26 14:15:27.206[0m
+  [1mSTEP:[0m Creating Pod that can create and write to the file [38;5;243m@ 02/02/26 14:15:27.495[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:15:27.495[0m
+I0202 14:15:27.663884   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"0e2308e2-9117-429d-9b68-2263567eb092\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"0e2308e2-9117-429d-9b68-2263567eb092\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"0e2308e2-9117-429d-9b68-2263567eb092\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"0e2308e2-9117-429d-9b68-2263567eb092\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 02/02/26 14:16:12.957[0m
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 02/02/26 14:16:12.957[0m
+  Feb  2 14:16:12.958: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-fss-basic-d65fh csi-fss-e2e-test6mtb8 -- /bin/sh -c ls /data'
+  Feb  2 14:16:15.318: INFO: stderr: ""
+  [1mSTEP:[0m Check NFS Mount Options [38;5;243m@ 02/02/26 14:16:15.319[0m
+  [1mSTEP:[0m check if NFS mount options are applied [38;5;243m@ 02/02/26 14:16:15.319[0m
+  Feb  2 14:16:15.319: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-fss-basic-d65fh csi-fss-e2e-test6mtb8 -- /bin/sh -c mount -t nfs'
+  Feb  2 14:16:17.659: INFO: stderr: ""
+  [1mSTEP:[0m Creating Pod that can read contents of existing file [38;5;243m@ 02/02/26 14:16:17.659[0m
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:16:17.659[0m
+I0202 14:16:17.842457   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"readapp\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"readapp\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"readapp\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"readapp\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-fss-basic-d65fh" for this suite. [38;5;243m@ 02/02/26 14:16:33.136[0m
+  Feb  2 14:17:23.578: INFO: namespace cloud-provider-e2e-tests-fss-basic-d65fh deletion completed in 50.442549417s
+  [1mSTEP:[0m Deleting volumes "csi-fss-e2e-testhc4bj" [38;5;243m@ 02/02/26 14:17:23.578[0m
+[38;5;10m• [127.404 seconds][0m
+[38;5;243m------------------------------[0m
+[0mCSI Raw Block Volume Expansion Paravirtualized [38;5;243m[cloudprovider][storage][csi][expand][paravirtualized][raw-block][rwx] [0m[1mExpand raw block PVC VolumeSize from 50Gi to 100Gi and asserts size, file existence and file corruptions for paravirtualized volumes[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/csi_rwx_volume_creation.go:220[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 14:17:23.727[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 14:17:33.732[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 14:17:33.733[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 14:17:33.734[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:17:33.735[0m
+  Feb  2 14:17:34.602: INFO: Taints found for node arm-cp-1.privateocp.openshiftvcn.oraclevcn.com, marking node unschedulable: [{node-role.kubernetes.io/master  NoSchedule <nil>}]
+  Feb  2 14:17:34.602: INFO: Taints found for node arm-cp-2.privateocp.openshiftvcn.oraclevcn.com, marking node unschedulable: [{node-role.kubernetes.io/master  NoSchedule <nil>}]
+  Feb  2 14:17:34.602: INFO: Taints found for node arm-cp-3.privateocp.openshiftvcn.oraclevcn.com, marking node unschedulable: [{node-role.kubernetes.io/master  NoSchedule <nil>}]
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-csi-expansion-k8f9b/csi-resizer-pvc-expand-to-100gi-paravirtualized" of volume size "50Gi" [38;5;243m@ 02/02/26 14:17:34.749[0m
+  Feb  2 14:17:35.047: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-resizer-pvc-expand-to-100gi-paravirtualizedsdrwh to have phase Pending
+  Feb  2 14:17:35.192: INFO: PersistentVolumeClaim csi-resizer-pvc-expand-to-100gi-paravirtualizedsdrwh found and phase=Pending (145.274166ms)
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:17:35.192[0m
+I0202 14:17:35.366039   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"expanded-pvc-pod-1\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"expanded-pvc-pod-1\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"expanded-pvc-pod-1\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"expanded-pvc-pod-1\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Creating a pod with the claiming PVC created by CSI [38;5;243m@ 02/02/26 14:18:20.668[0m
+I0202 14:18:20.843261   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"expanded-pvc-pod-2\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"expanded-pvc-pod-2\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"expanded-pvc-pod-2\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"expanded-pvc-pod-2\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  [1mSTEP:[0m Updating a PVC "csi-resizer-pvc-expand-to-100gi-paravirtualizedsdrwh" of volume size "100Gi" [38;5;243m@ 02/02/26 14:18:51.136[0m
+  Feb  2 14:18:51.580: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-resizer-pvc-expand-to-100gi-paravirtualizedsdrwh to have phase Bound
+  Feb  2 14:18:51.730: INFO: PersistentVolumeClaim csi-resizer-pvc-expand-to-100gi-paravirtualizedsdrwh found and phase=Bound (150.255833ms)
+  [1mSTEP:[0m Checking the claim and volume are bound. [38;5;243m@ 02/02/26 14:18:51.73[0m
+  Feb  2 14:18:52.026: INFO: Waiting upto 3 minutes for the block volume to resize.
+  Feb  2 14:18:52.324: INFO: Checking for PVC to resize. Type : "Resizing", Status : "True"
+  Feb  2 14:18:52.324: INFO: pvCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "50Gi" "BinarySI"}, pvStatus : "Bound", claimCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "100Gi" "BinarySI"}
+  Feb  2 14:18:52.324: INFO: Resizer :: Type : "Resizing", Status : "True", pvCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "50Gi" "BinarySI"}, claimCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "100Gi" "BinarySI"}
+  Feb  2 14:19:02.617: INFO: Checking for PVC to resize. Type : "FileSystemResizePending", Status : "True"
+  Feb  2 14:19:02.617: INFO: pvCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "100Gi" "BinarySI"}, pvStatus : "Bound", claimCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "100Gi" "BinarySI"}
+  Feb  2 14:19:02.617: INFO: Resizer :: Type : "FileSystemResizePending", Status : "True", pvCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "100Gi" "BinarySI"}, claimCapacity : {{'�' '\x00'} {%!q(*inf.Dec=<nil>)} "100Gi" "BinarySI"}
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 02/02/26 14:19:12.911[0m
+  Feb  2 14:19:12.911: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-expansion-k8f9b csi-resizer-pvc-expand-to-100gi-paravirtualizedmbpks -- /bin/sh -c ls /dev'
+  Feb  2 14:19:15.425: INFO: stderr: ""
+  Feb  2 14:19:15.425: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-expansion-k8f9b csi-resizer-pvc-expand-to-100gi-paravirtualizedmbpks -- /bin/sh -c echo 'Hello New World' > /tmp/test.txt; dd if=/tmp/test.txt of=/dev/xvda count=1; dd if=/dev/xvda bs=512 count=1'
+  Feb  2 14:19:17.923: INFO: stderr: "0+1 records in\n0+1 records out\n16 bytes copied, 4.692e-05 s, 341 kB/s\n1+0 records in\n1+0 records out\n512 bytes copied, 3.912e-05 s, 13.1 MB/s\n"
+  [1mSTEP:[0m extract data from block device [38;5;243m@ 02/02/26 14:19:17.923[0m
+  Feb  2 14:19:17.924: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-expansion-k8f9b csi-resizer-pvc-expand-to-100gi-paravirtualizedmbpks -- /bin/sh -c dd if=/dev/xvda count=1 | tr -d '\000' > /tmp/testdata.txt'
+  Feb  2 14:19:20.287: INFO: stderr: "1+0 records in\n1+0 records out\n512 bytes copied, 0.00015892 s, 3.2 MB/s\n"
+  [1mSTEP:[0m check if the file exists [38;5;243m@ 02/02/26 14:19:20.287[0m
+  Feb  2 14:19:20.288: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-expansion-k8f9b csi-resizer-pvc-expand-to-100gi-paravirtualized5wpj6 -- /bin/sh -c ls /dev'
+  Feb  2 14:19:22.637: INFO: stderr: ""
+  Feb  2 14:19:22.637: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-expansion-k8f9b csi-resizer-pvc-expand-to-100gi-paravirtualized5wpj6 -- /bin/sh -c echo 'Hello New World' > /tmp/test.txt; dd if=/tmp/test.txt of=/dev/xvda count=1; dd if=/dev/xvda bs=512 count=1'
+  Feb  2 14:19:25.135: INFO: stderr: "0+1 records in\n0+1 records out\n16 bytes copied, 4.62e-05 s, 346 kB/s\n1+0 records in\n1+0 records out\n512 bytes copied, 2.46e-05 s, 20.8 MB/s\n"
+  [1mSTEP:[0m extract data from block device [38;5;243m@ 02/02/26 14:19:25.136[0m
+  Feb  2 14:19:25.136: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-csi-expansion-k8f9b csi-resizer-pvc-expand-to-100gi-paravirtualized5wpj6 -- /bin/sh -c dd if=/dev/xvda count=1 | tr -d '\000' > /tmp/testdata.txt'
+  Feb  2 14:19:27.629: INFO: stderr: "1+0 records in\n1+0 records out\n512 bytes copied, 0.00011648 s, 4.4 MB/s\n"
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-csi-expansion-k8f9b" for this suite. [38;5;243m@ 02/02/26 14:19:27.629[0m
+  Feb  2 14:20:18.072: INFO: namespace cloud-provider-e2e-tests-csi-expansion-k8f9b deletion completed in 50.442911541s
+  [1mSTEP:[0m Deleting storage class "cloud-provider-e2e-tests-csi-expansion-k8f9b" [38;5;243m@ 02/02/26 14:20:18.072[0m
+  [1mSTEP:[0m Deleting volumes "" [38;5;243m@ 02/02/26 14:20:18.223[0m
+  Feb  2 14:20:18.223: INFO: Failed to delete persistent volume "": resource name may not be empty
+[38;5;10m• [174.497 seconds][0m
+[38;5;243m------------------------------[0m
+[0mEnd to end TLS [38;5;243m[cloudprovider][ccm][lb] [0m[1mshould be possible to create and mutate a Service type:LoadBalancer [Canary][0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:869[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 14:20:18.223[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 14:20:28.231[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 14:20:28.232[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 14:20:28.233[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:20:28.233[0m
+  [1mSTEP:[0m creating a pod to be part of the TCP service e2e-tls-lb-test [38;5;243m@ 02/02/26 14:20:29.312[0m
+  Feb  2 14:20:29.460: INFO: Waiting up to 5m0s for 1 pods to be created
+  Feb  2 14:20:29.606: INFO: Found all 1 pods
+  Feb  2 14:20:29.606: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [e2e-tls-lb-test-6gv4f]
+  Feb  2 14:20:29.606: INFO: Waiting up to 3m0s for pod "e2e-tls-lb-test-6gv4f" in namespace "cloud-provider-e2e-tests-endtoendtls-service-29jgk" to be "running and ready"
+  Feb  2 14:20:29.751: INFO: Pod "e2e-tls-lb-test-6gv4f": Phase="Pending", Reason="", readiness=false. Elapsed: 145.449958ms
+  Feb  2 14:20:31.897: INFO: Pod "e2e-tls-lb-test-6gv4f": Phase="Running", Reason="", readiness=true. Elapsed: 2.291526542s
+  Feb  2 14:20:31.897: INFO: Pod "e2e-tls-lb-test-6gv4f" satisfied condition "running and ready"
+  Feb  2 14:20:31.897: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [e2e-tls-lb-test-6gv4f]
+  [1mSTEP:[0m waiting for the TCP service to have a load balancer [38;5;243m@ 02/02/26 14:20:31.897[0m
+  Feb  2 14:20:31.897: INFO: Waiting up to 2m0s for service "e2e-tls-lb-test" to have a LoadBalancer
+  Feb  2 14:20:52.189: INFO: TCP node port: 30428
+  Feb  2 14:20:52.189: INFO: TCP load balancer: 10.0.13.16
+  [1mSTEP:[0m changing TCP service back to type=ClusterIP [38;5;243m@ 02/02/26 14:20:52.189[0m
+  Feb  2 14:20:52.492: INFO: Waiting up to 2m0s for service "e2e-tls-lb-test" to have no LoadBalancer
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-endtoendtls-service-29jgk" for this suite. [38;5;243m@ 02/02/26 14:20:52.792[0m
+  Feb  2 14:21:15.236: INFO: namespace cloud-provider-e2e-tests-endtoendtls-service-29jgk deletion completed in 22.444030583s
+[38;5;10m• [57.013 seconds][0m
+[38;5;243m------------------------------[0m
+[0mStatic FSS RWO Tests [38;5;243m[cloudprovider][storage][csi][fss][static][rwo] [0m[1mVerify volume group ownership change for RWO volume when fsType and fsGroup are defined[0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/fss_static.go:138[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 14:21:15.236[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 14:21:25.245[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 14:21:25.246[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 14:21:25.247[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:21:25.248[0m
+  [1mSTEP:[0m Creating a PVC "cloud-provider-e2e-tests-fss-rwo-nvwqm/csi-rwo-fss-e2e-test" of volume size "50Gi" [38;5;243m@ 02/02/26 14:21:25.695[0m
+  Feb  2 14:21:25.989: INFO: Waiting up to 10m0s for PersistentVolumeClaim csi-rwo-fss-e2e-testszzg6 to have phase Bound
+  Feb  2 14:21:26.135: INFO: PersistentVolumeClaim csi-rwo-fss-e2e-testszzg6 found and phase=Bound (145.983ms)
+  [1mSTEP:[0m Checking the claim and volume are bound. [38;5;243m@ 02/02/26 14:21:26.135[0m
+  [1mSTEP:[0m Creating a pod with the dynamically provisioned volume or raw block volume [38;5;243m@ 02/02/26 14:21:26.427[0m
+I0202 14:21:26.598819   13140 warnings.go:110] "Warning: would violate PodSecurity \"restricted:latest\": allowPrivilegeEscalation != false (container \"write-pod\" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container \"write-pod\" must set securityContext.capabilities.drop=[\"ALL\"]), runAsNonRoot != true (pod or container \"write-pod\" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container \"write-pod\" must set securityContext.seccompProfile.type to \"RuntimeDefault\" or \"Localhost\")"
+  Feb  2 14:21:41.893: INFO: Running '/Users/nikhilsingh/.rd/bin/kubectl --kubeconfig=/Users/nikhilsingh/.kube/config exec --namespace=cloud-provider-e2e-tests-fss-rwo-nvwqm pvc-pod-tester-47ef0fae-ca08-4f50-968d-b32c318dfd5b8lf24 -- /bin/sh -c ls -l /usr/share/nginx/html/ | awk 'NR==2 { print $4 }''
+  Feb  2 14:21:44.254: INFO: stderr: ""
+  Feb  2 14:21:44.254: INFO: Verified volume group owner for PV in pod "pvc-pod-tester-47ef0fae-ca08-4f50-968d-b32c318dfd5b8lf24" is 1000
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-fss-rwo-nvwqm" for this suite. [38;5;243m@ 02/02/26 14:21:44.254[0m
+  Feb  2 14:22:34.692: INFO: namespace cloud-provider-e2e-tests-fss-rwo-nvwqm deletion completed in 50.4384655s
+  [1mSTEP:[0m Deleting volumes "csi-rwo-fss-e2e-testbqfm6" [38;5;243m@ 02/02/26 14:22:34.692[0m
+[38;5;10m• [79.605 seconds][0m
+[38;5;243m------------------------------[0m
+[0mService [Slow] [38;5;243m[cloudprovider][ccm][lb][SL][wris][system-tags] [0m[1mshould be possible to create and mutate a Service type:LoadBalancer (change nodeport) [Canary][0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85[0m
+  [1mSTEP:[0m Creating OCI client [38;5;243m@ 02/02/26 14:22:34.841[0m
+  [1mSTEP:[0m Creating a kubernetes client [38;5;243m@ 02/02/26 14:22:44.849[0m
+  [1mSTEP:[0m Creating a snapshot client [38;5;243m@ 02/02/26 14:22:44.85[0m
+  [1mSTEP:[0m Creating a CRD client [38;5;243m@ 02/02/26 14:22:44.851[0m
+  [1mSTEP:[0m Building a namespace api object [38;5;243m@ 02/02/26 14:22:44.851[0m
+  [1mSTEP:[0m Running test for: lb [38;5;243m@ 02/02/26 14:22:45.14[0m
+  [1mSTEP:[0m creating a pod to be part of the TCP service basic-lb-test [38;5;243m@ 02/02/26 14:22:46.022[0m
+  Feb  2 14:22:46.197: INFO: Waiting up to 5m0s for 1 pods to be created
+  Feb  2 14:22:46.343: INFO: Found all 1 pods
+  Feb  2 14:22:46.344: INFO: Waiting up to 3m0s for 1 pods to be running and ready: [basic-lb-test-mxxss]
+  Feb  2 14:22:46.344: INFO: Waiting up to 3m0s for pod "basic-lb-test-mxxss" in namespace "cloud-provider-e2e-tests-service-k5g4d" to be "running and ready"
+  Feb  2 14:22:46.491: INFO: Pod "basic-lb-test-mxxss": Phase="Pending", Reason="", readiness=false. Elapsed: 147.071333ms
+  Feb  2 14:22:48.639: INFO: Pod "basic-lb-test-mxxss": Phase="Running", Reason="", readiness=true. Elapsed: 2.29509425s
+  Feb  2 14:22:48.639: INFO: Pod "basic-lb-test-mxxss" satisfied condition "running and ready"
+  Feb  2 14:22:48.639: INFO: Wanted all 1 pods to be running and ready. Result: true. Pods: [basic-lb-test-mxxss]
+  [1mSTEP:[0m waiting for the TCP service to have a load balancer [38;5;243m@ 02/02/26 14:22:48.639[0m
+  Feb  2 14:22:48.639: INFO: Waiting up to 2m0s for service "basic-lb-test" to have a LoadBalancer
+  [1mSTEP:[0m validating system tags on the loadbalancer [38;5;243m@ 02/02/26 14:23:02.928[0m
+  Feb  2 14:23:02.928: INFO: LB Name is 65a7d0f2-e687-4392-bd9f-fd11262d8d37
+  Feb  2 14:23:03.713: INFO: Loadbalancer details &{0x140009aff00 0x140009aff10 0x140009aff20 0x140011522f0 0x140009aff40 [{0x140009aff30 0x1400048842d <nil>}] 0x14001152300 0x14000488437 [ocid1.subnet.oc1.us-sanjose-1.aaaaaaaa3yqp2l3qspiqr7kpq7ccpxnwzyuhckzf377nkleuud52pg5sr22q] [] map[TCP-8080:{0x14001152000 0x14001152010 0x14000488448 0x14001152020 [] <nil> <nil> 0x14000a68b70 <nil> [] <nil> <nil>}] map[] map[TCP-8080:{0x14001152040 0x1400084fe00 0x14001152050 [{0x14000488490 <nil> 0x14001152070 <nil> 0x14000488498 0x140004884c1 0x140004884c0 0x140004884c2 <nil>} {0x140004884d0 <nil> 0x14001152090 <nil> 0x140004884d8 0x140004884f1 0x140004884f0 0x140004884f2 <nil>} {0x14000488520 <nil> 0x140011520b0 <nil> 0x14000488528 0x14000488531 0x14000488530 0x14000488532 <nil>} {0x14000488550 <nil> 0x140011520d0 <nil> 0x14000488558 0x14000488561 0x14000488560 0x14000488562 <nil>} {0x14000488570 <nil> 0x140011520f0 <nil> 0x14000488578 0x14000488581 0x14000488580 0x14000488582 <nil>} {0x14000488590 <nil> 0x14001152110 <nil> 0x14000488598 0x140004885a1 0x140004885a0 0x140004885a2 <nil>}] <nil> <nil> <nil> <nil>}] map[] <nil> map[] map[Oracle-Tags:map[CreatedBy:ocid1.instance.oc1.us-sanjose-1.anzwuljr2bh44rycyhcjywdo4zjian66wyv7zsf3pxygebxukbe4pxxignaq CreatedOn:2026-02-02T22:22:46.110Z]] map[]}:
+  Feb  2 14:23:03.713: INFO: TCP node port: 32632
+  Feb  2 14:23:03.713: INFO: TCP load balancer: 192.9.146.192
+  [1mSTEP:[0m hitting the TCP service's LoadBalancer [38;5;243m@ 02/02/26 14:23:03.714[0m
+  Feb  2 14:23:03.714: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  [1mSTEP:[0m changing the TCP service's NodePort [38;5;243m@ 02/02/26 14:23:04.007[0m
+  Feb  2 14:23:04.318: INFO: TCP node port: 32633
+  [1mSTEP:[0m hitting the TCP service's LoadBalancer [38;5;243m@ 02/02/26 14:23:04.318[0m
+  Feb  2 14:23:04.318: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:04.628: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65197->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:06.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:06.932: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65205->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:08.628: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:08.937: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65210->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:10.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:10.934: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65216->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:12.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:12.944: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65221->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:14.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:14.920: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65226->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:16.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:16.919: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65231->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:18.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:18.923: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": EOF
+  Feb  2 14:23:20.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:20.927: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": EOF
+  Feb  2 14:23:22.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:22.929: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65246->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:24.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:24.924: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65251->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:26.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:26.922: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65256->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:28.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:28.933: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65261->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:30.628: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:30.918: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": EOF
+  Feb  2 14:23:32.628: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:32.923: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": read tcp 10.25.163.244:65271->192.9.146.192:8080: read: connection reset by peer
+  Feb  2 14:23:34.628: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:34.920: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": EOF
+  Feb  2 14:23:36.628: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:36.942: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": EOF
+  Feb  2 14:23:38.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  Feb  2 14:23:38.919: INFO: Got error testing for reachability of http://192.9.146.192:8080/echo?msg=hello: Get "http://192.9.146.192:8080/echo?msg=hello": EOF
+  Feb  2 14:23:40.629: INFO: Testing HTTP reachability of http://192.9.146.192:8080/echo?msg=hello
+  [1mSTEP:[0m changing the TCP service's port [38;5;243m@ 02/02/26 14:23:40.926[0m
+  Feb  2 14:23:41.221: INFO: service port (TCP): 8081
+  [1mSTEP:[0m hitting the TCP service's LoadBalancer [38;5;243m@ 02/02/26 14:23:41.221[0m
+  Feb  2 14:23:41.221: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:23:46.222: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:23:48.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:23:53.224: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:23:54.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:23:59.223: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:00.222: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:24:05.223: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:06.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:24:11.224: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:12.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:24:17.224: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:18.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:24:23.224: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:24.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:24:29.223: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:30.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  Feb  2 14:24:35.223: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:36.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  [38;5;214m[TIMEDOUT][0m in [It] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85 [38;5;243m@ 02/02/26 14:24:38.762[0m
+  [1mSTEP:[0m Destroying namespace "cloud-provider-e2e-tests-service-k5g4d" for this suite. [38;5;243m@ 02/02/26 14:24:38.765[0m
+  Feb  2 14:24:41.224: INFO: Got error testing for reachability of http://192.9.146.192:8081/echo?msg=hello: Get "http://192.9.146.192:8081/echo?msg=hello": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+  Feb  2 14:24:42.223: INFO: Testing HTTP reachability of http://192.9.146.192:8081/echo?msg=hello
+  [1mSTEP:[0m changing TCP service back to type=ClusterIP [38;5;243m@ 02/02/26 14:24:42.52[0m
+  Feb  2 14:24:42.821: INFO: Waiting up to 2m0s for service "basic-lb-test" to have no LoadBalancer
+  [1mSTEP:[0m checking the TCP LoadBalancer is closed [38;5;243m@ 02/02/26 14:24:42.966[0m
+  Feb  2 14:24:42.966: INFO: Testing HTTP non-reachability of http://192.9.146.192:8081
+  Feb  2 14:24:43.269: INFO: Confirmed that http://192.9.146.192:8081 is not reachable
+  [1mSTEP:[0m Running test for: nlb [38;5;243m@ 02/02/26 14:24:43.269[0m
+  Feb  2 14:24:43.993: INFO: Failed to create TCP Service "basic-nlb-test": services "basic-nlb-test" is forbidden: unable to create new content in namespace cloud-provider-e2e-tests-service-k5g4d because it is being terminated
+  [38;5;214m[TIMEDOUT][0m in [AfterEach] - /Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/cloud_provider_framework.go:142 [38;5;243m@ 02/02/26 14:25:08.765[0m
+[38;5;214m• [TIMEDOUT] [153.928 seconds][0m
+[0mService [Slow] [38;5;243m[cloudprovider][ccm][lb][SL][wris][system-tags] [38;5;214m[1m[It] should be possible to create and mutate a Service type:LoadBalancer (change nodeport) [Canary][0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85[0m
+
+  [38;5;214m[TIMEDOUT] A suite timeout occurred[0m
+  [38;5;214mIn [1m[It][0m[38;5;214m at: [1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85[0m [38;5;243m@ 02/02/26 14:24:38.762[0m
+
+  [38;5;214mFull Stack Trace[0m
+
+  [1mThis is the Progress Report generated when the suite timeout occurred:[0m
+    [0mService [Slow] [38;5;243m[cloudprovider][ccm][lb][SL][wris][system-tags][0m [1m[38;5;214mshould be possible to create and mutate a Service type:LoadBalancer (change nodeport) [Canary][0m (Spec Runtime: 2m3.921s)
+      [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85[0m
+      In [1m[38;5;214m[It][0m (Node Runtime: 1m53.622s)
+        [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85[0m
+        At [1m[38;5;214m[By Step] hitting the TCP service's LoadBalancer[0m (Step Runtime: 57.54s)
+          [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:277[0m
+
+        [1m[4mSpec Goroutine[0m
+        [38;5;214mgoroutine 1305 [select][0m
+          [38;5;243mnet/http.(*Transport).getConn(0x14000bd01a0, 0x140006349b0, {{}, 0x0, {0x14001186990, 0x4}, {0x1400078c360, 0x12}, 0x0})[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/transport.go:1520[0m
+          [38;5;243mnet/http.(*Transport).roundTrip(0x14000bd01a0, 0x14000bee500)[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/transport.go:685[0m
+          [38;5;243mnet/http.(*Transport).RoundTrip(0x14000bee500?, 0x107d41840?)[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/roundtrip.go:33[0m
+          [38;5;243mnet/http.send(0x14000bee3c0, {0x107d41840, 0x14000bd01a0}, {0x104b04388?, 0x8?, 0x109ff7b40?})[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/client.go:259[0m
+          [38;5;243mnet/http.(*Client).send(0x140012a6630, 0x14000bee3c0, {0x14000de33a8?, 0x104a5c7ec?, 0x109ff7b40?})[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/client.go:180[0m
+          [38;5;243mnet/http.(*Client).do(0x140012a6630, 0x14000bee3c0)[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/client.go:729[0m
+          [38;5;243mnet/http.(*Client).Do(...)[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/client.go:587[0m
+          [38;5;243mnet/http.(*Client).Get(0x140012a6630, {0x14001186990?, 0x107d465c0?})[0m
+            [38;5;243m/opt/homebrew/Cellar/go/1.25.0/libexec/src/net/http/client.go:484[0m
+          [38;5;243mgithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.httpGetNoConnectionPoolTimeout({0x14001186990, 0x28}, 0x12a05f200)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/networking_util.go:83[0m
+          [38;5;243mgithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.TestReachableHTTPWithContentTimeoutWithRetriableErrorCodes(0x0, {0x140001acf80, 0xd}, 0x1f91, {0x106c3f539, 0xf}, {0x106c0cc13, 0x5}, 0x0, {0x14000de3be8, ...}, ...)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/networking_util.go:120[0m
+          [38;5;243mgithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.TestReachableHTTPWithRetriableErrorCodes(...)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/networking_util.go:91[0m
+          [38;5;243mgithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*ServiceTestJig).TestReachableHTTPWithRetriableErrorCodes.func1()[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/service_util.go:792[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.PollImmediate.ConditionFunc.WithContext.func1({0x14000efb340?, 0x14001269b60?})[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:113[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.runConditionWithCrashProtectionWithContext({0x107d8a858?, 0x10a02c288?}, 0x0?)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:159[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.waitForWithContext({0x107d8a858, 0x10a02c288}, 0x14000095980, 0x14000de39d8)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:212[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.poll({0x107d8a858, 0x10a02c288}, 0xe8?, 0x14000095980, 0x140000959d8)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:260[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.PollImmediateWithContext({0x107d8a858?, 0x10a02c288?}, 0x115?, 0x0?, 0x0?)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:175[0m
+          [38;5;243mk8s.io/apimachinery/pkg/util/wait.PollImmediate(0x14000095ad8?, 0x2?, 0x108add7dd?)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/k8s.io/apimachinery/pkg/util/wait/poll.go:157[0m
+          [38;5;243mgithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*ServiceTestJig).TestReachableHTTPWithRetriableErrorCodes(0x106cafd62?, 0x4?, {0x140001acf80, 0xd}, 0x1f91, {0x14000095be8?, 0x1?, 0x140008b1bb0?}, 0x1bf08eb000)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/service_util.go:791[0m
+          [38;5;243mgithub.com/oracle/oci-cloud-controller-manager/test/e2e/framework.(*ServiceTestJig).TestReachableHTTP(...)[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/service_util.go:787[0m
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func67.1.1.1({{0x106c09bf0?, 0x104dc9940?}, 0x1400096bd70?}, 0x14000946788, 0x1400096bbc0)[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:278[0m
+              | 
+              | By("hitting the TCP service's LoadBalancer")
+              [1m[38;5;214m> jig.TestReachableHTTP(false, tcpIngressIP, svcPort, loadBalancerCreateTimeout) // this may actually recreate the LB[0m
+              | 
+              | // Change the services back to ClusterIP.
+        [38;5;214m[1m> github.com/oracle/oci-cloud-controller-manager/test/e2e/cloud-provider-oci.init.func67.1.1()[0m
+            [38;5;214m[1m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:298[0m
+              | 			By("checking the TCP LoadBalancer is closed")
+              | 			jig.TestNotReachableHTTP(tcpIngressIP, svcPort, loadBalancerLagTimeout)
+              [1m[38;5;214m> 		}()[0m
+              | 	}
+              | })
+          [38;5;243mgithub.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x1078a9aa0?, 0x100000000?})[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/node.go:524[0m
+          [38;5;243mgithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:942[0m
+          [38;5;243mgithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 183[0m
+            [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:907[0m
+
+  There were [1m[38;5;9madditional failures[0m detected.  To view them in detail run [1mginkgo -vv[0m
+[38;5;243m------------------------------[0m
+[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m[38;5;14mS[0m
+[38;5;243m------------------------------[0m
+[0m[1m[SynchronizedAfterSuite] [0m
+[38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/setup.go:36[0m
+  Feb  2 14:25:08.771: INFO: Running AfterSuite actions on all node
+[38;5;10m[SynchronizedAfterSuite] PASSED [0.000 seconds][0m
+[38;5;243m------------------------------[0m
+
+[38;5;9m[1mSummarizing 4 Failures:[0m
+  [38;5;9m[FAIL][0m [0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [38;5;9m[1m[It] Should be possible to create a persistent volume claim for a block storage (PVC)[0m
+  [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m
+  [38;5;9m[FAIL][0m [0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [38;5;9m[1m[It] Should be possible to create a persistent volume claim (PVC) for a block storage of Ext3 file system [0m
+  [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m
+  [38;5;9m[FAIL][0m [0mBlock Volume Creation [38;5;243m[cloudprovider][storage][fvp] [38;5;9m[1m[It] Should be possible to create a persistent volume claim (PVC) for a block storage with no AD specified [0m
+  [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/framework/pvc_util.go:377[0m
+  [38;5;214m[TIMEDOUT][0m [0mService [Slow] [38;5;243m[cloudprovider][ccm][lb][SL][wris][system-tags] [38;5;214m[1m[It] should be possible to create and mutate a Service type:LoadBalancer (change nodeport) [Canary][0m
+  [38;5;243m/Users/nikhilsingh/work/OpenShift/ccm-github-forked/oci-cloud-controller-manager/test/e2e/cloud-provider-oci/load_balancer.go:85[0m
+
+[38;5;9m[1mRan 18 of 178 Specs in 3619.088 seconds[0m
+[38;5;9m[1mFAIL! - Suite Timeout Elapsed[0m -- [38;5;10m[1m14 Passed[0m | [38;5;9m[1m4 Failed[0m | [38;5;11m[1m0 Pending[0m | [38;5;14m[1m160 Skipped[0m
+--- FAIL: TestE2E (3619.09s)
+FAIL
+
+Ginkgo ran 1 suite in 1h0m31.217245792s
+
+Test Suite Failed
+[0;31mARM Failed[0m

@@ -22,7 +22,7 @@ import (
 	"time"
 
 	snapclientset "github.com/kubernetes-csi/external-snapshotter/client/v6/clientset/versioned"
-	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
@@ -221,7 +221,7 @@ func (f *CloudProviderFramework) DeleteNamespace(namespace string, timeout time.
 // BeforeEach gets a client and makes a namespace.
 func (f *CloudProviderFramework) BeforeEach() {
 	// The fact that we need this feels like a bug in ginkgo.
-	// https://github.com/onsi/ginkgo/issues/222
+	// https://github.com/onsi/ginkgo/v2/issues/222
 	f.cleanupHandle = AddCleanupAction(f.AfterEach)
 
 	// Create an OCI client if the cloudConfig has been specified.
